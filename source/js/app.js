@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap', 'snippets'], function (news, snippets) {
+define(['lib/news_special/bootstrap', 'bump-3', 'playlister/snippets'], function (news, $, snippets) {
 
 	/*
 	 * variable declarations

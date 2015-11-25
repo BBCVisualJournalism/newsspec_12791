@@ -7,9 +7,10 @@ module.exports = function (grunt) {
 
     var amdModulePaths = {
         'pubsub': './lib/vendors/jquery/pubsub',
-        // 'bump-3': 'empty:',
+        'bump-3': 'empty:',
+        'swfobject-2': 'empty:',
         'istats-1': 'empty:',
-        'snippets': './../../bower_components/snippets-js/index'
+        'playlister/snippets': './../../bower_components/snippets-js/index'
     };
 
     // *************************************************************************
