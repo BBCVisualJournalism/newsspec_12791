@@ -10,13 +10,15 @@ define(['lib/news_special/bootstrap', 'bump-3', 'playlister/snippets'], function
     news.sendMessageToremoveLoadingImage();
 
     snippets.init({
-        // lang: "en",
-        // continuous: false,
-        // base_url: "/modules/snippet",
-        // pause_enabled: true,
-        // uk: null,
-        // context: null
+        lang: "en",
+        continuous: false,
+        base_url: "http://www.bbc.co.uk/modules/snippet",
+        pause_enabled: true,
+        uk: null,
+        context: null
     });
+
+    console.log('snippets = ', snippets);
 
 
 });
