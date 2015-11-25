@@ -1,0 +1,7 @@
+{
+  "name": "Shared dependencies",
+  "dependencies": {
+    "snippets-css": "http://static.bbc.co.uk/snippet/0.1.12/css/snippets.css",
+    "snippets-js": "http://static.bbc.co.uk/snippet/0.1.12/script/snippets.min.js"
+  }
+}

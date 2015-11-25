@@ -1,0 +1,14 @@
+{
+  "name": "snippets-css",
+  "_cacheHeaders": {
+    "ETag": "\"204a-52275e3262840\"",
+    "Last-Modified": "Mon, 19 Oct 2015 14:23:21 GMT",
+    "Content-Length": "8266",
+    "Content-Type": "text/css"
+  },
+  "_release": "e-tag:204a-5227",
+  "main": "index.css",
+  "_source": "http://static.bbc.co.uk/snippet/0.1.12/css/snippets.css",
+  "_target": "*",
+  "_originalSource": "http://static.bbc.co.uk/snippet/0.1.12/css/snippets.css"
+}

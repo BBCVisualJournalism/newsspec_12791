@@ -1,0 +1,27 @@
+{{= include('includes/newsBanner_en-GB.tmpl') }}
+<!--[if lt IE 9]>
+<div class="browser-notify">
+    <div class="browser-notify__banner">
+        <div class="browser-notify__icon"></div>
+        <span>This site is optimised for modern web browsers, and does not fully support your version of Internet Explorer</span>
+    </div>
+</div>
+<![endif]-->
+
+<style>
+{{= include("../scss/news_special/loading.css") }}
+.spt-snippet{width:4em;height:4em}.spt-snippet .spt-button{cursor:default;width:4em;height:4em;font-size:1em;display:block;padding:0;margin:0;outline:0;border:0;position:relative;background:#4a4a4a;overflow:visible}.spt-snippet .spt-button::after{width:0;height:0;display:block;content:"";top:1em;left:1.2em;position:absolute;border-top:1em solid transparent;border-bottom:1em solid transparent;border-left:1.7em solid #fff}@media screen and (-ms-high-contrast: active){.spt-snippet .spt-button::after{content:"\25B6";color:white;border:none;font-size:3.3em;top:0.1em;left:0.3em}}.spt-snippet .spt-button .spt-playback{width:100%;height:100%;display:none}.spt-snippet.is-loading .spt-button{background:#ff5500}.spt-snippet.is-loading .spt-button:after{width:2.2em;height:2.2em;position:absolute;top:0.9em;left:0.9em;display:block;content:"";border:0.6em solid #fff;border-bottom-color:transparent;border-top-left-radius:100%;border-top-right-radius:100%;border-bottom-left-radius:100%;border-bottom-right-radius:100%;box-sizing:border-box;-webkit-animation:snippetloadingspin .6s infinite linear;animation:snippetloadingspin .6s infinite linear}.spt-snippet.is-disabled .spt-button{background:#4a4a4a}.spt-snippet.has-error .spt-button{background:#ff3333}.spt-snippet.has-error .spt-button:before{width:0.6em;height:0.6em;display:block;content:"";left:1.7em;top:2.7em;position:absolute;border:0;background:#fff}.spt-snippet.has-error .spt-button:after{width:0.6em;height:1.6em;display:block;content:"";left:1.7em;top:0.8em;position:absolute;border:0;background:#fff}.spt-snippet.is-playing .spt-button{background:#ff5500}.spt-snippet.is-playing .spt-button:hover,.spt-snippet.is-playing .spt-button:focus,.spt-snippet.is-playing .spt-button:active{background:#ff8500}.spt-snippet.is-playing .spt-button:after{width:1em;height:1em;display:block;content:"";position:absolute;top:1.5em;left:1.5em;border:0;background:#fff}.spt-snippet.can-pause .spt-button:after{display:block;content:"";height:1.2em;width:0.4em;border:0;border-left:0.3em solid #FFF;border-right:0.3em solid #FFF;background:transparent;position:absolute;top:1.4em;left:1.5em}.spt-snippet.is-paused .spt-button:after{display:block;content:"";width:0;height:0;border-width:0.6em 0;border-left:1.1em solid #FFF;position:absolute;top:1.4em;left:1.6em}.spt-enabled .spt-snippet.is-disabled .spt-button{background:#4a4a4a;cursor:default}.spt-enabled .spt-button{cursor:pointer;background:#ff8500}.spt-enabled .spt-button:hover,.spt-enabled .spt-button:focus,.spt-enabled .spt-button:active{background:#ff5500}.spt-enabled .spt-button::-moz-focus-inner{padding:0;border:0}@-webkit-keyframes snippetloadingspin{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes snippetloadingspin{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}.spt-smp{position:absolute;pointer-events:none;overflow:hidden}
+</style>
+
+<div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}">
+	<div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
+	
+	<bbc-snippet data-record-id="{{ nznqpq }}"></bbc-snippet>
+	<!-- <bbc-snippet data-record-id="nznqpq"></bbc-snippet> -->
+	<div style="width:100px; height:100px; background-color:#ff0000;"></div>
+    
+    <!-- <div class="delayed-image-load" data-src="{{= pathStatic }}/{{= vocab_dir }}/img/320/testcard.jpg" data-width="320" style="width: 100%;"></div> -->
+</div>
+{{=  include("./creditsShareAndMore.tmpl") }}
+
+{{=  include("./includes/inline.js.tmpl") }}

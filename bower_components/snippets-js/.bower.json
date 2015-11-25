@@ -1,0 +1,14 @@
+{
+  "name": "snippets-js",
+  "_cacheHeaders": {
+    "ETag": "\"6aa4-52275e3262840\"",
+    "Last-Modified": "Mon, 19 Oct 2015 14:23:21 GMT",
+    "Content-Length": "27300",
+    "Content-Type": "application/javascript"
+  },
+  "_release": "e-tag:6aa4-5227",
+  "main": "index.js",
+  "_source": "http://static.bbc.co.uk/snippet/0.1.12/script/snippets.min.js",
+  "_target": "*",
+  "_originalSource": "http://static.bbc.co.uk/snippet/0.1.12/script/snippets.min.js"
+}
