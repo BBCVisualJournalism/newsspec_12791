@@ -1,4 +1,9 @@
-define(['lib/news_special/bootstrap', 'bump-3', 'playlister/snippets'], function (news, $, snippets) {
+define([
+    'lib/news_special/bootstrap',
+    'bump-3',
+    'playlister/snippets',
+    'mediator/screenSizeMediator'
+    ], function (news, $, snippets, screenSizeMediator) {
 
 	/*
 	 * variable declarations
@@ -8,6 +13,8 @@ define(['lib/news_special/bootstrap', 'bump-3', 'playlister/snippets'], function
 	 * init stuff
 	*/
     news.sendMessageToremoveLoadingImage();
+
+    screenSizeMediator.init();
 
     snippets.init({
         lang: "en",
