@@ -1,0 +1,128 @@
+$teamSearchBgColour: #000;
+$teamSearchTitleFontColour: #fff;
+$base--border-color: #000;
+$sportYellowColor: #00ffff;
+
+.ns12791_topSearchHolder {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	display: table;
+
+	.ns12791_searchContentsHolder {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+
+		.ns12791_cityFreeTextSearchHolder {
+			background-color: #000;
+			background-color: rgba(0, 0, 0, 0.8);
+			margin: 0 auto;
+			max-width: 500px;
+			text-align: left;
+			padding: 32px;
+
+			h4 {
+				margin-top: 0;
+			}
+
+			///////////////////////////////////////////////////////////////
+		    .club-search--text-input{
+		    	-moz-box-sizing: border-box;
+			    -webkit-box-sizing: border-box;
+			    box-sizing: border-box;
+
+		        display: block;
+		        margin: 0 0 0.625em 0;
+		        color: #333;
+		        padding: 13px;
+		        width: 100%;
+		        outline: 0;
+		        margin-bottom: 0.625em;
+		        border: 1px solid $base--border-color;
+
+		    }
+		    .club-search--inputs{
+		        margin: 0.625em 0 0 0;
+		    }
+
+		    .club-search--help{
+		        margin: 0 0 0.625em 0;
+		        text-align: left;
+		        a{
+		            color: $sportYellowColor;
+		            font-weight: bold;
+		            text-decoration: none;
+		            &:hover, &:focus{
+		                text-decoration: underline;
+		            }
+		            display: inline-block;
+		        }
+		    }
+
+		    .club-search--submit{
+		        @extend %button--cta;
+		        margin: 0;
+		        min-height: 47px;
+		        width:100%;
+
+		        background-image: url(../img/frame/chevron--grey-right.png);
+		        background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDE1IDMyIDMyIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiICBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMTUgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiMyMjIiIHBvaW50cz0iMjMuOSwzMC45IDEyLDIzLjYgMTIsMjYuOCAxOSwzMC45IDEyLDM0LjkgMTIsMzguMiAiLz48L3N2Zz4=), none;
+
+		        color: #000;
+		        background-color: $sportYellowColor;
+		        border: 2px solid $sportYellowColor;
+
+		        &:hover,
+		        &:active,
+		        &:focus {
+		            background-color: $sportYellowColor;
+		            border: 2px solid $sportYellowColor;
+		        }
+		    }
+			///////////////////////////////////////////////////////////////
+		}
+	}
+}
+
+/*
+ * Responsive behaviour
+*/
+//'mobile' landscape
+@media screen and (orientation:landscape) {
+	.ns12791_topSearchHolder {
+		background-image: url('../img/topbg_small_landscape.jpg');
+	}
+}
+
+//'tablet' and 'desktop' landscape
+@media screen and (orientation:landscape) and (min-width: 769px) {
+	.ns12791_topSearchHolder {
+		background-image: url('../img/topbg_large_landscape.jpg');
+	}
+}
+
+//
+
+//'mobile' portrait
+@media screen and (orientation:portrait) {
+	.ns12791_topSearchHolder {
+		background-image: url('../img/topbg_small_portrait.jpg');
+	}
+}
+
+//'tablet' portrait
+@media screen and (orientation:portrait) and (min-width: 641px) {
+	.ns12791_topSearchHolder {
+		background-image: url('../img/topbg_medium_portrait.jpg');
+	}
+}
+
+//'desktop' portrait
+@media screen and (orientation:portrait) and (min-width: 1225px) {
+	.ns12791_topSearchHolder {
+		background-image: url('../img/topbg_large_portrait.jpg');
+	}
+}

@@ -1,7 +1,15 @@
 @import "news_special/defaults";
 @import "app";
 @import "creditsShareAndMore";
-@import "./../../bower_components/snippets-css/index";
+@import "./../../bower_components/snippets-css/index.css";
+@import "type";
+@import "colours";
+@import "buttons";
+@import "topSearchSection";
+
+.main {
+	background-color: #fff;
+}
 
 .ns_rtl {
 	direction: rtl;
