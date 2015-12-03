@@ -2,8 +2,9 @@ define([
     'lib/news_special/bootstrap',
     'bump-3',
     'playlister/snippets',
-    'mediator/screenSizeMediator'
-    ], function (news, $, snippets, screenSizeMediator) {
+    'mediator/screenSizeMediator',
+    'citySearchUserInput'
+    ], function (news, $, snippets, screenSizeMediator, citySearchUserInput) {
 
 	/*
 	 * variable declarations
@@ -14,8 +15,6 @@ define([
 	*/
     news.sendMessageToremoveLoadingImage();
 
-    screenSizeMediator.init();
-
     snippets.init({
         lang: "en",
         continuous: false,
@@ -25,7 +24,19 @@ define([
         context: null
     });
 
-    console.log('snippets = ', snippets);
+    /*
+     * model components init
+    */
+    citySearchUserInput.init();
+
+    /*
+     * mediator components init
+    */
+    screenSizeMediator.init();
+
+    /*
+     * view components init
+    */
 
 
 });

@@ -29,7 +29,7 @@ $sportYellowColor: #00ffff;
 			}
 
 			///////////////////////////////////////////////////////////////
-		    .club-search--text-input{
+		    .city-search--text-input{
 		    	-moz-box-sizing: border-box;
 			    -webkit-box-sizing: border-box;
 			    box-sizing: border-box;
@@ -44,11 +44,11 @@ $sportYellowColor: #00ffff;
 		        border: 1px solid $base--border-color;
 
 		    }
-		    .club-search--inputs{
+		    .city-search--inputs{
 		        margin: 0.625em 0 0 0;
 		    }
 
-		    .club-search--help{
+		    .city-search--help{
 		        margin: 0 0 0.625em 0;
 		        text-align: left;
 		        a{
@@ -62,7 +62,7 @@ $sportYellowColor: #00ffff;
 		        }
 		    }
 
-		    .club-search--submit{
+		    .city-search--submit{
 		        @extend %button--cta;
 		        margin: 0;
 		        min-height: 47px;
