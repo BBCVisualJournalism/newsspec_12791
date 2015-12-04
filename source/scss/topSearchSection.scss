@@ -16,73 +16,82 @@ $sportYellowColor: #00ffff;
 		vertical-align: middle;
 		text-align: center;
 
-		.ns12791_cityFreeTextSearchHolder {
-			background-color: #000;
-			background-color: rgba(0, 0, 0, 0.8);
+		.ns12791_searchBoxHolder {
+			position: relative;
+			width: 100%;
+			max-width: 400px;
 			margin: 0 auto;
-			max-width: 500px;
-			text-align: left;
-			padding: 32px;
 
-			h4 {
-				margin-top: 0;
+			.ns12791_countryFreeTextSearchHolder {
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
+			
+			.ns12791_cityFreeTextSearchHolder, .ns12791_countryFreeTextSearchHolder {
+				background-color: #000;
+				background-color: rgba(0, 0, 0, 0.8);
+				width: 100%;
+				text-align: left;
+				padding: 32px;
 
-			///////////////////////////////////////////////////////////////
-		    .city-search--text-input{
-		    	-moz-box-sizing: border-box;
-			    -webkit-box-sizing: border-box;
-			    box-sizing: border-box;
+				h4 {
+					margin-top: 0;
+				}
 
-		        display: block;
-		        margin: 0 0 0.625em 0;
-		        color: #333;
-		        padding: 13px;
-		        width: 100%;
-		        outline: 0;
-		        margin-bottom: 0.625em;
-		        border: 1px solid $base--border-color;
+			    .city-search--text-input, .country-search--text-input {
+			    	-moz-box-sizing: border-box;
+				    -webkit-box-sizing: border-box;
+				    box-sizing: border-box;
 
-		    }
-		    .city-search--inputs{
-		        margin: 0.625em 0 0 0;
-		    }
+			        display: block;
+			        margin: 0 0 0.625em 0;
+			        color: #333;
+			        padding: 13px;
+			        width: 100%;
+			        outline: 0;
+			        margin-bottom: 0.625em;
+			        border: 1px solid $base--border-color;
 
-		    .city-search--help{
-		        margin: 0 0 0.625em 0;
-		        text-align: left;
-		        a{
-		            color: $sportYellowColor;
-		            font-weight: bold;
-		            text-decoration: none;
-		            &:hover, &:focus{
-		                text-decoration: underline;
-		            }
-		            display: inline-block;
-		        }
-		    }
+			    }
+			    .city-search--inputs, .country-search--inputs {
+			        margin: 0.625em 0 0 0;
 
-		    .city-search--submit{
-		        @extend %button--cta;
-		        margin: 0;
-		        min-height: 47px;
-		        width:100%;
+			        .ns12791_cantFindCity {
+			        	display: inline-block;
+			        	font-size: 1em;
+			        	font-weight: bold;
+			        	color: rgb(203, 162, 108);
+			        	margin: 1em 0 0 0;
+			        	text-decoration: none;
+			        	cursor: pointer;
+			        	&:hover, &:focus{
+			                text-decoration: underline;
+			            }
+			        }
+			    }
 
-		        background-image: url(../img/frame/chevron--grey-right.png);
-		        background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDE1IDMyIDMyIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiICBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMTUgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiMyMjIiIHBvaW50cz0iMjMuOSwzMC45IDEyLDIzLjYgMTIsMjYuOCAxOSwzMC45IDEyLDM0LjkgMTIsMzguMiAiLz48L3N2Zz4=), none;
+			    .city-search--submit, .country-search--submit {
+			        @extend %button--cta;
+			        margin: 0;
+			        min-height: 47px;
+			        width:100%;
 
-		        color: #000;
-		        background-color: $sportYellowColor;
-		        border: 2px solid $sportYellowColor;
+			        background-image: url(../img/frame/chevron--grey-right.png);
+			        background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDE1IDMyIDMyIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiICBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMTUgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiMyMjIiIHBvaW50cz0iMjMuOSwzMC45IDEyLDIzLjYgMTIsMjYuOCAxOSwzMC45IDEyLDM0LjkgMTIsMzguMiAiLz48L3N2Zz4=), none;
 
-		        &:hover,
-		        &:active,
-		        &:focus {
-		            background-color: $sportYellowColor;
-		            border: 2px solid $sportYellowColor;
-		        }
-		    }
-			///////////////////////////////////////////////////////////////
+			        color: #000;
+			        background-color: $sportYellowColor;
+			        border: 2px solid $sportYellowColor;
+
+			        &:hover,
+			        &:active,
+			        &:focus {
+			            background-color: $sportYellowColor;
+			            border: 2px solid $sportYellowColor;
+			        }
+			    }
+			}
 		}
 	}
 }

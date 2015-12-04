@@ -10,7 +10,8 @@ module.exports = function (grunt) {
         'bump-3': 'empty:',
         'swfobject-2': 'empty:',
         'istats-1': 'empty:',
-        'playlister/snippets': './../../bower_components/snippets-js/index'
+        'playlister/snippets': './../../bower_components/snippets-js/index',
+        '$v': './lib/vendors/velocity/velocity.min'
     };
 
     // *************************************************************************

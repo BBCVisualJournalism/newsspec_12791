@@ -8,9 +8,8 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         this.$submitButton = news.$('.city-search--submit');
         this.citiesData = {};
         
-        // this.setupAutocomplete();
         var that = this;
-        require(['http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/worldwide_city_list_en.js?callback=define'], function (worldwideCitiesList) {
+        require(['http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/en/worldwide_city_list.js?callback=define'], function (worldwideCitiesList) {
             that.setupAutocomplete(worldwideCitiesList.data);
         });
     };
@@ -25,8 +24,10 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                 autoSelectFirst: true,
                 onSelect: function (suggestion) {
 
-                    if (suggestion !== cityAutocomplete.autocompleteSelectedCity) {
-                        cityAutocomplete.autocompleteSelectedCity = suggestion;
+                    // console.log('suggestion = ', suggestion);
+
+                    if (suggestion.value !== cityAutocomplete.autocompleteSelectedCity) {
+                        cityAutocomplete.autocompleteSelectedCity = suggestion.value;
                         if (cityAutocomplete.onCityChange) {
                             cityAutocomplete.onCityChange(suggestion);
                         }
