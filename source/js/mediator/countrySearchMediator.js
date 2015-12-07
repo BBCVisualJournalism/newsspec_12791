@@ -9,7 +9,7 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         this.citiesData = {};
         
         /*
-         * The following shoulf only be loaded once when the cant find your city buton has been clicked
+         * The following should only be loaded once when the cant find your city buton has been clicked
         */
         var that = this;
         require(['http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/en/worldwide_country_list.js?callback=define'], function (worldwideCountriesList) {
@@ -35,12 +35,13 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                             countryAutocomplete.onCountryChange(suggestion);
                         }
                     }
-
-                    countryAutocomplete.$submitButton.removeClass('disabled');
                     
                     if (!news.$('#country-search--text-input').is(':focus')) {
                         news.$('#country-search--text-input').focus();
                     }
+
+                    news.pubsub.emit('user-autocomplete-country', suggestion.value);
+                    
 
                 },
                 lookupFilter: function (suggestion, originalQuery, queryLowerCase) {

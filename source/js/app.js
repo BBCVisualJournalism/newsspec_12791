@@ -3,8 +3,10 @@ define([
     'bump-3',
     'playlister/snippets',
     'mediator/screenSizeMediator',
-    'citySearchUserInput'
-    ], function (news, $, snippets, screenSizeMediator, citySearchUserInput) {
+    'mediator/citySearchDropDownMediator',
+    'citySearchUserInput',
+    'countrySearchUserInput'
+    ], function (news, $, snippets, screenSizeMediator, citySearchDropDownMediator, citySearchUserInput, countrySearchUserInput) {
 
 	/*
 	 * variable declarations
@@ -29,11 +31,13 @@ define([
      * model components init
     */
     citySearchUserInput.init();
+    // countrySearchUserInput.init();
 
     /*
      * mediator components init
     */
     screenSizeMediator.init();
+    citySearchDropDownMediator.init();
 
     /*
      * view components init
@@ -56,7 +60,7 @@ define([
                 marginLeft: '-' + animationMovement + 'px',
                 opacity: 0
             }, animationDuration, 'linear', function() {
-                //dsfg
+                countrySearchUserInput.init();
             }
         );
 
