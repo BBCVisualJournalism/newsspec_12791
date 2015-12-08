@@ -107,7 +107,7 @@ Feature: Shazam
     And it should say how far away the town is
     And it should state how many tracks we have in common (1 - 10)
     And it should list those track names
-    And they should be ordered by that city's preferences # @TODO - Ed/Ransome
+    And they should be ordered by that city's preferences order
 
   Scenario: Twin town doesn't exist
     Given my town is unique
