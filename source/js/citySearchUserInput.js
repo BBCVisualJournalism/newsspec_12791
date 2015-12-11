@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (news, CitySearchMediator) {
+define(['lib/news_special/bootstrap', 'mediator/citySearchMediator', 'utils'], function (news, CitySearchMediator, utils) {
 
     /* Vars */
     var autocompleteSelectedCity;
@@ -83,8 +83,7 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (
     var submit = function () {
         news.pubsub.emit('istats', ['find-automation-clicked']);
 
-        var stringRegex = / /gi;
-        var cityFileName = getUserCity().replace(stringRegex, '').toLowerCase() + '.js';
+        var cityFileName = utils.normaliseText(getUserCity()) + '.js';
 
         news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
     };

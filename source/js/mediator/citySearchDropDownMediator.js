@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap'], function (news) {
+define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
     /*
      * Declare Variables
@@ -8,11 +8,8 @@ define(['lib/news_special/bootstrap'], function (news) {
     var $submitButton;
     var selectedCityFileName;
     var basePath;
-    
 
     var init = function (baseDataPath) {
-
-
         /*
          * Set Variables
         */
@@ -31,7 +28,7 @@ define(['lib/news_special/bootstrap'], function (news) {
 
     var loadCountriesCities = function (countryName) {
         //load the city options for the country selected
-        var countrySafePathName = countryName.replace(' ', '').toLowerCase();
+        var countrySafePathName = utils.normaliseText(countryName);
         var countriesCityListFilePath = basePath + 'cities_list_' + countrySafePathName + '.js';
 
         //clear the dropdown list
