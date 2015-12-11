@@ -5,7 +5,7 @@ $base--border-color: #000;
 .ns12791_topSearchHolder {
 	width: 100%;
 	min-height: 100vh;
-	background-color: #000;
+	background-color: #212121;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	display: table;
@@ -137,19 +137,10 @@ $base--border-color: #000;
 	}
 }
 
-//'tablet' and 'desktop' landscape
-@media screen and (orientation:landscape) and (min-width: 769px) {
-	.ns12791_topSearchHolder {
-		background-image: url('../img/topbg_large_landscape.jpg');
-	}
-}
-
-//
-
 //'mobile' portrait
 @media screen and (orientation:portrait) {
 	.ns12791_topSearchHolder {
-		background-image: url('../img/topbg_small_portrait.jpg');
+		background-image: url('../img/topbg_v_small_portrait.jpg');
 	}
 }
 
@@ -157,6 +148,13 @@ $base--border-color: #000;
 @media screen and (orientation:portrait) and (min-width: 641px) {
 	.ns12791_topSearchHolder {
 		background-image: url('../img/topbg_medium_portrait.jpg');
+	}
+}
+
+//'tablet' and 'desktop' landscape
+@media screen and (orientation:landscape) and (min-width: 769px) {
+	.ns12791_topSearchHolder {
+		background-image: url('../img/topbg_large_landscape.jpg');
 	}
 }
 
