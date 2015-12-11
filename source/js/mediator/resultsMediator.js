@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap'], function (news) {
+define(['lib/news_special/bootstrap', 'mediator/topTracksResultsMediator'], function (news, topTracksResultsMediator) {
 
     /*
      * Declare Variables
@@ -22,11 +22,14 @@ define(['lib/news_special/bootstrap'], function (news) {
     var handleCitySubmit = function (basePath, cityFileName) {
         require([basePath + cityFileName + '?callback=define'], function (selectedCityModel) {
             displayResults(selectedCityModel);
+            topTracksResultsMediator.init();
         });
     };
 
     var displayResults = function (resultsModel) {
-        news.pubsub.emit('display-city-tracks-results', [resultsModel.topTracks]);
+        console.log('resultsModel = ', resultsModel);
+        news.pubsub.emit('display-city-tracks-results', [resultsModel.data.topTracks]);
+        // news.pubsub.emit('display-twin-city-results', [resultsModel.data.topTracks]);
 
     }
 

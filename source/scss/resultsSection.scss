@@ -28,6 +28,13 @@ $resultsBoxFontColor: #000;
 		}
 	}
 
+	.ns12791_showMoreTracksButton, .ns12791_showLessButton {
+		@extend %button--naked;
+		margin-left: auto;
+		margin-right: auto;
+		display: none;
+	}
+
 	.ns12791_songResultsSecondHalf {
 		width: 50%;
 		display: inline-block;
@@ -104,17 +111,75 @@ $resultsBoxFontColor: #000;
 		}
 
 	}
+	.ns12791_button--show {
+		display: block;
+	}
 }
 
 /*
  * Responsive behaviour
 */
+//'mobile'
+@include respondMinMax(false, 700px) {
+	.ns12791_songBoxImage {
+		display: none;
+	}
+	.ns12791_resultsHolder {
+		.ns12791_songBoxHolder {
+			display: table;
+			width: 100%;
+			.ns12791_trackNumAndSnippetHolder {
+				width: 82px;
+				display: table-cell;
+				.ns12791_trackNumber, .ns12791_snippetHolder {
+					display: inline-block;
+					vertical-align: top;
+				}
+				.ns12791_trackNumber+.ns12791_snippetHolder {
+					margin-top: 0;
+					margin-left: 2px;
+				}
+			}
+			.ns12791_songBoxTitleAndArtistHolder {
+				position: static;
+				display: table-cell;
+				padding-left: 8px;
+			}
+		}
+	}
+}
+
+//mobile & tablet
+@include respondMinMax(false, 1224px) {
+	.ns12791_resultsHolder {
+		.ns12791_songResultsFirstHalf {
+			display: block;
+		}
+		.ns12791_songResultsSecondHalf--mobHidden {
+			display: none;
+		}
+		.ns12791_songResultsFirstHalf, .ns12791_songResultsSecondHalf {
+			width: 100%;
+			padding: 0 8px;
+			max-width: 500px;
+			margin: 0 auto;
+		}
+	}
+}
 //'desktop'
 @media screen and (min-width: 1225px) {
 	.ns12791_resultsHolder {
 		
 		.ns12791_songBoxHolder {
 			max-width: 450px;
+		}
+
+		.ns12791_showMoreTracksButton, .ns12791_showLessButton {
+			display: none;
+		}
+
+		.ns12791_button--show {
+			display: none;
 		}
 	}
 }
