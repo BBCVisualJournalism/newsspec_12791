@@ -1,5 +1,5 @@
 define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (news) {
-    var CitysAutocompleteMediator = function ($inputElement, onCityChange) {
+    var CitysAutocompleteMediator = function ($inputElement, onCityChange, baseDataPath) {
         
         this.$autocompleteInput = $inputElement;
         this.onCityChange = onCityChange;
@@ -9,7 +9,7 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         this.citiesData = {};
         
         var that = this;
-        require(['http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/en/worldwide_city_list.js?callback=define'], function (worldwideCitiesList) {
+        require([baseDataPath + 'worldwide_city_list.js?callback=define'], function (worldwideCitiesList) {
             that.setupAutocomplete(worldwideCitiesList.data);
         });
     };

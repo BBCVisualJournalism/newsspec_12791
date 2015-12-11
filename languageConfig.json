@@ -1,5 +1,6 @@
 {
         "languageLookup": {
+                "afrique":{         "bannerImgPath": "afrique.png",           "url": "http://www.bbc.com/afrique",            "direction": "ltr",       "code":"fr"},
                 "arabic":{          "bannerImgPath": "arabic.png",            "url": "http://www.bbc.com/arabic",             "direction": "rtl",       "code":"ar"},
                 "azeri":{           "bannerImgPath": "azeri.png",             "url": "http://www.bbc.com/azeri",              "direction": "ltr",       "code":"az"},
                 "bengali":{         "bannerImgPath": "bengali.png",           "url": "http://www.bbc.com/bengali",            "direction": "ltr",       "code":"bn"},
@@ -8,7 +9,7 @@
                 "chinese_simp":{    "bannerImgPath": "zhongwen.png",          "url": "http://www.bbc.com/zhongwen/simp",      "direction": "ltr",       "code":"zh"},
                 "chinese_trad":{    "bannerImgPath": "zhongwen.png",          "url": "http://www.bbc.com/zhongwen/trad",      "direction": "ltr",       "code":"zh"},
                 "cymru":{           "bannerImgPath": "cymrufyw.png",          "url": "http://www.bbc.co.uk/cymrufyw",         "direction": "ltr",       "code":"cy"},
-                "english":{         "bannerImgPath": "news.png",              "url": "http://www.bbc.co.uk/news",             "direction": "ltr",       "code":"en-GB"},
+                "english":{         "bannerImgPath": "news.png",              "url": "http://www.bbc.co.uk/news",             "direction": "ltr",       "code":"en"},
                 "french":{          "bannerImgPath": "afrique.png",           "url": "http://www.bbc.com/afrique",            "direction": "ltr",       "code":"fr"},
                 "gahuza":{          "bannerImgPath": "gahuza.png",            "url": "http://www.bbc.com/gahuza",             "direction": "ltr",       "code":"en-GB"},
                 "hausa":{           "bannerImgPath": "hausa.png",             "url": "http://www.bbc.com/hausa",              "direction": "ltr",       "code":"ha"},

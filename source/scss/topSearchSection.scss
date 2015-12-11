@@ -1,7 +1,6 @@
 $teamSearchBgColour: #000;
 $teamSearchTitleFontColour: #fff;
 $base--border-color: #000;
-$sportYellowColor: #00ffff;
 
 .ns12791_topSearchHolder {
 	width: 100%;
@@ -57,16 +56,21 @@ $sportYellowColor: #00ffff;
 			    .city-search--inputs, .country-search--inputs {
 			        margin: 0.625em 0 0 0;
 
-			        .ns12791_cantFindCity {
+			        .ns12791_alternateSearchSpan {
 			        	display: inline-block;
 			        	font-size: 1em;
 			        	font-weight: bold;
-			        	color: rgb(203, 162, 108);
+			        	color: $cantFindCity;
 			        	margin: 1em 0 0 0;
 			        	text-decoration: none;
 			        	cursor: pointer;
 			        	&:hover, &:focus{
 			                text-decoration: underline;
+			            }
+			            &.disabled {
+			            	color: $color--brand-black;
+						    cursor: default;
+						    pointer-events: none;
 			            }
 			        }
 
@@ -102,21 +106,20 @@ $sportYellowColor: #00ffff;
 			        width:100%;
 			        background-image: none!important;
 
-			        color: #000;
-			        background-color: $sportYellowColor;
-			        border: 2px solid $sportYellowColor;
+			        color: #fff;
+			        background-color: $submitButtonActive;
+			        border: 2px solid $submitButtonActive;
 
 			        &:hover,
 			        &:active,
 			        &:focus {
-			            background-color: $sportYellowColor;
-			            border: 2px solid $sportYellowColor;
+			            background-color: $submitButtonActive;
+			            border: 2px solid $submitButtonActive;
 			        }
 
 					&.disabled {
 						background-color: #333;
 						border-color: #333;
-						color: #fff;
 					}
 			    }
 			}

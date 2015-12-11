@@ -1,35 +1,32 @@
 <div class="ns12791_topSearchHolder">
 	<div class="ns12791_searchContentsHolder">
-		<h1>Musical twin towns</h1>
-		<h4>The songs cities are searching for...</h4>
+		<h1>{{= musicalTwinTowns }}</h1>
+		<h4>{{= theSongsCitiesAreListeningTo }}</h4>
 		
 		<div class="ns12791_searchBoxHolder">
 			
 			<div class="ns12791_cityFreeTextSearchHolder" id="ns12791_cityFreeTextSearchHolder">
-				<h4>Enter your nearest city</h4>
+				<h4>{{= enterYourNearestCity }}</h4>
 				
 				<div class="city-search--inputs">
 	                <div class="city-search--autocomplete">
 	                    <input type="text" placeholder="Your city" id="city-search--text-input" class="city-search--text-input" />
 	                </div>
-	                <button class="city-search--submit disabled">Search</button>
-	                <span class="ns12791_cantFindCity" id="ns12791_cantFindCity">Can't find your city?</span>
+	                <button class="city-search--submit disabled">{{= search }}</button>
+	                <span class="ns12791_alternateSearchSpan" id="ns12791_cantFindCity">{{= cantFindYourCity }}</span>
 	            </div>
 			</div>
 			
 			<div class="ns12791_countryFreeTextSearchHolder" id="ns12791_countryFreeTextSearchHolder" style="display:none;">
-				<h4>Enter your country</h4>
+				<h4>{{= enterYourCountry }}</h4>
 				
 				<div class="country-search--inputs">
 	                <div class="country-search--autocomplete">
 	                    <input type="text" placeholder="Your country" id="country-search--text-input" class="country-search--text-input" />
 	                </div>
-	                <select class="city-search--dropdown-input disabled" id="city-search--dropdown-input">
-	                	<option>London</option>
-	                	<option>Liverpool</option>
-	                	<option>Leeds</option>
-	                </select>
-	                <button class="country-search--submit disabled">Search</button>
+	                <select class="city-search--dropdown-input disabled" id="city-search--dropdown-input"></select>
+	                <button class="country-search--submit disabled">{{= search }}</button>
+	                <span class="ns12791_alternateSearchSpan" id="ns12791_backToOriginalSearch">{{= backToOriginalSearch }}</span>
 	            </div>
 			</div>
 		</div>

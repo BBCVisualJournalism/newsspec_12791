@@ -5,6 +5,7 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (
     var autocompleteSelected;
     var citysAutocomplete;
     var toggleInputIstats;
+    var basePath;
 
     /* Elements */
     var $autocompleteddInput;
@@ -13,11 +14,13 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (
     var $userInputWrapperEl;
     var $submitButton;
 
-    var init = function () {
+    var init = function (baseDataPath) {
         /* Set defaults */
         autocompleteSelectedCity = null;
         dropdownSelectedCity = null;
         toggleInputIstats = false;
+
+        basePath = baseDataPath;
 
         /* Element selectors */
         $autocompleteInput = news.$('#city-search--text-input');
@@ -26,7 +29,7 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (
         $submitButton = news.$('.city-search--submit');
 
         /* Populate the inputs */
-        citysAutocomplete = new CitySearchMediator($autocompleteInput, updateButtonState);
+        citysAutocomplete = new CitySearchMediator($autocompleteInput, updateButtonState, basePath);
 
         /* LISTENERS */
         $autocompleteInput.keypress(autocompleteInputKeypress);
@@ -80,7 +83,10 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (
     var submit = function () {
         news.pubsub.emit('istats', ['find-automation-clicked']);
 
-        news.pubsub.emit('user-submitted-city', getUserCity());
+        var stringRegex = / /gi;
+        var cityFileName = getUserCity().replace(stringRegex, '').toLowerCase() + '.js';
+
+        news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
     };
 
     var publicApi = {

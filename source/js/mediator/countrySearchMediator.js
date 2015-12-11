@@ -1,5 +1,5 @@
 define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (news) {
-    var CountrysAutocompleteMediator = function ($inputElement, onCountryChange) {
+    var CountrysAutocompleteMediator = function ($inputElement, onCountryChange, baseDataPath) {
         
         this.$autocompleteInput = $inputElement;
         this.onCountryChange = onCountryChange;
@@ -8,11 +8,8 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         this.$submitButton = news.$('.country-search--submit');
         this.citiesData = {};
         
-        /*
-         * The following should only be loaded once when the cant find your city buton has been clicked
-        */
         var that = this;
-        require(['http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/en/worldwide_country_list.js?callback=define'], function (worldwideCountriesList) {
+        require([baseDataPath + 'worldwide_country_list.js?callback=define'], function (worldwideCountriesList) {
             that.setupAutocomplete(worldwideCountriesList.data);
         });
     };
@@ -26,8 +23,6 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                 lookupLimit: 20,
                 autoSelectFirst: true,
                 onSelect: function (suggestion) {
-
-                    // console.log('suggestion = ', suggestion);
 
                     if (suggestion.value !== countryAutocomplete.autocompleteSelectedCountry) {
                         countryAutocomplete.autocompleteSelectedCountry = suggestion.value;

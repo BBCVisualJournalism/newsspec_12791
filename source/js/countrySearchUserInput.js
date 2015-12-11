@@ -5,6 +5,7 @@ define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], functio
     var autocompleteSelected;
     var countrysAutocomplete;
     var toggleInputIstats;
+    var basePath;
 
     /* Elements */
     var $autocompleteddInput;
@@ -14,11 +15,13 @@ define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], functio
     var $submitButton;
     var $cityDropDownEl;
 
-    var init = function () {
+    var init = function (baseDataPath) {
         /* Set defaults */
         autocompleteSelectedCountry = null;
         dropdownSelectedCountry = null;
         toggleInputIstats = false;
+
+        basePath = baseDataPath;
 
         /* Element selectors */
         $autocompleteInput = news.$('#country-search--text-input');
@@ -28,7 +31,7 @@ define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], functio
         $cityDropDownEl = news.$('#city-search--dropdown-input');
 
         /* Populate the inputs */
-        countrysAutocomplete = new CountrySearchMediator($autocompleteInput, updateButtonState);
+        countrysAutocomplete = new CountrySearchMediator($autocompleteInput, updateButtonState, basePath);
 
         /* LISTENERS */
         $autocompleteInput.keypress(autocompleteInputKeypress);

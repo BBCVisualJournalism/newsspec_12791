@@ -1,47 +1,45 @@
 define([
     'lib/news_special/bootstrap',
-    'bump-3',
-    'playlister/snippets',
     'mediator/screenSizeMediator',
     'mediator/citySearchDropDownMediator',
+    'mediator/resultsMediator',
+    'view/topTracksResultsView',
     'citySearchUserInput',
     'countrySearchUserInput'
-    ], function (news, $, snippets, screenSizeMediator, citySearchDropDownMediator, citySearchUserInput, countrySearchUserInput) {
+    ], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, citySearchUserInput, countrySearchUserInput) {
 
 	/*
 	 * variable declarations
 	*/
+    var locale = news.$('.main').attr('id').replace('locale_', '');
+    var baseDataPath = 'http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/' + locale + '/';
+    
     var $cantFindCity = news.$('#ns12791_cantFindCity');
+    var $backToOriginalSearch = news.$('#ns12791_backToOriginalSearch');
+    var citySearchV = news.$v('#ns12791_cityFreeTextSearchHolder');
+    var countrySearchV = news.$v('#ns12791_countryFreeTextSearchHolder');
 
 	/*
 	 * init stuff
 	*/
     news.sendMessageToremoveLoadingImage();
-
-    snippets.init({
-        lang: "en",
-        continuous: false,
-        base_url: "http://www.bbc.co.uk/modules/snippet",
-        pause_enabled: true,
-        uk: null,
-        context: null
-    });
+    citySearchUserInput.init(baseDataPath);
 
     /*
      * model components init
     */
-    citySearchUserInput.init();
-    // countrySearchUserInput.init();
 
     /*
      * mediator components init
     */
     screenSizeMediator.init();
-    citySearchDropDownMediator.init();
+    citySearchDropDownMediator.init(baseDataPath);
+    resultsMediator.init();
 
     /*
      * view components init
     */
+    topTracksResultsView.init();
 
     /*
      * button listeners
@@ -50,9 +48,6 @@ define([
         /*
          * switch from the city search to the country search
         */
-        var citySearchV = news.$v('#ns12791_cityFreeTextSearchHolder');
-        var countrySearchV = news.$v('#ns12791_countryFreeTextSearchHolder');
-
         var animationMovement = 40;
         var animationDuration = 180;
 
@@ -60,7 +55,7 @@ define([
                 marginLeft: '-' + animationMovement + 'px',
                 opacity: 0
             }, animationDuration, 'linear', function() {
-                countrySearchUserInput.init();
+                countrySearchUserInput.init(baseDataPath);
             }
         );
 
@@ -71,20 +66,39 @@ define([
         countrySearchV.velocity({
                 left: [0, (animationMovement * 1.5) + 'px'],
                 opacity: [1, 0]
+            }, animationDuration * 1.2, 'linear'
+        );
+
+        $cantFindCity.addClass('disabled');
+        $backToOriginalSearch.removeClass('disabled');
+
+    });
+
+    $backToOriginalSearch.on('click', function () {
+
+        var animationMovement = 40;
+        var animationDuration = 180;
+
+        citySearchV.velocity("reverse");
+
+        countrySearchV.velocity({
+                left: [(animationMovement * 1.5) + 'px', 0],
+                opacity: [0, 1]
             }, animationDuration * 1.2, 'linear', function() {
-                //adsfg
+                countrySearchV.css({
+                    'display': 'none'
+                });
             }
         );
 
+        $cantFindCity.removeClass('disabled');
+        $backToOriginalSearch.addClass('disabled');
     });
 
 
     /*
      * event listeners
     */
-    news.pubsub.on('user-submitted-city', function (cityName) {
-        console.log('cityName = ', cityName);
-    });
 
 
 });

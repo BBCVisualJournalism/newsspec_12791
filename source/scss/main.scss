@@ -1,5 +1,6 @@
 @import "news_special/defaults";
 @import "app";
+@import "mixins";
 @import "creditsShareAndMore";
 @import "./../../bower_components/snippets-css/index.css";
 @import "type";
@@ -7,6 +8,7 @@
 @import "buttons";
 @import "topSearchSection";
 @import "autocomplete";
+@import "resultsSection";
 
 .main {
 	background-color: #fff;

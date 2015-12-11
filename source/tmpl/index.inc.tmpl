@@ -12,12 +12,11 @@
 {{= include("../scss/news_special/loading.css") }}
 </style>
 
-<div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}">
+<div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}" id="locale_{{= languageConfig.languageLookup[vocab_dir].code }}">
 	<div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
 
 	{{=  include("./topSearchSection.tmpl") }}
-	
-	<bbc-snippet data-record-id="nznqpq"></bbc-snippet>
+	{{=  include("./resultsSection.tmpl") }}
     
     <!-- <div class="delayed-image-load" data-src="{{= pathStatic }}/{{= vocab_dir }}/img/320/testcard.jpg" data-width="320" style="width: 100%;"></div> -->
 </div>
