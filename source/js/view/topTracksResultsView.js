@@ -7,23 +7,27 @@ define([
     /*
      * Declare Variables
     */
-    var $songResultsFirstHalf = news.$('#ns12791_songResultsFirstHalf');
-    var $songResultsSecondHalf = news.$('#ns12791_songResultsSecondHalf');
-
-    var $showMoreTracksButton = news.$('.ns12791_showMoreTracksButton');
-    var $showLessTracksButton = news.$('.ns12791_showLessButton');
+    var $resultsCityName;
+    var $songResultsFirstHalf;
+    var $songResultsSecondHalf;
+    var $showMoreTracksButton;
+    var $showLessTracksButton;
 
     var init = function () {
-
-
         /*
          * Set Variables
         */
+        $resultsCityName = news.$('#ns12791_resultsCityName');
+        $songResultsFirstHalf = news.$('#ns12791_songResultsFirstHalf');
+        $songResultsSecondHalf = news.$('#ns12791_songResultsSecondHalf');
+        $showMoreTracksButton = news.$('.ns12791_showMoreTracksButton');
+        $showLessTracksButton = news.$('.ns12791_showLessButton');
         
         /*
          * Event Listeners
         */
         news.pubsub.on('display-city-tracks-results', displayResults);
+        news.pubsub.on('display-selected-city-name', displayCityName);
         news.pubsub.on('show-more-tracks', showMoreTracks);
         news.pubsub.on('show-less-tracks', showLessTracks);
     };
@@ -40,6 +44,10 @@ define([
         $songResultsSecondHalf.addClass('ns12791_songResultsSecondHalf--mobHidden');
         $showMoreTracksButton.addClass('ns12791_button--show');
         $showLessTracksButton.removeClass('ns12791_button--show');
+    };
+
+    var displayCityName = function (cityName) {
+        $resultsCityName.text(cityName);
     };
 
     var displayResults = function (tracksArr) {
