@@ -1,166 +1,221 @@
-$teamSearchBgColour: #000;
-$teamSearchTitleFontColour: #fff;
-$base--border-color: #000;
-
 .ns12791_topSearchHolder {
 	width: 100%;
 	min-height: 100vh;
 	background-color: #212121;
-	background-repeat: no-repeat;
 	background-size: 100% auto;
-	display: table;
-
-	.ns12791_searchContentsHolder {
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-
-		.ns12791_searchBoxHolder {
-			position: relative;
-			width: 100%;
-			max-width: 400px;
-			margin: 0 auto;
-
-			.ns12791_countryFreeTextSearchHolder {
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-			
-			.ns12791_cityFreeTextSearchHolder, .ns12791_countryFreeTextSearchHolder {
-				background-color: #000;
-				background-color: rgba(0, 0, 0, 0.8);
-				width: 100%;
-				text-align: left;
-				padding: 32px;
-
-				h4 {
-					margin-top: 0;
-				}
-
-			    .city-search--text-input, .country-search--text-input {
-			    	-moz-box-sizing: border-box;
-				    -webkit-box-sizing: border-box;
-				    box-sizing: border-box;
-
-			        display: block;
-			        margin: 0 0 0.625em 0;
-			        color: #333;
-			        padding: 13px;
-			        width: 100%;
-			        outline: 0;
-			        margin-bottom: 0.625em;
-			        border: 1px solid $base--border-color;
-
-			    }
-			    .city-search--inputs, .country-search--inputs {
-			        margin: 0.625em 0 0 0;
-
-			        .ns12791_alternateSearchSpan {
-			        	display: inline-block;
-			        	font-size: 1em;
-			        	font-weight: bold;
-			        	color: $cantFindCity;
-			        	margin: 1em 0 0 0;
-			        	text-decoration: none;
-			        	cursor: pointer;
-			        	&:hover, &:focus{
-			                text-decoration: underline;
-			            }
-			            &.disabled {
-			            	color: $color--brand-black;
-						    cursor: default;
-						    pointer-events: none;
-			            }
-			        }
-
-			        .city-search--dropdown-input {
-			        	display: block;
-			        	color: #333;
-			        	padding: 13px;
-			        	width: 100%;
-			        	height: 47px;
-			        	background-color: #fff;
-			        	background-image: url(../img/frame/chevron.png);
-			        	background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220%22%20y%3D%220%22%0A%09%20width%3D%2226.033%22%20height%3D%2213.135%22%20viewBox%3D%220%200%2026.033%2013.135%22%20enable-background%3D%22new%200%200%2026.033%2013.135%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cpolygon%20fill%3D%22%233E3E3E%22%20points%3D%228.083%2C13.135%2016.166%2C0%2013.447%2C0%208.083%2C8.638%202.719%2C0%200%2C0%20%09%22/%3E%0A%3C/svg%3E%0A);
-			        	background-position: center right;
-			        	background-repeat: no-repeat;
-			        	padding-right: 2em;
-			        	margin-bottom: 0.625em;
-			        	-webkit-appearance: none;
-			        	border-radius: 0;
-
-			        	&.disabled {
-							background-color: #333;
-							border-color: #333;
-							pointer-events: none;
-							cursor: default;
-						}
-			        }
-			    }
-
-			    .city-search--submit, .country-search--submit {
-			        @extend %button--cta;
-			        margin: 0;
-			        min-height: 47px;
-			        width:100%;
-			        background-image: none!important;
-
-			        color: #fff;
-			        background-color: $submitButtonActive;
-			        border: 2px solid $submitButtonActive;
-
-			        &:hover,
-			        &:active,
-			        &:focus {
-			            background-color: $submitButtonActive;
-			            border: 2px solid $submitButtonActive;
-			        }
-
-					&.disabled {
-						background-color: #333;
-						border-color: #333;
-					}
-			    }
-			}
-		}
-	}
+	background-repeat: no-repeat;
 }
 
-/*
- * Responsive behaviour
-*/
+.ns12791_mainTitle {
+	font-size: 2.8em;
+	line-height: 32px;
+	color: #fff;
+	padding-top: 16px;
+	margin: 0 32px 16px;
+	text-shadow: 7px 7px 12px #222;
+}
+
+.ns12791_introSubheading, .ns12791_introParagraph {
+	color: #fff;
+	margin: 16px 32px;
+}
+
+.ns12791_introSubheading {
+	font-size: 1.8em;
+	line-height: 22px;
+	text-shadow: 3px 3px 8px #222;
+}
+
+.ns12791_introParagraph {
+	font-size: 1.6em;
+	line-height: 20px;
+}
+
+.ns12791_searchBoxHolder {
+	width: auto;
+	margin: 0 8px;
+	position: relative;
+	font-size: 1.6em;
+	line-height: 20px;
+}
+
+.ns12791_cityFreeTextSearchHolder, .ns12791_countryFreeTextSearchHolder {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	padding: 16px;
+	color: #fff;
+}
+
+.ns12791_countryFreeTextSearchHolder {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.ns12791_searchBoxCta {
+	margin: 0 0 16px;
+	font-size: 1em;
+}
+
+.city-search--text-input, .country-search--text-input {
+	@include boxSizing;
+    display: block;
+    margin: 0 0 16px;
+    color: #333;
+    padding: 13px;
+    width: 100%;
+    height: 44px;
+    outline: 0;
+    border: 1px solid $base--border-color;
+}
+
+.ns12791_alternateSearchSpan {
+    display: inline-block;
+    font-weight: bold;
+    color: #f7c27c;
+    margin: 16px 0 0;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover, &:focus{
+        text-decoration: underline;
+    }
+    &.disabled {
+        color: $color--brand-black;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+.city-search--dropdown-input {
+    display: block;
+    color: #333;
+    padding: 13px;
+    width: 100%;
+    height: 47px;
+    background-color: #fff;
+    background-image: url(../img/frame/chevron.png);
+    background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220%22%20y%3D%220%22%0A%09%20width%3D%2226.033%22%20height%3D%2213.135%22%20viewBox%3D%220%200%2026.033%2013.135%22%20enable-background%3D%22new%200%200%2026.033%2013.135%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cpolygon%20fill%3D%22%233E3E3E%22%20points%3D%228.083%2C13.135%2016.166%2C0%2013.447%2C0%208.083%2C8.638%202.719%2C0%200%2C0%20%09%22/%3E%0A%3C/svg%3E%0A);
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding-right: 2em;
+    margin-bottom: 16px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    &.disabled {
+        background-color: #333;
+        border-color: #333;
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+.city-search--submit, .country-search--submit {
+    @extend %button--cta;
+    margin: 0;
+    height: 44px;
+    width: 100%;
+    background-image: none;
+    color: #fff;
+    background-color: $submitButtonActive;
+    border: 2px solid $submitButtonActive;
+    &:hover, &:active, &:focus {
+        background-color: $submitButtonActive;
+        border: 2px solid $submitButtonActive;
+    }
+    &.disabled {
+        background-color: #333;
+        border-color: #333;
+    }
+}
+
 //'mobile' landscape
 @media screen and (orientation:landscape) {
-	.ns12791_topSearchHolder {
-		background-image: url('../img/topbg_small_landscape.jpg');
-	}
+    .ns12791_topSearchHolder {
+        background-image: url('../img/topbg_small_landscape.jpg');
+    }
 }
 
 //'mobile' portrait
 @media screen and (orientation:portrait) {
-	.ns12791_topSearchHolder {
-		background-image: url('../img/topbg_v_small_portrait.jpg');
-	}
+    .ns12791_topSearchHolder {
+        background-image: url('../img/topbg_v_small_portrait.jpg');
+    }
 }
 
 //'tablet' portrait
-@media screen and (orientation:portrait) and (min-width: 641px) {
-	.ns12791_topSearchHolder {
-		background-image: url('../img/topbg_medium_portrait.jpg');
-	}
+@media screen and (orientation:portrait) and (min-width: 600px) {
+    .ns12791_topSearchHolder {
+        background-image: url('../img/topbg_medium_portrait.jpg');
+    }
 }
 
 //'tablet' and 'desktop' landscape
 @media screen and (orientation:landscape) and (min-width: 769px) {
-	.ns12791_topSearchHolder {
-		background-image: url('../img/topbg_large_landscape.jpg');
-	}
+    .ns12791_topSearchHolder {
+        background-image: url('../img/topbg_large_landscape.jpg');
+    }
 }
 
 //'desktop' portrait
-@media screen and (orientation:portrait) and (min-width: 1225px) {
+@media screen and (orientation:portrait) and (min-width: 1008px) {
+    .ns12791_topSearchHolder {
+        background-image: url('../img/topbg_large_portrait.jpg');
+    }
+}
+
+@include respondMinMax(600px, false) {
 	.ns12791_topSearchHolder {
-		background-image: url('../img/topbg_large_portrait.jpg');
+		display: table;
+	}
+
+	.ns12791_searchContentsHolder {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.ns12791_mainTitle {
+		font-size: 5.2em;
+		line-height: 60px;
+		text-align: center;
+	}
+
+	.ns12791_introSubheading {
+		font-size: 2.8em;
+		line-height: 32px;
+	}
+
+	.ns12791_mainTitle, .ns12791_introSubheading, .ns12791_introParagraph {
+		width: 480px;
+		padding: 0;
+		margin: 16px auto;
+	}
+
+	.ns12791_searchBoxHolder {
+		width: 380px;
+		margin: 0 auto;
+	}
+
+	.ns12791_cityFreeTextSearchHolder, .ns12791_countryFreeTextSearchHolder {
+		padding: 32px 40px;
+	}
+}
+
+@include respondMinMax(1008px, false) {
+	.ns12791_mainTitle {
+		font-size: 6.4em;
+		line-height: 72px;
+	}
+
+	.ns12791_introSubheading {
+		font-size: 3.2em;
+		line-height: 40px;
+		text-align: center;
+	}
+
+	.ns12791_mainTitle, .ns12791_introSubheading, .ns12791_introParagraph {
+		width: 588px;
+		padding: 0;
+		margin: 16px auto;
 	}
 }

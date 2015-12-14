@@ -1,32 +1,30 @@
-$creditsFontColour:#222;
-
 .ns_creditsHolder {
 	width:100%;
-	max-width:704px;
-	margin:52px auto 0 auto;
-	padding: 0 40px;
-
+	padding: 52px 16px;
+	background-color: #212121;
+	color: #fff;
+	.ns_creditsContainer {
+		max-width: 704px;
+		margin: 0 auto;
+	}
 	h2 {
-		font-size: 24px;
+		font-size: 2.4em;
 		font-weight: bold;
 		font-style: normal;
-		color: $creditsFontColour;
-
 		a {
 			text-decoration: none;
-			font-size: 12px;
+			font-size: 0.5em;
 			font-weight: normal;
-			color: $creditsFontColour;			
+			color: #fff;
 		}
 	}
 
 	p {
-		font-size: 18px;
+		font-size: 1.8em;
 		line-height: 24px;
 		font-weight: normal;
 		font-style: normal;
 		margin: 20px auto;
-		color: $creditsFontColour;
 	}
 
 	.ns_creditsLineThin {
@@ -80,12 +78,10 @@ $creditsFontColour:#222;
 	}
 
 	.ns_onwardJourneys {
-		margin-top: 32px;
-		margin-bottom:32px;
+		padding: 32px 0;
 
 		h2 {
-			margin-top: 8px;
-			margin-bottom: 8px;
+			margin: 8px 0;
 		}
 
 		.ns_creditsLineThin {
@@ -93,8 +89,8 @@ $creditsFontColour:#222;
 		}
 
 		a {
-			color: $creditsFontColour;
-			font-size: 16px;
+			color: #fff;
+			font-size: 1.6em;
 			font-weight: bold;
 			text-decoration: none;
 			display: block;
@@ -106,8 +102,7 @@ $creditsFontColour:#222;
 		}
 
 		span {
-			color: $creditsFontColour;
-			font-size: 16px;
+			font-size: 1.6em;
 			line-height:20px;
 			display: block;
 			margin-top: 8px;

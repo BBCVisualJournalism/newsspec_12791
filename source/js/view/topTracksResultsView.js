@@ -64,10 +64,10 @@ define([
 													'<div class="ns12791_snippetHolder">' +
 														'<bbc-snippet data-record-id="{{songId}}"></bbc-snippet>' +
 													'</div>' +
-												'</div><img src="{{imgSrc}}" width="82" height="82" class="ns12791_songBoxImage">' +
+												'</div><img src="{{imgSrc}}" width="84" height="84" class="ns12791_songBoxImage">' +
 												'<div class="ns12791_songBoxTitleAndArtistHolder">' +
-													'<h4>{{artistName}}</h4>' +
-													'<p>{{songName}}</p>' +
+													'<div class="ns12791_songBoxArtist">{{artistName}}</div>' +
+													'<div class="ns12791_songBoxTitle">{{songName}}</div>' +
 												'</div>' +
 											'</div>';
 

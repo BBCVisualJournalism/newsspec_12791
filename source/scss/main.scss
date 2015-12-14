@@ -11,7 +11,7 @@
 @import "resultsSection";
 
 .main {
-	background-color: #fff;
+	background-color: #212121;
 }
 
 .ns_rtl {
@@ -20,4 +20,8 @@
 
 .ns_hideMe {
 	display: none;
+}
+
+.b-g-p {
+    box-sizing: content-box;
 }
