@@ -7,6 +7,7 @@ define([
     /*
      * Declare Variables
     */
+    var $resultsSection;
     var $resultsCityName;
     var $songResultsFirstHalf;
     var $songResultsSecondHalf;
@@ -17,6 +18,7 @@ define([
         /*
          * Set Variables
         */
+        $resultsSection = news.$('.ns12791_resultsHolder');
         $resultsCityName = news.$('#ns12791_resultsCityName');
         $songResultsFirstHalf = news.$('#ns12791_songResultsFirstHalf');
         $songResultsSecondHalf = news.$('#ns12791_songResultsSecondHalf');
@@ -100,6 +102,8 @@ define([
 			context: null
 		});
 
+        $resultsSection.show();
+        $resultsSection.velocity('scroll', { duration: 1000 });
     }
 
     var publicApi = {
