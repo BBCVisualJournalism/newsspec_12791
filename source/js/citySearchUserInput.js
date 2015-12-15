@@ -1,90 +1,50 @@
-define(['lib/news_special/bootstrap', 'mediator/citySearchMediator', 'utils'], function (news, CitySearchMediator, utils) {
+define(['lib/news_special/bootstrap', 'mediator/cityAutocompleteMediator', 'utils'], function (news, CityAutocompleteMediator, utils) {
 
-    // variables
-    var autocompleteSelectedCity;
-    var autocompleteSelected;
-    var citysAutocomplete;
-    var toggleInputIstats;
+    var $searchForm;
+    var $searchInput;
+    var $searchSubmit;
+
+    var cityAutocomplete;
     var basePath;
 
-    // elements
-    var $autocompleteddInput;
-    var $autocompleteEl;
-    var $dropdownInput;
-    var $userInputWrapperEl;
-    var $submitButton;
-
     var init = function (baseDataPath) {
-        // set defaults 
-        autocompleteSelectedCity = null;
-        dropdownSelectedCity = null;
-        toggleInputIstats = false;
+        $searchForm = news.$('#ns12791_cityFreeTextSearchHolder');
+        $searchInput = news.$('#city-search--text-input');
+        $searchSubmit = news.$('.city-search--submit');
 
         basePath = baseDataPath;
 
-        // element selectors 
-        $autocompleteInput = news.$('#city-search--text-input');
-        $autocompleteEl = news.$('.city-search--autocomplete');
-        $userInputWrapperEl = news.$('.city-search--inputs');
-        $submitButton = news.$('.city-search--submit');
+        cityAutocomplete = new CityAutocompleteMediator($searchInput, onCitySelect, basePath);
 
-        // populate the inputs 
-        citysAutocomplete = new CitySearchMediator($autocompleteInput, updateButtonState, basePath);
+        $searchInput.on('focus', function () {
+            var $this = $(this);
+            if ($this.val() !== '') {
+                $this.val('');
+            }
+        });
 
-        // event listeners
-        $autocompleteInput.keypress(autocompleteInputKeypress);
-        $submitButton.on('click', submit);
+        $searchForm.on('submit', onSubmit);
     };
 
-    var updateButtonState = function () {
-        var disabled = true;
-        if (citysAutocomplete.getSelectedCity() !== null) {
-            disabled = false;
-        }
-
-        if (disabled) {
-            $submitButton.addClass('disabled');
+    var onCitySelect = function () {
+        if (getUserCity() !== null) {
+            utils.enableButton($searchSubmit);
         } else {
-            $submitButton.removeClass('disabled');
+            utils.disableButton($searchSubmit);
         }
     };
 
-    var autocompleteInputKeypress = function (e) {
-        var inputText = (e.target.value + String.fromCharCode(e.charCode)).toLowerCase();
-        var $suggestionsHolder = news.$('.autocomplete-suggestions');
-        var $autoCompletSuggestions = $suggestionsHolder.find('.autocomplete-suggestion');
-
-        var keyCode = (window.event) ? e.which : e.keyCode;
-
-        if (keyCode === 13 && !$submitButton.hasClass('disabled')) {
-            //we've got a match and we've hit the enter key!
-            if ($suggestionsHolder.css('display') === 'none') {
-                $submitButton.trigger('click');
-                $autocompleteInput.blur();
-            }
-            return;
-        }
-
-        if ($autoCompletSuggestions.length) {
-            if (news.$($autoCompletSuggestions[0]).text().toLowerCase() === inputText) {
-                $submitButton.removeClass('disabled');
-            }
-            else {
-                $submitButton.addClass('disabled');
-            }
-        }
-    };
-
-    var getUserCity = function () {
-        return citysAutocomplete.getSelectedCity();
-    };
-
-    var submit = function () {
+    var onSubmit = function () {
         news.pubsub.emit('istats', ['find-automation-clicked']);
 
         var cityFileName = utils.normaliseText(getUserCity()) + '.js';
 
         news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
+        return false;
+    };
+
+    var getUserCity = function () {
+        return cityAutocomplete.getSelectedCity();
     };
 
     var publicApi = {

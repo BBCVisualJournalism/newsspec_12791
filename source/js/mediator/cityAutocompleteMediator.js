@@ -1,55 +1,40 @@
 define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (news) {
-    var CitysAutocompleteMediator = function ($inputElement, onCityChange, baseDataPath) {
-        
+    var CityAutocompleteMediator = function ($inputElement, onCitySelect, baseDataPath) {
         this.$autocompleteInput = $inputElement;
-        this.onCityChange = onCityChange;
-        this.autocompleteSelectedCity  = null;
+        this.onCitySelect = onCitySelect;
+        this.autocompleteSelectedCity = null;
         this.istatsSent = false;
-        this.$submitButton = news.$('.city-search--submit');
-        this.citiesData = {};
         
-        var that = this;
+        var self = this;
         require([baseDataPath + 'worldwide_city_list.js?callback=define'], function (worldwideCitiesList) {
-            that.setupAutocomplete(worldwideCitiesList.data);
+            self.setupAutocomplete(worldwideCitiesList.data);
         });
     };
 
-    CitysAutocompleteMediator.prototype = {
+    CityAutocompleteMediator.prototype = {
         setupAutocomplete: function (autoCompleteData) {
-            var cityAutocomplete = this;
+            var self = this;
 
             this.$autocompleteInput.autocomplete({
                 lookup: autoCompleteData,
                 lookupLimit: 20,
                 autoSelectFirst: true,
                 onSelect: function (suggestion) {
-                    if (suggestion.value !== cityAutocomplete.autocompleteSelectedCity) {
-                        cityAutocomplete.autocompleteSelectedCity = suggestion.value;
-                        if (cityAutocomplete.onCityChange) {
-                            cityAutocomplete.onCityChange(suggestion);
-                        }
+                    if (suggestion.value !== self.autocompleteSelectedCity) {
+                        self.autocompleteSelectedCity = suggestion.value;
                     }
-
-                    cityAutocomplete.$submitButton.removeClass('disabled');
-
-                    if (!news.$('#city-search--text-input').is(':focus')) {
-                        news.$('#city-search--text-input').focus();
-                    }
-
+                    self.onCitySelect();
                 },
 
                 lookupFilter: function (suggestion, originalQuery, queryLowerCase) {
                     if (suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1) {
                         return true;
                     }
-                    cityAutocomplete.logiStats();
+                    self.logiStats();
                 },
 
                 onInvalidateSelection: function () {
-                    cityAutocomplete.autocompleteSelectedCity = null;
-                    if (cityAutocomplete.onCityChange) {
-                        cityAutocomplete.onCityChange();
-                    }
+                    self.autocompleteSelectedCity = null;
                 }
             });
         },
@@ -68,5 +53,5 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         }
     };
 
-    return CitysAutocompleteMediator;
+    return CityAutocompleteMediator;
 });

@@ -5,28 +5,28 @@
 		<p class="ns12791_introParagraph">{{= introParagraph }}</p>
 		
 		<div class="ns12791_searchBoxHolder">
-			<div class="ns12791_cityFreeTextSearchHolder" id="ns12791_cityFreeTextSearchHolder">
+			<form class="ns12791_cityFreeTextSearchHolder" id="ns12791_cityFreeTextSearchHolder">
 				<h3 class="ns12791_searchBoxCta">{{= searchBoxCTACity }}</h3>
 				<div class="city-search--inputs">
 	                <div class="city-search--autocomplete">
 	                    <input type="text" placeholder="Your city" id="city-search--text-input" class="city-search--text-input" />
 	                </div>
-	                <button class="city-search--submit disabled">{{= searchSubmitButton }}</button>
+	                <button type="submit" class="city-search--submit disabled" disabled="disabled">{{= searchSubmitButton }}</button>
 	                <span class="ns12791_alternateSearchSpan" id="ns12791_cantFindCity">{{= cantFindYourCity }}</span>
 	            </div>
-			</div>
+			</form>
 			
-			<div class="ns12791_countryFreeTextSearchHolder" id="ns12791_countryFreeTextSearchHolder" style="display:none;">
+			<form class="ns12791_countryFreeTextSearchHolder" id="ns12791_countryFreeTextSearchHolder" style="display:none;">
 				<h3 class="ns12791_searchBoxCta">{{= searchBoxCTACountry }}</h3>
 				<div class="country-search--inputs">
 	                <div class="country-search--autocomplete">
 	                    <input type="text" placeholder="Your country" id="country-search--text-input" class="country-search--text-input" />
 	                </div>
 	                <select class="city-search--dropdown-input disabled" id="city-search--dropdown-input"></select>
-	                <button class="country-search--submit disabled">{{= searchSubmitButton }}</button>
+	                <button type="submit" class="country-search--submit disabled" disabled="disabled">{{= searchSubmitButton }}</button>
 	                <span class="ns12791_alternateSearchSpan" id="ns12791_backToOriginalSearch">{{= backToOriginalSearch }}</span>
 	            </div>
-			</div>
+			</form>
 		</div>
 
 	</div>
