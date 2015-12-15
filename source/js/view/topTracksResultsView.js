@@ -13,6 +13,7 @@ define([
     var $songResultsSecondHalf;
     var $showMoreTracksButton;
     var $showLessTracksButton;
+    var $twinTownSection;
 
     var init = function () {
         /*
@@ -24,6 +25,7 @@ define([
         $songResultsSecondHalf = news.$('#ns12791_songResultsSecondHalf');
         $showMoreTracksButton = news.$('.ns12791_showMoreTracksButton');
         $showLessTracksButton = news.$('.ns12791_showLessButton');
+        $twinTownSection = news.$('.ns12791_twinTown');
         
         /*
          * Event Listeners
@@ -100,8 +102,9 @@ define([
 		});
 
         $resultsSection.show();
-        $resultsSection.velocity('scroll', { duration: 1000 });
-    }
+        $twinTownSection.show();
+        $resultsSection.velocity('scroll', { duration: 750, easing: 'easeOutSine' });
+    };
 
     var publicApi = {
         init: init

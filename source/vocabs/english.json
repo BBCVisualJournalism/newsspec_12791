@@ -14,5 +14,8 @@
     "yourTwinTown": "Your twin town",
     "twinTownParagraph": "We searched the data for the place in a different continent with the most matches for the songs being looked up in your city.",
     "milesAway": "miles away",
-    "kmAway": "km away"
+    "kmAway": "km away",
+    "tracksInCommon": "tracks in common",
+    "noTwinTownParagraph1": "Not one of the songs being looked up here was also being searched for anywhere else in the world.",
+    "noTwinTownParagraph2": "There are just 31 cities in the data that have no twin town."
 }

@@ -4,9 +4,10 @@ define([
     'mediator/citySearchDropDownMediator',
     'mediator/resultsMediator',
     'view/topTracksResultsView',
+    'view/twinTownResultsView',
     'citySearchUserInput',
     'countrySearchUserInput'
-    ], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, citySearchUserInput, countrySearchUserInput) {
+    ], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, twinTownResultsView, citySearchUserInput, countrySearchUserInput) {
 
 	/*
 	 * variable declarations
@@ -40,6 +41,7 @@ define([
      * view components init
     */
     topTracksResultsView.init();
+    twinTownResultsView.init();
 
     /*
      * button listeners

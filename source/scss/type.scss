@@ -12,7 +12,8 @@ p {
 
 @include respondMinMax(600px, false) {
 	.ns12791_subheading {
-		margin: 8px 0 32px;
+		margin: 8px auto 32px;
+		width: 480px;
 		font-size: 3.2em;
 		line-height: 40px;
 	}

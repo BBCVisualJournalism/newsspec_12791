@@ -68,4 +68,29 @@
         promoManager.init(document.getElementById('navp-orb-footer-promo'));
     })
 })();
- </script>    <script type="text/javascript"> require(['orb/lib/_$', 'orb/features/_mastheadimages'], function ($, mastheadimages) { 'use strict'; function updateSigninImage() { var ctaImg = $('#idcta-image')[0]; if (ctaImg) { var imgDefault = ctaImg.src; var imgInverse = $.getAttr(ctaImg, 'data-activesrc'); ctaImg.src = imgDefault.replace('signin', 'signedin'); if (imgInverse) { imgInverse = imgInverse.replace('signin', 'signedin'); $.setAttr(ctaImg, 'data-activesrc', imgInverse); mastheadimages.precacheImage(ctaImg); } } } function shorten(text, length) { if (text.length > length) { return text.substring(0, length - 1) + '…'; } return text; } function updateSigninText(elm, name) { var shortName = shorten(name, 14); elm.textContent = elm.innerText = shortName; if (shortName !== name) { elm.title = name; } } function updateForAuthorisedState() { var ctaElm = $('#idcta-username')[0], ctaLink = $('#idcta-link')[0], name, signinUrl; if (ctaElm && ctaLink) { require(['id-statusbar-config', 'idcta/idcta-1'], function (idConfig, idcta) { var signedin = idcta.hasCookie(); if (signedin) { name = idcta.getNameFromCookie() || idConfig.translation_signedin; updateSigninImage(); } else { name = idConfig.translation_signedout; signinUrl = idConfig.signin_url; } if (name) { updateSigninText(ctaElm, name); } if (signinUrl) { ctaLink.href = signinUrl; } }); } } $.ready(function () { updateForAuthorisedState(); $.removeClass($('.orb-nav-id')[0], 'orb-nav-id-default'); }); }); </script>  <script type="text/javascript"> if (typeof require !== 'undefined') { require(['istats-1'], function(istats){ istats.track('external', { region: document.getElementsByTagName('body')[0] }); istats.track('download', { region: document.getElementsByTagName('body')[0] }); }); } </script>              <!--orbBodyEnd-->
+ </script>   
+        <script type="text/javascript" src="//mybbc.files.bbci.co.uk/s/notification-ui/16/js/notifications.js"></script>
+
+    <script type="text/javascript">
+
+        var options = {
+            languages: []
+        };
+
+            options.languages.push('en-GB');
+
+        require.config({
+            paths: {
+                "mybbc/templates": '//mybbc.files.bbci.co.uk/s/notification-ui/16/templates',
+                "mybbc/notifications": '//mybbc.files.bbci.co.uk/s/notification-ui/16/js'
+            }
+        });
+
+        require(['mybbc/notifications/NotificationsMain', 'idcta/idcta-1'], function(NotificationsMain, idcta) {
+            if (window.orb.fig.geo.isUK()) {
+                NotificationsMain.run(idcta, '//mybbc.files.bbci.co.uk/s/notification-ui/16/', options);
+            }
+        });
+    </script>
+
+ <script type="text/javascript"> if (typeof require !== 'undefined') { require(['istats-1'], function(istats){ istats.track('external', { region: document.getElementsByTagName('body')[0] }); istats.track('download', { region: document.getElementsByTagName('body')[0] }); }); } </script>              <!--orbBodyEnd-->
