@@ -1,22 +1,22 @@
 define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
-    // declare variables
-    var scrollTimeout;
-    var $citiesDropdownSelectEl;
-    var $submitButton;
+    var $searchForm;
+    var $cityDropDown;
+    var $searchSubmit;
+
     var selectedCityFileName;
     var basePath;
 
     var init = function (baseDataPath) {
-        // set variables
-        $citiesDropdownSelectEl = news.$('#city-search--dropdown-input');
-        $submitButton = news.$('.country-search--submit');
+        $searchForm = news.$('#ns12791_countryFreeTextSearchHolder');
+        $cityDropDown = news.$('#city-search--dropdown-input');
+        $searchSubmit = news.$('.country-search--submit');
+
         basePath = baseDataPath;
-        
-        // event listeners
+
         news.pubsub.on('user-autocomplete-country', loadCountriesCities);
-        $citiesDropdownSelectEl.change(handleCitySelected);
-        $submitButton.on('click', handleSubmitButtonClick);
+        $cityDropDown.change(handleCitySelected);
+        $searchForm.on('submit', onSubmit);
     };
 
     var loadCountriesCities = function (countryName) {
@@ -25,7 +25,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         var countriesCityListFilePath = basePath + 'cities_list_' + countrySafePathName + '.js';
 
         // clear the dropdown list
-        $citiesDropdownSelectEl.empty();
+        $cityDropDown.empty();
 
         // load the jsonp and populate the dropdown
         var that = this;
@@ -34,18 +34,18 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
             news.$("<option />", {
                 val: undefined,
                 text: 'Select city'
-            }).appendTo($citiesDropdownSelectEl);
+            }).appendTo($cityDropDown);
 
             news.$("<option />", {
                 val: undefined,
                 text: ''
-            }).appendTo($citiesDropdownSelectEl);
+            }).appendTo($cityDropDown);
 
             news.$(citiesList.data).each(function () {
                 news.$("<option />", {
                     val: this.cityFileName,
                     text: this.cityName
-                }).appendTo($citiesDropdownSelectEl);
+                }).appendTo($cityDropDown);
             });
 
         }, function (err) {
@@ -57,14 +57,15 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         var cityFileName = e.target.value;
         selectedCityFileName = cityFileName;
         if (!cityFileName) {
-            $submitButton.addClass('disabled');
-            return;
+            utils.disableInput($searchSubmit);
+        } else {
+            utils.enableInput($searchSubmit);
         }
-        $submitButton.removeClass('disabled');
     };
 
-    var handleSubmitButtonClick = function (e) {
+    var onSubmit = function () {
         news.pubsub.emit('user-submitted-city', [basePath, selectedCityFileName]);
+        return false;
     };
 
     var publicApi = {

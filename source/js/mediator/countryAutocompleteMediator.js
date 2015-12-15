@@ -1,12 +1,9 @@
 define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (news) {
-    var CountrysAutocompleteMediator = function ($inputElement, onCountryChange, baseDataPath) {
-        
+    var CountryAutocompleteMediator = function ($inputElement, onCountrySelect, baseDataPath) {
         this.$autocompleteInput = $inputElement;
-        this.onCountryChange = onCountryChange;
+        this.onCountrySelect = onCountrySelect;
         this.autocompleteSelectedCountry  = null;
         this.istatsSent = false;
-        this.$submitButton = news.$('.country-search--submit');
-        this.citiesData = {};
         
         var that = this;
         require([baseDataPath + 'worldwide_country_list.js?callback=define'], function (worldwideCountriesList) {
@@ -14,25 +11,19 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         });
     };
 
-    CountrysAutocompleteMediator.prototype = {
+    CountryAutocompleteMediator.prototype = {
         setupAutocomplete: function (autoCompleteData) {
-            var countryAutocomplete = this;
+            var self = this;
 
             this.$autocompleteInput.autocomplete({
                 lookup: autoCompleteData,
                 lookupLimit: 20,
                 autoSelectFirst: true,
                 onSelect: function (suggestion) {
-                    if (suggestion.value !== countryAutocomplete.autocompleteSelectedCountry) {
-                        countryAutocomplete.autocompleteSelectedCountry = suggestion.value;
-                        if (countryAutocomplete.onCountryChange) {
-                            countryAutocomplete.onCountryChange(suggestion);
-                        }
+                    if (suggestion.value !== self.autocompleteSelectedCountry) {
+                        self.autocompleteSelectedCountry = suggestion.value;
                     }
-                    
-                    if (!news.$('#country-search--text-input').is(':focus')) {
-                        news.$('#country-search--text-input').focus();
-                    }
+                    self.onCountrySelect();
 
                     news.pubsub.emit('user-autocomplete-country', suggestion.value);
                 },
@@ -41,14 +32,12 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                     if (suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1) {
                         return true;
                     }
-                    countryAutocomplete.logiStats();
+                    self.logiStats();
                 },
 
                 onInvalidateSelection: function () {
-                    countryAutocomplete.autocompleteSelectedCountry = null;
-                    if (countryAutocomplete.onCountryChange) {
-                        countryAutocomplete.onCountryChange();
-                    }
+                    self.autocompleteSelectedCountry = null;
+                    self.onCountrySelect();
                 }
             });
         },
@@ -67,5 +56,5 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         }
     };
 
-    return CountrysAutocompleteMediator;
+    return CountryAutocompleteMediator;
 });

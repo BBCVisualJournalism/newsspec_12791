@@ -28,9 +28,9 @@ define(['lib/news_special/bootstrap', 'mediator/cityAutocompleteMediator', 'util
 
     var onCitySelect = function () {
         if (getUserCity() !== null) {
-            utils.enableButton($searchSubmit);
+            utils.enableInput($searchSubmit);
         } else {
-            utils.disableButton($searchSubmit);
+            utils.disableInput($searchSubmit);
         }
     };
 

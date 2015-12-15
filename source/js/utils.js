@@ -122,20 +122,20 @@ define(function () {
         return normalisedString;
     };
 
-    var enableButton = function ($button) {
-        console.log('enabling button');
-        $button.removeClass('disabled').removeAttr('disabled');
+    var enableInput = function ($input) {
+        console.log('enabling input');
+        $input.removeClass('disabled').removeAttr('disabled');
     };
 
-    var disableButton = function ($button) {
-        console.log('disabling button');
-        $button.addClass('disabled').attr('disabled', 'disabled');
+    var disableInput = function ($input) {
+        console.log('disabling input');
+        $input.addClass('disabled').attr('disabled', 'disabled');
     };
 
     var publicApi = {
         normaliseText: normaliseText,
-        enableButton: enableButton,
-        disableButton: disableButton
+        enableInput: enableInput,
+        disableInput: disableInput
     };
 
     return publicApi;

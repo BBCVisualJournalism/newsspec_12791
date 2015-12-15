@@ -1,81 +1,40 @@
-define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], function (news, CountrySearchMediator) {
+define(['lib/news_special/bootstrap', 'mediator/countryAutocompleteMediator', 'utils'], function (news, CountryAutocompleteMediator, utils) {
 
-    // vars 
-    var autocompleteSelectedCountry;
-    var autocompleteSelected;
-    var countrysAutocomplete;
-    var toggleInputIstats;
+    var $searchInput;
+    var $cityDropDown;
+    var $searchSubmit;
+
+    var countryAutocomplete;
     var basePath;
 
-    // elements 
-    var $autocompleteddInput;
-    var $autocompleteEl;
-    var $dropdownInput;
-    var $userInputWrapperEl;
-    var $submitButton;
-    var $cityDropDownEl;
-
     var init = function (baseDataPath) {
-        // set defaults 
-        autocompleteSelectedCountry = null;
-        dropdownSelectedCountry = null;
-        toggleInputIstats = false;
+        $searchInput = news.$('#country-search--text-input');
+        $cityDropDown = news.$('#city-search--dropdown-input');
+        $searchSubmit = news.$('.country-search--submit');
 
         basePath = baseDataPath;
 
-        // element selectors 
-        $autocompleteInput = news.$('#country-search--text-input');
-        $autocompleteEl = news.$('.country-search--autocomplete');
-        $userInputWrapperEl = news.$('.country-search--inputs');
-        $submitButton = news.$('.country-search--submit');
-        $cityDropDownEl = news.$('#city-search--dropdown-input');
+        countryAutocomplete = new CountryAutocompleteMediator($searchInput, onCountrySelect, basePath);
 
-        // populate the inputs 
-        countrysAutocomplete = new CountrySearchMediator($autocompleteInput, updateButtonState, basePath);
-
-        // event listeners
-        $autocompleteInput.keypress(autocompleteInputKeypress);
+        $searchInput.on('focus', function () {
+            var $this = $(this);
+            if ($this.val() !== '') {
+                $this.val('');
+            }
+        });
     };
 
-    var updateButtonState = function () {
-        var disabled = true;
-        if (countrysAutocomplete.getSelectedCountry() !== null) {
-            disabled = false;
-        }
-
-        if (disabled) {
-            $cityDropDownEl.addClass('disabled');
+    var onCountrySelect = function () {
+        if (getUserCountry() !== null) {
+            utils.enableInput($cityDropDown);
         } else {
-            $cityDropDownEl.removeClass('disabled');
-        }
-    };
-
-    var autocompleteInputKeypress = function (e) {
-        var inputText = (e.target.value + String.fromCharCode(e.charCode)).toLowerCase();
-        var $suggestionsHolder = news.$('.autocomplete-suggestions');
-        var $autoCompletSuggestions = $suggestionsHolder.find('.autocomplete-suggestion');
-
-        var keyCode = (window.event) ? e.which : e.keyCode;
-
-        if (keyCode === 13 && !$cityDropDownEl.hasClass('disabled')) {
-            //we've got a match and we've hit the enter key!
-            if ($suggestionsHolder.css('display') === 'none') {
-                $autocompleteInput.blur();
-            }
-            return;
-        }
-
-        if ($autoCompletSuggestions.length) {
-            if (news.$($autoCompletSuggestions[0]).text().toLowerCase() === inputText) {
-                $cityDropDownEl.removeClass('disabled');
-            } else {
-                $cityDropDownEl.addClass('disabled');
-            }
+            utils.disableInput($cityDropDown);
+            utils.disableInput($searchSubmit);
         }
     };
 
     var getUserCountry = function () {
-        return countrysAutocomplete.getSelectedCountry();
+        return countryAutocomplete.getSelectedCountry();
     };
 
     var publicApi = {
