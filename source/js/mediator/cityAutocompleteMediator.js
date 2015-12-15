@@ -35,6 +35,7 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
 
                 onInvalidateSelection: function () {
                     self.autocompleteSelectedCity = null;
+                    self.onCitySelect();
                 }
             });
         },
