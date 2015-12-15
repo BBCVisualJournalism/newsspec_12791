@@ -1,24 +1,8 @@
 define(['lib/news_special/bootstrap'], function (news) {
 
-    /*
-     * Declare Variables
-    */
-    // var scrollAnimSupport = true;
     var scrollTimeout;
-    
 
     var init = function () {
-
-
-        /*
-         * Set Variables
-        */
-        
-        /*
-         * Event Listeners
-        */
-        // news.pubsub.on('user-submitted-country', handleCountrySelected);
-
         //listener for the scroll listener from the parent postmessage
         if (window.addEventListener) {
             window.addEventListener('resize', handleWindowResize, true);
@@ -26,7 +10,6 @@ define(['lib/news_special/bootstrap'], function (news) {
         else {
             window.attachEvent('resize', handleWindowResize, true);
         }
-
     };
 
     var handleWindowResize = function (e) {

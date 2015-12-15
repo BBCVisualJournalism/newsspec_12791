@@ -1,13 +1,13 @@
 define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], function (news, CountrySearchMediator) {
 
-    /* Vars */
+    // vars 
     var autocompleteSelectedCountry;
     var autocompleteSelected;
     var countrysAutocomplete;
     var toggleInputIstats;
     var basePath;
 
-    /* Elements */
+    // elements 
     var $autocompleteddInput;
     var $autocompleteEl;
     var $dropdownInput;
@@ -16,24 +16,24 @@ define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], functio
     var $cityDropDownEl;
 
     var init = function (baseDataPath) {
-        /* Set defaults */
+        // set defaults 
         autocompleteSelectedCountry = null;
         dropdownSelectedCountry = null;
         toggleInputIstats = false;
 
         basePath = baseDataPath;
 
-        /* Element selectors */
+        // element selectors 
         $autocompleteInput = news.$('#country-search--text-input');
         $autocompleteEl = news.$('.country-search--autocomplete');
         $userInputWrapperEl = news.$('.country-search--inputs');
         $submitButton = news.$('.country-search--submit');
         $cityDropDownEl = news.$('#city-search--dropdown-input');
 
-        /* Populate the inputs */
+        // populate the inputs 
         countrysAutocomplete = new CountrySearchMediator($autocompleteInput, updateButtonState, basePath);
 
-        /* LISTENERS */
+        // event listeners
         $autocompleteInput.keypress(autocompleteInputKeypress);
     };
 
@@ -57,23 +57,22 @@ define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], functio
 
         var keyCode = (window.event) ? e.which : e.keyCode;
 
-        if (keyCode == 13 && !$cityDropDownEl.hasClass('disabled')) {
+        if (keyCode === 13 && !$cityDropDownEl.hasClass('disabled')) {
             //we've got a match and we've hit the enter key!
-            if ($suggestionsHolder.css('display') == 'none') {
+            if ($suggestionsHolder.css('display') === 'none') {
                 $autocompleteInput.blur();
             }
             return;
         }
 
         if ($autoCompletSuggestions.length) {
-            if (news.$($autoCompletSuggestions[0]).text().toLowerCase() == inputText) {
+            if (news.$($autoCompletSuggestions[0]).text().toLowerCase() === inputText) {
                 $cityDropDownEl.removeClass('disabled');
-            }
-            else {
+            } else {
                 $cityDropDownEl.addClass('disabled');
             }
         }
-    };    
+    };
 
     var getUserCountry = function () {
         return countrysAutocomplete.getSelectedCountry();
@@ -85,5 +84,4 @@ define(['lib/news_special/bootstrap', 'mediator/countrySearchMediator'], functio
     };
 
     return publicApi;
-
 });

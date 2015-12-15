@@ -4,9 +4,7 @@ define([
     'playlister/snippets',
 	], function (news, $, snippets) {
 
-    /*
-     * Declare Variables
-    */
+    // declare variables
     var $resultsSection;
     var $resultsCityName;
     var $songResultsFirstHalf;
@@ -16,9 +14,7 @@ define([
     var $twinTownSection;
 
     var init = function () {
-        /*
-         * Set Variables
-        */
+        // set variables
         $resultsSection = news.$('.ns12791_resultsHolder');
         $resultsCityName = news.$('#ns12791_resultsCityName');
         $songResultsFirstHalf = news.$('#ns12791_songResultsFirstHalf');
@@ -27,9 +23,7 @@ define([
         $showLessTracksButton = news.$('.ns12791_showLessButton');
         $twinTownSection = news.$('.ns12791_twinTown');
         
-        /*
-         * Event Listeners
-        */
+        // event listeners
         news.pubsub.on('display-city-tracks-results', displayResults);
         news.pubsub.on('display-selected-city-name', displayCityName);
         news.pubsub.on('show-more-tracks', showMoreTracks);
@@ -55,9 +49,7 @@ define([
     };
 
     var displayResults = function (tracksArr) {
-    	console.log('displayResults called, tracksArr = ', tracksArr);
-        
-        //empty the snippets containers
+        // empty the snippets containers
         $songResultsFirstHalf.empty();
         $songResultsSecondHalf.empty();
 
@@ -74,7 +66,7 @@ define([
 												'</div>' +
 											'</div>';
 
-        //populate the snippet containers with markup
+        // populate the snippet containers with markup
         var a, arrLength = tracksArr.length;
         for (a = 0; a < arrLength; a++) {
         	var songBoxMarkupStr = songBoxHolderMarkupTemplateStr.replace('{{songId}}', tracksArr[a].songId);
@@ -91,7 +83,7 @@ define([
         	(a < 5) ? $songResultsFirstHalf.append(songBoxMarkupStr) : $songResultsSecondHalf.append(songBoxMarkupStr);
         }
 
-		//init the snippets
+		// init the snippets
 		snippets.init({
 			lang: "en",
 			continuous: false,

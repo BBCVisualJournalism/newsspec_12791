@@ -1,8 +1,6 @@
 define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
-    /*
-     * Declare Variables
-    */
+    // declare variables
     var scrollTimeout;
     var $citiesDropdownSelectEl;
     var $submitButton;
@@ -10,37 +8,29 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     var basePath;
 
     var init = function (baseDataPath) {
-        /*
-         * Set Variables
-        */
+        // set variables
         $citiesDropdownSelectEl = news.$('#city-search--dropdown-input');
         $submitButton = news.$('.country-search--submit');
         basePath = baseDataPath;
         
-        /*
-         * Event Listeners
-        */
+        // event listeners
         news.pubsub.on('user-autocomplete-country', loadCountriesCities);
         $citiesDropdownSelectEl.change(handleCitySelected);
         $submitButton.on('click', handleSubmitButtonClick);
-
     };
 
     var loadCountriesCities = function (countryName) {
-        //load the city options for the country selected
+        // load the city options for the country selected
         var countrySafePathName = utils.normaliseText(countryName);
         var countriesCityListFilePath = basePath + 'cities_list_' + countrySafePathName + '.js';
 
-        //clear the dropdown list
+        // clear the dropdown list
         $citiesDropdownSelectEl.empty();
 
-        //load the jsonp and populate the dropdown
+        // load the jsonp and populate the dropdown
         var that = this;
         require([countriesCityListFilePath + '?callback=define'], function (citiesList) {
-
-            /*
-             * Add explanation option and a blank space to make it look tidy
-            */
+            // add explanation option and a blank space to make it look tidy
             news.$("<option />", {
                 val: undefined,
                 text: 'Select city'
@@ -61,7 +51,6 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         }, function (err) {
             //couldn't load the cities for the selected country/region :s
         });
-
     };
 
     var handleCitySelected = function (e) {

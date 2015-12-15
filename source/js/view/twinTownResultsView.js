@@ -1,6 +1,6 @@
 define(['lib/news_special/bootstrap'], function (news) {
     
-    //declare variables
+    // declare variables
     var $twinTownResult;
     var $twinTownCityName;
     var $twinTownMilesAway;
@@ -11,7 +11,7 @@ define(['lib/news_special/bootstrap'], function (news) {
     var $noTwinTown;
 
     var init = function () {
-        //set variables
+        // set variables
         $twinTownResult = news.$('.ns12791_twinTownResult');
         $twinTownCityName = news.$('.ns12791_twinTownCityName');
         $twinTownMilesAway = news.$('#ns12791_twinTownDistance_miles');
@@ -21,7 +21,7 @@ define(['lib/news_special/bootstrap'], function (news) {
         $twinTownFound = news.$('.ns12791_twinTownFound');
         $noTwinTown = news.$('.ns12791_noTwinTown');
 
-        //event listeners
+        // event listeners
         news.pubsub.on('display-twin-town-results', displayResults);
     };
 

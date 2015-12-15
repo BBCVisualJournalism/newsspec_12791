@@ -23,7 +23,6 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                 lookupLimit: 20,
                 autoSelectFirst: true,
                 onSelect: function (suggestion) {
-
                     if (suggestion.value !== countryAutocomplete.autocompleteSelectedCountry) {
                         countryAutocomplete.autocompleteSelectedCountry = suggestion.value;
                         if (countryAutocomplete.onCountryChange) {
@@ -36,27 +35,28 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                     }
 
                     news.pubsub.emit('user-autocomplete-country', suggestion.value);
-                    
-
                 },
+
                 lookupFilter: function (suggestion, originalQuery, queryLowerCase) {
                     if (suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1) {
                         return true;
                     }
                     countryAutocomplete.logiStats();
                 },
+
                 onInvalidateSelection: function () {
                     countryAutocomplete.autocompleteSelectedCountry = null;
                     if (countryAutocomplete.onCountryChange) {
                         countryAutocomplete.onCountryChange();
                     }
                 }
-
             });
         },
+
         getSelectedCountry: function () {
             return this.autocompleteSelectedCountry;
         },
+        
         logiStats: function () {
             if (this.istatsSent === false) {
                 var searchType = (this.$autocompleteInput.selector === '#country-search--text-input') ? 'initial-search' : 'animate-table-search';

@@ -1,21 +1,15 @@
 define(['lib/news_special/bootstrap'], function (news) {
 
-    /*
-     * Declare Variables
-    */
+    // declare variables
     var $showMoreTracksButton;
     var $showLessButton;
 
     var init = function () {
-        /*
-         * Set Variables
-        */
+        // set variables
         $showMoreTracksButton = news.$('.ns12791_showMoreTracksButton');
         $showLessButton = news.$('.ns12791_showLessButton');
         
-        /*
-         * Event Listeners
-        */
+        // event listeners
         $showMoreTracksButton.on('click', handleShowMoreButtonCLick);
         $showLessButton.on('click', handleShowLessButtonClick);
     };
@@ -33,5 +27,4 @@ define(['lib/news_special/bootstrap'], function (news) {
     };
 
     return publicApi;
-
 });

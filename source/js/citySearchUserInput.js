@@ -1,13 +1,13 @@
 define(['lib/news_special/bootstrap', 'mediator/citySearchMediator', 'utils'], function (news, CitySearchMediator, utils) {
 
-    /* Vars */
+    // variables
     var autocompleteSelectedCity;
     var autocompleteSelected;
     var citysAutocomplete;
     var toggleInputIstats;
     var basePath;
 
-    /* Elements */
+    // elements
     var $autocompleteddInput;
     var $autocompleteEl;
     var $dropdownInput;
@@ -15,23 +15,23 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator', 'utils'], f
     var $submitButton;
 
     var init = function (baseDataPath) {
-        /* Set defaults */
+        // set defaults 
         autocompleteSelectedCity = null;
         dropdownSelectedCity = null;
         toggleInputIstats = false;
 
         basePath = baseDataPath;
 
-        /* Element selectors */
+        // element selectors 
         $autocompleteInput = news.$('#city-search--text-input');
         $autocompleteEl = news.$('.city-search--autocomplete');
         $userInputWrapperEl = news.$('.city-search--inputs');
         $submitButton = news.$('.city-search--submit');
 
-        /* Populate the inputs */
+        // populate the inputs 
         citysAutocomplete = new CitySearchMediator($autocompleteInput, updateButtonState, basePath);
 
-        /* LISTENERS */
+        // event listeners
         $autocompleteInput.keypress(autocompleteInputKeypress);
         $submitButton.on('click', submit);
     };
@@ -46,7 +46,6 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator', 'utils'], f
             $submitButton.addClass('disabled');
         } else {
             $submitButton.removeClass('disabled');
-            // $submitButton.focus();
         }
     };
 
@@ -57,24 +56,24 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator', 'utils'], f
 
         var keyCode = (window.event) ? e.which : e.keyCode;
 
-        if (keyCode == 13 && !$submitButton.hasClass('disabled')) {
+        if (keyCode === 13 && !$submitButton.hasClass('disabled')) {
             //we've got a match and we've hit the enter key!
-            if ($suggestionsHolder.css('display') == 'none') {
-                $submitButton.trigger("click");
+            if ($suggestionsHolder.css('display') === 'none') {
+                $submitButton.trigger('click');
                 $autocompleteInput.blur();
             }
             return;
         }
 
         if ($autoCompletSuggestions.length) {
-            if (news.$($autoCompletSuggestions[0]).text().toLowerCase() == inputText) {
+            if (news.$($autoCompletSuggestions[0]).text().toLowerCase() === inputText) {
                 $submitButton.removeClass('disabled');
             }
             else {
                 $submitButton.addClass('disabled');
             }
         }
-    };    
+    };
 
     var getUserCity = function () {
         return citysAutocomplete.getSelectedCity();
@@ -94,5 +93,4 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator', 'utils'], f
     };
 
     return publicApi;
-
 });
