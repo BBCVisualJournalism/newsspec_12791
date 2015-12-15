@@ -1,29 +1,29 @@
 <div class="ns12791_topSearchHolder">
 	<div class="ns12791_searchContentsHolder">
-		<h1 class="ns12791_mainTitle">{{= musicalTwinTowns }}</h1>
-		<h2 class="ns12791_introSubheading">{{= theSongsCitiesAreListeningTo }}</h4>
+		<h1 class="ns12791_mainTitle">{{= mainTitle }}</h1>
+		<h2 class="ns12791_introSubheading">{{= introSubheading }}</h4>
 		<p class="ns12791_introParagraph">{{= introParagraph }}</p>
 		
 		<div class="ns12791_searchBoxHolder">
 			<div class="ns12791_cityFreeTextSearchHolder" id="ns12791_cityFreeTextSearchHolder">
-				<h3 class="ns12791_searchBoxCta">{{= enterYourNearestCity }}</h3>
+				<h3 class="ns12791_searchBoxCta">{{= searchBoxCTACity }}</h3>
 				<div class="city-search--inputs">
 	                <div class="city-search--autocomplete">
 	                    <input type="text" placeholder="Your city" id="city-search--text-input" class="city-search--text-input" />
 	                </div>
-	                <button class="city-search--submit disabled">{{= search }}</button>
+	                <button class="city-search--submit disabled">{{= searchSubmitButton }}</button>
 	                <span class="ns12791_alternateSearchSpan" id="ns12791_cantFindCity">{{= cantFindYourCity }}</span>
 	            </div>
 			</div>
 			
 			<div class="ns12791_countryFreeTextSearchHolder" id="ns12791_countryFreeTextSearchHolder" style="display:none;">
-				<h3 class="ns12791_searchBoxCta">{{= enterYourCountry }}</h3>
+				<h3 class="ns12791_searchBoxCta">{{= searchBoxCTACountry }}</h3>
 				<div class="country-search--inputs">
 	                <div class="country-search--autocomplete">
 	                    <input type="text" placeholder="Your country" id="country-search--text-input" class="country-search--text-input" />
 	                </div>
 	                <select class="city-search--dropdown-input disabled" id="city-search--dropdown-input"></select>
-	                <button class="country-search--submit disabled">{{= search }}</button>
+	                <button class="country-search--submit disabled">{{= searchSubmitButton }}</button>
 	                <span class="ns12791_alternateSearchSpan" id="ns12791_backToOriginalSearch">{{= backToOriginalSearch }}</span>
 	            </div>
 			</div>

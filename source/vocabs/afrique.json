@@ -1,15 +1,18 @@
 {
     "": "",
-    "musicalTwinTowns": "",
-    "theSongsCitiesAreListeningTo": "",
+    "mainTitle": "",
+    "introSubheading": "",
     "introParagraph": "",
-    "enterYourNearestCity": "",
-    "search": "",
+    "searchBoxCTACity": "",
+    "searchSubmitButton": "",
     "cantFindYourCity": "",
-    "enterYourCountry": "",
-    "yourCountry": "",
+    "searchBoxCTACountry": "",
     "backToOriginalSearch": "",
     "topTracksIn": "",
     "showMoreTracks": "",
-    "showLess": ""
+    "showLessTracks": "",
+    "yourTwinTown": "",
+    "twinTownParagraph": "",
+    "milesAway": "",
+    "kmAway": ""
 }

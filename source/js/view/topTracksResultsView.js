@@ -53,7 +53,6 @@ define([
     };
 
     var displayResults = function (tracksArr) {
-
     	console.log('displayResults called, tracksArr = ', tracksArr);
         
         //empty the snippets containers
@@ -76,7 +75,6 @@ define([
         //populate the snippet containers with markup
         var a, arrLength = tracksArr.length;
         for (a = 0; a < arrLength; a++) {
-        	
         	var songBoxMarkupStr = songBoxHolderMarkupTemplateStr.replace('{{songId}}', tracksArr[a].songId);
         	songBoxMarkupStr = songBoxMarkupStr.replace('{{trackNum}}', (a + 1 + ''));
         	songBoxMarkupStr = songBoxMarkupStr.replace('{{artistName}}', tracksArr[a].artist);
@@ -89,7 +87,6 @@ define([
         	}
 
         	(a < 5) ? $songResultsFirstHalf.append(songBoxMarkupStr) : $songResultsSecondHalf.append(songBoxMarkupStr);
-
         }
 
 		//init the snippets
@@ -111,5 +108,4 @@ define([
     };
 
     return publicApi;
-
 });

@@ -1,15 +1,18 @@
 {
     "": "",
-    "musicalTwinTowns": "Musical twin towns",
-    "theSongsCitiesAreListeningTo": "The songs cities are searching for...",
+    "mainTitle": "Musical twin towns",
+    "introSubheading": "The songs cities are searching for...",
     "introParagraph": "Mobile app Shazam helps its users find out about new or forgotten songs. Explore the top ten most-searched-for tracks in 4,900 global cities.",
-    "enterYourNearestCity": "Enter your nearest city",
-    "search": "Search",
+    "searchBoxCTACity": "Enter your nearest city",
+    "searchSubmitButton": "Search",
     "cantFindYourCity": "Can't find your city?",
-    "enterYourCountry": "Enter your country",
-    "yourCountry": "Your country",
+    "searchBoxCTACountry": "Enter your country",
     "backToOriginalSearch": "Back to original search",
     "topTracksIn": "Top tracks in",
     "showMoreTracks": "Show more tracks",
-    "showLess": "Show less"
+    "showLessTracks": "Show less",
+    "yourTwinTown": "Your twin town",
+    "twinTownParagraph": "We searched the data for the place in a different continent with the most matches for the songs being looked up in your city.",
+    "milesAway": "miles away",
+    "kmAway": "km away"
 }

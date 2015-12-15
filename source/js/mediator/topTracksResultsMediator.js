@@ -7,8 +7,6 @@ define(['lib/news_special/bootstrap'], function (news) {
     var $showLessButton;
 
     var init = function () {
-
-
         /*
          * Set Variables
         */

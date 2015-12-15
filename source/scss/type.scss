@@ -1,19 +1,19 @@
-$topSearchSectionFontColor: #fff;
+p {
+	margin: 1em 0;
+}
 
-.main {
-	
-	// font-size: 1.6em;
-	// &.ns_rtl {
-	// 	font-size: 18px;
-	// }
+.ns12791_subheading {
+	color: #fff;
+	margin: 8px 32px 32px;
+	font-size: 2.8em;
+	line-height: 35px;
+	text-align: center;
+}
 
-	h4 {
-		font-size: 1.6em;
-		font-weight: bold;
-		margin: 16px 0;
-	}
-
-	.ns12791_searchContentsHolder h4 {
-		color: $topSearchSectionFontColor;
+@include respondMinMax(600px, false) {
+	.ns12791_subheading {
+		margin: 8px 0 32px;
+		font-size: 3.2em;
+		line-height: 40px;
 	}
 }
