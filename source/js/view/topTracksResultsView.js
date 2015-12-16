@@ -69,7 +69,12 @@ define([
         // populate the snippet containers with markup
         var a, arrLength = tracksArr.length;
         for (a = 0; a < arrLength; a++) {
-        	var songBoxMarkupStr = songBoxHolderMarkupTemplateStr.replace('{{songId}}', tracksArr[a].songId);
+            var songBoxMarkupStr = '';
+            if (tracksArr[a].songId) {
+                songBoxMarkupStr = songBoxHolderMarkupTemplateStr.replace('{{songId}}', tracksArr[a].songId);
+            } else {
+                songBoxMarkupStr = songBoxHolderMarkupTemplateStr.replace('<bbc-snippet data-record-id="{{songId}}"></bbc-snippet>', '');
+            }
         	songBoxMarkupStr = songBoxMarkupStr.replace('{{trackNum}}', (a + 1 + ''));
         	songBoxMarkupStr = songBoxMarkupStr.replace('{{artistName}}', tracksArr[a].artist);
         	songBoxMarkupStr = songBoxMarkupStr.replace('{{songName}}', tracksArr[a].songTitle);
