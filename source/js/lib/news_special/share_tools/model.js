@@ -83,7 +83,7 @@ define(['lib/news_special/bootstrap'], function (news) {
         if (opts.template) {this.setTemplate(opts.template); } else {this.setTemplate('default'); }
     };
 
-    NSShareModel.prototype.storyPageUrl = window.location.href || 'www.bbc.co.uk/news';
+    // NSShareModel.prototype.storyPageUrl = window.location.href || 'www.bbc.co.uk/news';
 
     /**
     * Sets the Call to action, invitation to share text e.g. 'Share me'

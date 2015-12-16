@@ -17,5 +17,20 @@
     "kmAway": "km away",
     "tracksInCommon": "tracks in common",
     "noTwinTownParagraph1": "Not one of the songs being looked up here was also being searched for anywhere else in the world.",
-    "noTwinTownParagraph2": "There are just 31 cities in the data that have no twin town."
+    "noTwinTownParagraph2": "There are just 31 cities in the data that have no twin town.",
+    "shareCTA": "Share your twin town",
+    "shareMessage": "{{cityName}}'s musical twin town is {{twinTownName}}",
+    "aboutThisPageTitle": "How this page was made",
+    "aboutThisPageParagraph1": "Lorem ipsum",
+    "aboutThisPageParagraph2": "dolor sit amet",
+    "creditsTitle": "Credits",
+    "creditsParagraph": "Produced by Charlotte Thornton, Punit Shah, Richard Bangay, Ransome Mpini, Ed Lowther and John Walton",
+    "shareTitle": "Share this story",
+    "shareDisclaimerLink": "About sharing",
+    "onwardJourneyTitle": "Related internet links",
+    "onwardJourneyLink1_text": "Shazam",
+    "onwardJourneyLink1_url": "http://www.shazam.com/",
+    "onwardJourneyLink2_text": "BBC Music",
+    "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
+    "onwardJourneyDisclaimer": "The BBC is not responsible for the content of external Internet sites"
 }

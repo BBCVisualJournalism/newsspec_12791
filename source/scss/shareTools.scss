@@ -1,0 +1,42 @@
+.ns12791_shareCta {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.6em;
+    line-height: 20px;
+}
+
+.shareToolsHolder {
+    .share__button {
+        width: 84px;
+        max-width: none;
+        height: 26px;
+        background-color: #41850d;
+        margin: 0 auto;
+        .share__png_icon {
+            float: left;
+            margin: 3px 5px;
+        }
+        p {
+            font-size: 1.6em;
+            color: #fff;
+            line-height: 26px;
+            padding: 0 5px;
+        }
+    }
+    .share__overlay {
+        font-size: 1.4em;
+        min-width: 0;
+        width: 200px;
+        top: 26px;
+        left: 50%;
+        margin-left: -100px;
+        p {
+            padding: 0 16px 0;
+        }
+        .share__overlay-close {
+            top: 8px;
+            right: 8px;
+        }
+    }
+}

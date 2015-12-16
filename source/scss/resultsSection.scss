@@ -22,6 +22,10 @@
 	display: block;
 }
 
+.ns12791_songResultsFirstHalf {
+    padding: 16px 8px 0;
+}
+
 .ns12791_songResultsSecondHalf--mobHidden {
 	display: none;
 }
@@ -145,6 +149,7 @@
 		display: inline-block;
 		width: 428px;
 		margin: 0;
+        padding: 16px 8px;
 	}
 
 	.ns12791_songResultsSecondHalf--mobHidden {
