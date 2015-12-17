@@ -29,6 +29,12 @@
 .ns12791_introParagraph {
 	font-size: 1.6em;
 	line-height: 20px;
+    a {
+        color: #eee;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px solid #eee;
+    }
 }
 
 .ns12791_searchBoxHolder {
