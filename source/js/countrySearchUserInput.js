@@ -20,6 +20,8 @@ define(['lib/news_special/bootstrap', 'mediator/countryAutocompleteMediator', 'u
             var $this = $(this);
             if ($this.val() !== '') {
                 $this.val('');
+                utils.disableInput($cityDropDown);
+                utils.disableInput($searchSubmit);
             }
         });
     };

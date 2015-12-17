@@ -20,6 +20,7 @@ define(['lib/news_special/bootstrap', 'mediator/cityAutocompleteMediator', 'util
             var $this = $(this);
             if ($this.val() !== '') {
                 $this.val('');
+                utils.disableInput($searchSubmit);
             }
         });
 
