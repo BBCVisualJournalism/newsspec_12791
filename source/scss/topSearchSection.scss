@@ -84,8 +84,10 @@
     margin: 16px 0 0;
     text-decoration: none;
     cursor: pointer;
+    border-bottom: solid 1px #000;
+    border-bottom-color: rgba(0,0,0,0);
     &:hover, &:focus{
-        text-decoration: underline;
+        border-bottom-color: #f7c27c;
     }
     &.disabled {
         color: $color--brand-black;

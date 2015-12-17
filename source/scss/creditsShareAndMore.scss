@@ -9,13 +9,18 @@
 	}
 	h2 {
 		font-size: 2.4em;
+		line-height: 30px;
 		font-weight: bold;
 		font-style: normal;
 		a {
 			text-decoration: none;
 			font-size: 0.5em;
+			line-height: 15px;
 			font-weight: normal;
 			color: #fff;
+			&:hover {
+				border-bottom: 1px solid #fff;
+			}
 		}
 	}
 
@@ -91,19 +96,19 @@
 		a {
 			color: #fff;
 			font-size: 1.6em;
+			line-height: 20px;
 			font-weight: bold;
 			text-decoration: none;
-			display: block;
 			margin-bottom: 8px;
 		}
 
 		a:hover {
-			text-decoration: underline;
+			border-bottom: 1px solid #fff;
 		}
 
 		span {
 			font-size: 1.6em;
-			line-height:20px;
+			line-height: 20px;
 			display: block;
 			margin-top: 8px;
 		}
