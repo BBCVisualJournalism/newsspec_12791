@@ -12,15 +12,15 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
 
     var displayShareTools = function (cityName, twinTown) {
         if (shareTools === null) {
-            var cityNameNoSpaces = cityName.replace(' ', '');
+            var cityHashtag = makeCityHashtag(cityName);
             if (twinTown) {
                 var twinTownCityCountryArray = twinTown.name.split(', ');
-                var twinTownCityNoSpaces = twinTownCityCountryArray[0].replace(' ', '');
+                var twinTownCityHashtag = makeCityHashtag(twinTownCityCountryArray[0]);
                 var twinTownCountry = twinTownCityCountryArray[1];
-                var twinTownString = twinTownCityNoSpaces + ', ' + twinTownCountry;
-                createShareTools(cityNameNoSpaces, twinTownString);
+                var twinTownString = twinTownCityHashtag + ', ' + twinTownCountry;
+                createShareTools(cityHashtag, twinTownString);
             } else {
-                createShareTools(cityNameNoSpaces);
+                createShareTools(cityHashtag);
             }
         } else {
             //sharetools has already been created
@@ -28,6 +28,12 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
             destroyShareTools();
             displayShareTools(cityName, twinTown);
         }
+    };
+
+    var makeCityHashtag = function (cityName) {
+        return cityName
+            .replace(/[^\w\s]/g, '')
+            .replace(' ', '');
     };
 
     var createShareTools = function (userCity, twinTown) {
