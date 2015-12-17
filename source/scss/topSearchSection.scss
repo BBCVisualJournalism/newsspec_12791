@@ -1,7 +1,7 @@
 .ns12791_topSearchHolder {
 	width: 100%;
 	min-height: 100vh;
-	background-color: #212121;
+	background-color: $mineShaft;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 }
@@ -9,31 +9,31 @@
 .ns12791_mainTitle {
 	font-size: 2.8em;
 	line-height: 35px;
-	color: #fff;
+	color: $white;
 	padding-top: 16px;
 	margin: 0 32px 16px;
-	text-shadow: 7px 7px 12px #222;
+	text-shadow: 7px 7px 12px $mineShaft;
 }
 
 .ns12791_introSubheading, .ns12791_introParagraph {
-	color: #fff;
+	color: $white;
 	margin: 16px 32px;
 }
 
 .ns12791_introSubheading {
 	font-size: 1.8em;
 	line-height: 22px;
-	text-shadow: 3px 3px 8px #222;
+	text-shadow: 3px 3px 8px $mineShaft;
 }
 
 .ns12791_introParagraph {
 	font-size: 1.6em;
 	line-height: 20px;
     a {
-        color: #eee;
+        color: $white;
         font-weight: bold;
         text-decoration: none;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid $white;
     }
 }
 
@@ -46,11 +46,11 @@
 }
 
 .ns12791_cityFreeTextSearchHolder, .ns12791_countryFreeTextSearchHolder {
-	background-color: #000;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: $black;
+	background-color: $black80;
 	width: 100%;
 	padding: 16px;
-	color: #fff;
+	color: $white;
 }
 
 .ns12791_countryFreeTextSearchHolder {
@@ -69,7 +69,7 @@
 	@include boxSizing;
     display: block;
     margin: 0 0 16px;
-    color: #333;
+    color: $tundora;
     padding: 13px;
     width: 100%;
     height: 44px;
@@ -80,17 +80,17 @@
 .ns12791_alternateSearchSpan {
     display: inline-block;
     font-weight: bold;
-    color: #f7c27c;
+    color: $rajah;
     margin: 16px 0 0;
     text-decoration: none;
     cursor: pointer;
-    border-bottom: solid 1px #000;
+    border-bottom: solid 1px $black;
     border-bottom-color: rgba(0,0,0,0);
     &:hover, &:focus{
-        border-bottom-color: #f7c27c;
+        border-bottom-color: $rajah;
     }
     &.disabled {
-        color: $color--brand-black;
+        color: $tundora;
         cursor: default;
         pointer-events: none;
     }
@@ -98,11 +98,11 @@
 
 .city-search--dropdown-input {
     display: block;
-    color: #333;
+    color: $tundora;
     padding: 13px;
     width: 100%;
     height: 47px;
-    background-color: #fff;
+    background-color: $white;
     background-image: url(../img/frame/chevron.png);
     background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220%22%20y%3D%220%22%0A%09%20width%3D%2226.033%22%20height%3D%2213.135%22%20viewBox%3D%220%200%2026.033%2013.135%22%20enable-background%3D%22new%200%200%2026.033%2013.135%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cpolygon%20fill%3D%22%233E3E3E%22%20points%3D%228.083%2C13.135%2016.166%2C0%2013.447%2C0%208.083%2C8.638%202.719%2C0%200%2C0%20%09%22/%3E%0A%3C/svg%3E%0A);
     background-position: center right;
@@ -112,8 +112,8 @@
     -webkit-appearance: none;
     border-radius: 0;
     &.disabled {
-        background-color: #333;
-        border-color: #333;
+        background-color: $tundora;
+        border-color: $tundora;
         pointer-events: none;
         cursor: default;
     }
@@ -125,16 +125,16 @@
     height: 44px;
     width: 100%;
     background-image: none;
-    color: #fff;
-    background-color: $submitButtonActive;
-    border: 2px solid $submitButtonActive;
+    color: $white;
+    background-color: $teal;
+    border: 2px solid $teal;
     &:hover, &:active, &:focus {
-        background-color: $submitButtonActive;
-        border: 2px solid $submitButtonActive;
+        background-color: $teal;
+        border: 2px solid $teal;
     }
     &.disabled {
-        background-color: #333;
-        border-color: #333;
+        background-color: $tundora;
+        border-color: $tundora;
     }
 }
 

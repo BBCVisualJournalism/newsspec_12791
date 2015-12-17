@@ -1,6 +1,6 @@
 .ns12791_shareCta {
     text-align: center;
-    color: #fff;
+    color: $white;
     font-weight: bold;
     font-size: 1.6em;
     line-height: 20px;
@@ -11,7 +11,7 @@
         width: 84px;
         max-width: none;
         height: 26px;
-        background-color: #41850d;
+        background-color: $greenLeaf;
         margin: 0 auto;
         .share__png_icon {
             float: left;
@@ -19,7 +19,7 @@
         }
         p {
             font-size: 1.6em;
-            color: #fff;
+            color: $white;
             line-height: 26px;
             padding: 0 5px;
         }

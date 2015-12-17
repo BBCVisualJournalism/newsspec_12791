@@ -1,13 +1,13 @@
 .ns12791_resultsHolder {
 	width: 100%;
 	text-align: center;
-	background-color: #212121;
+	background-color: $mineShaft;
 	padding: 16px 0;
     display: none;
 }
 
 .ns12791_resultsTitle {
-	color: #fff;
+	color: $white;
 	margin: 0 0 8px;
 	font-size: 1.6em;
     line-height: 20px;
@@ -32,7 +32,7 @@
 
 .ns12791_songBoxHolder {
 	margin: 0 0 16px;
-	background-color: $songBoxBg;
+	background-color: $white;
 	padding: 8px;
     text-align: left;
     position: relative;
@@ -66,8 +66,8 @@
 .ns12791_trackNumber {
 	line-height: 40px;
     text-align: center;
-    color: #fff;
-    background-color: $darkBackground;
+    color: $white;
+    background-color: $mineShaft;
 }
 
 .ns12791_snippetHolder {
@@ -85,13 +85,13 @@
 }
 
 .ns12791_songBoxArtist {
-	color: #000;
+	color: $black;
 	margin: 0 0 8px;
 	font-weight: bold;
 }
 
 .ns12791_songBoxTitle {
-	color: #000;
+	color: $black;
 	margin: 0;
 }
 

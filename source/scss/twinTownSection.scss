@@ -1,24 +1,24 @@
 .ns12791_twinTown {
     display: none;
-    background-color: #212121;
+    background-color: $mineShaft;
 }
 
 .ns12791_twinTownParagraph {
     font-size: 1.6em;
     line-height: 20px;
-    color: #fff;
+    color: $white;
     margin: 1em 32px;
 }
 
 .ns12791_twinTownResult {
     text-align: center;
-    background-color: #e8f9f8;
+    background-color: $polar;
     margin: 0 16px;
     padding: 32px;
 }
 
 .ns12791_twinTownCityName {
-    color: #2794c4;
+    color: $curiousBlue;
     font-size: 3.6em;
     line-height: 45px;
     margin: 0;
@@ -27,7 +27,7 @@
 .ns12791_twinTownDistance {
     font-size: 1.6em;
     line-height: 20px;
-    color: #0c4a5b;
+    color: $deepSeaGreen;
     span {
         font-weight: bold;
     }
@@ -38,7 +38,7 @@
     line-height: 28px;
     font-weight: bold;
     margin: 0 auto;
-    color: #0c4a5b;
+    color: $deepSeaGreen;
     width: 208px;
 }
 
@@ -50,7 +50,7 @@
     text-align: left;
     margin: 0 auto;
     padding: 0;
-    color: #0c4a5b;
+    color: $deepSeaGreen;
     width: 192px;
 }
 
@@ -59,7 +59,7 @@
     font-size: 1.6em;
     line-height: 20px;
     font-weight: bold;
-    color: #0c4a5b;
+    color: $deepSeaGreen;
 }
 
 @include respondMinMax(600px, false) {

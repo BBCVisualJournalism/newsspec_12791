@@ -1,13 +1,13 @@
 .autocomplete-suggestions {
-    color: #333;
-    background-color: #fff;
+    color: $mineShaft;
+    background-color: $white;
     overflow: auto;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid $doveGray;
     font-size: 1.6em;
 }
 
 .autocomplete-suggestion {
-    border: 1px solid #666;
+    border: 1px solid $doveGray;
     border-bottom: 0;
     padding: 13px 10px;
     overflow: hidden;
@@ -16,10 +16,10 @@
 }
 
 .autocomplete-selected {
-    background: #c4e0e0;
+    background: $botticelli;
 }
 
 .autocomplete-group {
-    background: #ebebeb;
+    background: $gallery;
     padding: 5px;
 }
