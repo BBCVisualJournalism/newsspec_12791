@@ -13,7 +13,8 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
     var displayShareTools = function (cityName, twinTown) {
         if (shareTools === null) {
             if (twinTown) {
-                createShareTools(cityName, twinTown.name);
+                var twinTownName = twinTown.name.split(',')[0];
+                createShareTools(cityName, twinTownName);
             } else {
                 createShareTools(cityName);
             }
