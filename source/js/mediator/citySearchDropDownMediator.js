@@ -31,6 +31,8 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         var that = this;
         require([countriesCityListFilePath + '?callback=define'], function (citiesList) {
             // add explanation option and a blank space to make it look tidy
+            console.log(citiesList);
+
             news.$("<option />", {
                 val: undefined,
                 text: 'Select city'
@@ -47,6 +49,11 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
                     text: this.cityName
                 }).appendTo($cityDropDown);
             });
+
+            if (citiesList.data.length === 1) {
+                $cityDropDown.find('option:eq(2)').attr('selected', true);
+                $cityDropDown.trigger('change');
+            }
 
         }, function (err) {
             //couldn't load the cities for the selected country/region :s
