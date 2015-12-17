@@ -64,6 +64,8 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     };
 
     var onSubmit = function () {
+        news.istats.log('newsspec-interaction', 'search-button-clicked');
+        news.istats.log('newsspec-interaction', 'country-search-button-clicked');
         news.pubsub.emit('user-submitted-city', [basePath, selectedCityFileName]);
         return false;
     };

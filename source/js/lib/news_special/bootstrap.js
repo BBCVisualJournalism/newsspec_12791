@@ -2,9 +2,10 @@ define([
     'jquery',
     'lib/news_special/imager',
     'lib/news_special/imager_image_sizes',
+    'istats-1',
     'pubsub',
     '$v'
-], function ($, Imager, imageSizes) {
+], function ($, Imager, imageSizes, istats) {
 
     // responsive images
     var imager = new Imager({
@@ -22,6 +23,7 @@ define([
         $: $,
         pubsub: $,
         $v: $,
+        istats: istats,
         sendMessageToremoveLoadingImage: function () {
             var spinner = document.getElementById('loading-spinner');
             if (spinner) {

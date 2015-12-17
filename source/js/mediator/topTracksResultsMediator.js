@@ -3,6 +3,7 @@ define(['lib/news_special/bootstrap'], function (news) {
     // declare variables
     var $showMoreTracksButton;
     var $showLessButton;
+    var $snippetsPlayButtons;
 
     var init = function () {
         // set variables
@@ -14,11 +15,11 @@ define(['lib/news_special/bootstrap'], function (news) {
         $showLessButton.on('click', handleShowLessButtonClick);
     };
 
-    var handleShowMoreButtonCLick = function (e) {
+    var handleShowMoreButtonCLick = function () {
         news.pubsub.emit('show-more-tracks');
     };
 
-    var handleShowLessButtonClick = function (e) {
+    var handleShowLessButtonClick = function () {
         news.pubsub.emit('show-less-tracks');
     };
 
