@@ -14,10 +14,11 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
         if (shareTools === null) {
             var cityNameNoSpaces = cityName.replace(' ', '');
             if (twinTown) {
-                var twinTownName = twinTown.name
-                    .split(',')[0]
-                    .replace(' ', '');
-                createShareTools(cityNameNoSpaces, twinTownName);
+                var twinTownCityCountryArray = twinTown.name.split(', ');
+                var twinTownCityNoSpaces = twinTownCityCountryArray[0].replace(' ', '');
+                var twinTownCountry = twinTownCityCountryArray[1];
+                var twinTownString = twinTownCityNoSpaces + ', ' + twinTownCountry;
+                createShareTools(cityNameNoSpaces, twinTownString);
             } else {
                 createShareTools(cityNameNoSpaces);
             }
@@ -29,15 +30,15 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
         }
     };
 
-    var createShareTools = function (cityName, twinTownName) {
+    var createShareTools = function (userCity, twinTown) {
         var message;
-        if (twinTownName) {
+        if (twinTown) {
             message = $shareToolsHolder.attr('data-share-message')
-                .replace('{{cityName}}', cityName)
-                .replace('{{twinTownName}}', twinTownName);
+                .replace('{{cityName}}', userCity)
+                .replace('{{twinTownName}}', twinTown);
         } else {
             message = $shareToolsHolder.attr('data-share-message-notwin')
-                .replace('{{cityName}}', cityName);
+                .replace('{{cityName}}', userCity);
         }
         var shareToolsOptions = {
             'header': 'Share',
