@@ -31,8 +31,8 @@ define(['lib/news_special/bootstrap'], function (news) {
 
     var updateDistance = function (milesAway) {
         var kmAway = Math.round(milesAway / 0.6214);
-        $twinTownMilesAway.text(milesAway);
-        $twinTownKmAway.text(kmAway);
+        $twinTownMilesAway.text(milesAway.toLocaleString());
+        $twinTownKmAway.text(kmAway.toLocaleString());
     };
 
     var updateTracksInCommon = function (commonTracksArray) {
