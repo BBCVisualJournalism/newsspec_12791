@@ -17,7 +17,7 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
 
             this.$autocompleteInput.autocomplete({
                 lookup: autoCompleteData,
-                lookupLimit: 20,
+                lookupLimit: 51,
                 autoSelectFirst: true,
                 onSelect: function (suggestion) {
                     if (suggestion.value !== self.autocompleteSelectedCity) {
