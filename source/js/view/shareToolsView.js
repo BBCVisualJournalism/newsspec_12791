@@ -12,11 +12,14 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
 
     var displayShareTools = function (cityName, twinTown) {
         if (shareTools === null) {
+            var cityNameNoSpaces = cityName.replace(' ', '');
             if (twinTown) {
-                var twinTownName = twinTown.name.split(',')[0];
-                createShareTools(cityName, twinTownName);
+                var twinTownName = twinTown.name
+                    .split(',')[0]
+                    .replace(' ', '');
+                createShareTools(cityNameNoSpaces, twinTownName);
             } else {
-                createShareTools(cityName);
+                createShareTools(cityNameNoSpaces);
             }
         } else {
             //sharetools has already been created
