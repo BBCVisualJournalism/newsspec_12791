@@ -3,13 +3,6 @@
     background-color: $mineShaft;
 }
 
-.ns12791_twinTownParagraph {
-    font-size: 1.6em;
-    line-height: 20px;
-    color: $white;
-    margin: 1em 32px;
-}
-
 .ns12791_twinTownResult {
     text-align: center;
     background-color: $polar;
@@ -63,11 +56,6 @@
 }
 
 @include respondMinMax(600px, false) {
-    .ns12791_twinTownParagraph {
-        margin: 1em auto;
-        width: 480px;
-    }
-
     .ns12791_twinTownResult {
         margin: 0 auto;
         width: 512px;

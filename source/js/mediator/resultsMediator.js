@@ -17,6 +17,7 @@ define(['lib/news_special/bootstrap', 'mediator/topTracksResultsMediator'], func
         news.pubsub.emit('display-city-tracks-results', [resultsModel.data.topTracks]);
         news.pubsub.emit('display-twin-town-results', [resultsModel.data.twinTown]);
         news.pubsub.emit('display-share-tools', [resultsModel.data.cityName, resultsModel.data.twinTown]);
+        news.pubsub.emit('display-random-city-section');
     };
 
     var publicApi = {

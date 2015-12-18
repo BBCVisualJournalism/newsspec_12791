@@ -11,11 +11,23 @@ p {
 	text-align: center;
 }
 
+.ns12791_paragraph {
+	font-size: 1.6em;
+	line-height: 20px;
+	color: $white;
+	margin: 1em 32px;
+}
+
 @include respondMinMax(600px, false) {
 	.ns12791_subheading {
 		margin: 0 auto;
 		width: 480px;
 		font-size: 3.2em;
 		line-height: 40px;
+	}
+
+	.ns12791_paragraph {
+		margin: 1em auto;
+		width: 480px;
 	}
 }

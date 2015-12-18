@@ -7,8 +7,9 @@ define([
     'view/twinTownResultsView',
     'view/shareToolsView',
     'citySearchUserInput',
-    'countrySearchUserInput'
-], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, twinTownResultsView, shareToolsView, citySearchUserInput, countrySearchUserInput) {
+    'countrySearchUserInput',
+    'randomCity'
+], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, twinTownResultsView, shareToolsView, citySearchUserInput, countrySearchUserInput, randomCity) {
 
 	// variable declarations
     var locale = news.$('.main').attr('id').replace('locale_', '');
@@ -31,6 +32,7 @@ define([
     topTracksResultsView.init();
     twinTownResultsView.init();
     shareToolsView.init();
+    randomCity.init(baseDataPath);
 
     // button listeners
     $cantFindCity.on('click', function () {
