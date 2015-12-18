@@ -33,7 +33,7 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
     var makeCityHashtag = function (cityName) {
         return cityName
             .replace(/[^\w\s]/g, '')
-            .replace(' ', '');
+            .replace(/ /g, '');
     };
 
     var createShareTools = function (userCity, twinTown) {
