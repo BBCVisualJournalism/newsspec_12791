@@ -48,11 +48,17 @@ define(['lib/news_special/bootstrap'], function (news) {
         $noTwinTown.show();
     };
 
+    var twinTownFound = function (twinTownData) {
+        updateCityName(twinTownData.name);
+        updateDistance(twinTownData.distanceMiles);
+        updateTracksInCommon(twinTownData.commonTracksList);
+        $noTwinTown.hide();
+        $twinTownFound.show();
+    }
+
     var displayResults = function (twinTownData) {
         if (twinTownData) {
-            updateCityName(twinTownData.name);
-            updateDistance(twinTownData.distanceMiles);
-            updateTracksInCommon(twinTownData.commonTracksList);
+            twinTownFound(twinTownData);
         } else {
             noTwinTown();
         }
