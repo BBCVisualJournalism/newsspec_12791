@@ -23,7 +23,7 @@
     "noTwinTownParagraph2": "There are just 31 cities in the data that have no twin town.",
     "shareCTA": "Share your twin town",
     "shareMessage": "Hello #{{twinTownName}}! You are the musical twin town of #{{cityName}}",
-    "shareMessageNoTwinTown": "{{cityName}} has no musical twin town",
+    "shareMessageNoTwinTown": "#{{cityName}} is unique. Find out if your town has a musical twin:",
     "aboutThisPageTitle": "How this page was made",
     "aboutThisPageParagraph1": "Shazam is a software application that helps people identify pieces of music. Users of the app record an extract of a song on their smartphones or computers. If the app recognises the extract, it displays the name of the artist and the song.",
     "aboutThisPageParagraph2": "The company shared the top ten songs being looked up during the month of November on its app in each of about 4,900 places with the BBC to enable the creation of this page. We have matched as many songs as possible in Shazam's data with the BBC music database to enable readers to listen to clips of the songs.",
