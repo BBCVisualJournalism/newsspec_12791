@@ -82,6 +82,8 @@
 .ns12791_songBoxTitleAndArtistHolder {
 	display: table-cell;
 	padding: 0 8px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 .ns12791_songBoxArtist {

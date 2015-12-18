@@ -18,6 +18,11 @@ p {
 	margin: 1em 32px;
 }
 
+.main, .ns_creditsHolder {
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @include respondMinMax(600px, false) {
 	.ns12791_subheading {
 		margin: 0 auto;

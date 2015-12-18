@@ -8,6 +8,8 @@
     background-color: $polar;
     margin: 0 16px;
     padding: 32px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 .ns12791_twinTownCityName {

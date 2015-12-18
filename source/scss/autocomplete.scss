@@ -4,6 +4,9 @@
     overflow: auto;
     border-bottom: 1px solid $doveGray;
     font-size: 1.6em;
+    line-height: 20px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 .autocomplete-suggestion {
