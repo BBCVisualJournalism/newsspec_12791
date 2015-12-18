@@ -16,6 +16,12 @@ p {
 	line-height: 20px;
 	color: $white;
 	margin: 1em 32px;
+	a {
+        color: $white;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px solid $white;
+    }
 }
 
 .main, .ns_creditsHolder {
@@ -34,5 +40,11 @@ p {
 	.ns12791_paragraph {
 		margin: 1em auto;
 		width: 480px;
+	}
+}
+
+@include respondMinMax(1008px, false) {
+	.ns12791_paragraph {
+		width: 588px;
 	}
 }

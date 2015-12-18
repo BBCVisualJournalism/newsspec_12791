@@ -15,26 +15,12 @@
 	text-shadow: 7px 7px 12px $mineShaft;
 }
 
-.ns12791_introSubheading, .ns12791_introParagraph {
-	color: $white;
-	margin: 16px 32px;
-}
-
 .ns12791_introSubheading {
+    color: $white;
+    margin: 16px 32px;
 	font-size: 1.8em;
 	line-height: 22px;
 	text-shadow: 3px 3px 8px $mineShaft;
-}
-
-.ns12791_introParagraph {
-	font-size: 1.6em;
-	line-height: 20px;
-    a {
-        color: $white;
-        font-weight: bold;
-        text-decoration: none;
-        border-bottom: 1px solid $white;
-    }
 }
 
 .ns12791_searchBoxHolder {
@@ -60,13 +46,15 @@
 }
 
 .ns12791_searchBoxCta {
+    display: block;
 	margin: 0 0 16px;
 	font-size: 1em;
     line-height: 20px;
+    font-weight: bold;
 }
 
-.city-search--text-input, .country-search--text-input {
-	@include boxSizing;
+.search--text-input {
+	box-sizing: border-box;
     display: block;
     margin: 0 0 16px;
     color: $tundora;
@@ -75,6 +63,8 @@
     height: 44px;
     outline: 0;
     border: 1px solid $base--border-color;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 .ns12791_alternateSearchSpan {
@@ -111,6 +101,8 @@
     margin-bottom: 16px;
     -webkit-appearance: none;
     border-radius: 0;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
     &.disabled {
         background-color: $tundora;
         border-color: $tundora;
@@ -194,7 +186,7 @@
 		line-height: 35px;
 	}
 
-	.ns12791_mainTitle, .ns12791_introSubheading, .ns12791_introParagraph {
+	.ns12791_mainTitle, .ns12791_introSubheading {
 		width: 480px;
 		padding: 0;
 		margin: 16px auto;
@@ -222,7 +214,7 @@
 		text-align: center;
 	}
 
-	.ns12791_mainTitle, .ns12791_introSubheading, .ns12791_introParagraph {
+	.ns12791_mainTitle, .ns12791_introSubheading {
 		width: 588px;
 		padding: 0;
 		margin: 16px auto;
