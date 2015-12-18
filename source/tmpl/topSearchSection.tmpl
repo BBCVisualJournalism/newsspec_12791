@@ -9,7 +9,7 @@
 				<label for="city-search--text-input" class="ns12791_searchBoxCta">{{= searchBoxCTACity }}</label>
 				<div class="city-search--inputs">
 	                <div class="city-search--autocomplete">
-	                    <input type="text" placeholder="Your city" id="city-search--text-input" class="search--text-input" />
+	                    <input type="text" placeholder="{{= searchBoxCityPlaceholder }}" id="city-search--text-input" class="search--text-input" />
 	                </div>
 	                <button type="submit" class="city-search--submit disabled" disabled="disabled">{{= searchSubmitButton }}</button>
 	                <span class="ns12791_alternateSearchSpan" id="ns12791_cantFindCity">{{= cantFindYourCity }}</span>
@@ -20,7 +20,7 @@
 				<label for="country-search--text-input" class="ns12791_searchBoxCta">{{= searchBoxCTACountry }}</label>
 				<div class="country-search--inputs">
 	                <div class="country-search--autocomplete">
-	                    <input type="text" placeholder="Your country" id="country-search--text-input" class="search--text-input" />
+	                    <input type="text" placeholder="{{= searchBoxCountryPlaceholder }}" id="country-search--text-input" class="search--text-input" />
 	                </div>
 	                <select class="city-search--dropdown-input disabled" id="city-search--dropdown-input"></select>
 	                <button type="submit" class="country-search--submit disabled" disabled="disabled">{{= searchSubmitButton }}</button>
