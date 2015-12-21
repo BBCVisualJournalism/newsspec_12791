@@ -84,7 +84,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 8px 0 8px 100px;
+    padding: 8px 8px 8px 100px;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
 }
@@ -136,11 +136,11 @@
     }
 
     .ns12791_songBoxTitleAndArtistHolder {
-    	padding: 8px 0 8px 144px;
+    	padding-left: 144px;
     }
 
     .ns12791_songBoxArtist {
-        margin: 0 0 8px;
+        margin-bottom: 8px;
     }
 
     .ns12791_resultsButton {
