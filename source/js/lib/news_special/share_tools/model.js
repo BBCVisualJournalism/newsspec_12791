@@ -345,7 +345,7 @@ define(['lib/news_special/bootstrap'], function (news) {
         '&display=popup' + // Share window type
         '&link=' + this.storyPageUrl + // URL storypage
         '&name=' + this.getFacebookShareMessage() + // Custom share message
-        '%20' + this.getHashTags() + // Hashtags string
+        // '%20' + this.getHashTags() + // Hashtags string
         //'&locale=' + LOCALE + //location - May not be needed - Share module seems only to support en_GB which it applies by default anyway??
         '&description=' + this.getOGPDescription() + // Open Graph Protocol Description
         '&picture=' + this.getOGPImage(); // Open Graph Protocol Image
@@ -359,7 +359,7 @@ define(['lib/news_special/bootstrap'], function (news) {
     NSShareModel.prototype.twitterShareTarget = function () {
         return TWITTER_URL + // Twitter API
         '?text=' + this.getTwitterShareMessage() + // Custom share message
-        ' ' + this.getHashTags() + // Hashtags string
+        // ' ' + this.getHashTags() + // Hashtags string
         ' ' + this.storyPageUrl; // URL storypage
     },
 
