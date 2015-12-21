@@ -86,14 +86,20 @@
 }
 
 .ns12791_songBoxArtist {
-	color: $black;
 	margin: 0 0 8px;
 	font-weight: bold;
 }
 
 .ns12791_songBoxTitle {
-	color: $black;
 	margin: 0;
+}
+
+.ns12791_songBoxArtist, .ns12791_songBoxTitle {
+    color: $black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
 }
 
 .ns12791_resultsButton {
