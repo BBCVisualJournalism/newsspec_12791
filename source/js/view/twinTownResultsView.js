@@ -38,7 +38,32 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     };
 
     var updateTracksInCommon = function (commonTracksArray) {
-        $tracksInCommonNumber.text(commonTracksArray.length);
+
+        // if param number is between 1-9, returns the number as a word
+        var convertNumberToWord = function (number) {
+            var numberString = number.toString();
+            var numberLookup = {
+                '1': 'One',
+                '2': 'Two',
+                '3': 'Three',
+                '4': 'Four',
+                '5': 'Five',
+                '6': 'Six',
+                '7': 'Seven',
+                '8': 'Eight',
+                '9': 'Nine'
+            };
+            if (number >= 10) {
+                return numberString;
+            } else {
+                for (var key in numberLookup) {
+                    numberString = numberString.replace(key, numberLookup[key]);
+                }
+                return numberString;
+            }
+        };
+
+        $tracksInCommonNumber.text(convertNumberToWord(commonTracksArray.length));
         $tracksInCommonList.empty();
         news.$.each(commonTracksArray, function (index, value) {
             var li = $('<li>').text(value).appendTo($tracksInCommonList);
