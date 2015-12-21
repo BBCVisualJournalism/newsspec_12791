@@ -132,10 +132,20 @@ define(function () {
         $input.addClass('disabled').attr('disabled', 'disabled');
     };
 
+    var getCityFromString = function (string) {
+        return string.slice(0, string.indexOf(', '));
+    };
+
+    var getCountryFromString = function (string) {
+        return string.slice(string.indexOf(', ') + 2);
+    };
+
     var publicApi = {
         normaliseText: normaliseText,
         enableInput: enableInput,
-        disableInput: disableInput
+        disableInput: disableInput,
+        getCityFromString: getCityFromString,
+        getCountryFromString: getCountryFromString
     };
 
     return publicApi;

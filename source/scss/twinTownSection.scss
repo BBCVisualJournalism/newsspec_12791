@@ -12,11 +12,19 @@
     -moz-osx-font-smoothing: auto;
 }
 
-.ns12791_twinTownCityName {
+.ns12791_twinTownCityName, .ns12791_twinTownCountryName {
     color: $curiousBlue;
-    font-size: 3.6em;
-    line-height: 45px;
     margin: 0;
+}
+
+.ns12791_twinTownCityName {
+    font-size: 2.6em;
+    line-height: 32px;
+}
+
+.ns12791_twinTownCountryName {
+    font-size: 1.8em;
+    line-height: 22px;
 }
 
 .ns12791_twinTownDistance {
@@ -63,7 +71,12 @@
     }
 
     .ns12791_twinTownCityName {
-        font-size: 4.2em;
-        line-height: 52px;
+        font-size: 3.2em;
+        line-height: 40px;
+    }
+
+    .ns12791_twinTownCountryName {
+        font-size: 2.4em;
+        line-height: 30px;
     }
 }

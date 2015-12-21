@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap'], function (news) {
+define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     
     // declare variables
     var $twinTownResult;
@@ -14,6 +14,7 @@ define(['lib/news_special/bootstrap'], function (news) {
         // set variables
         $twinTownResult = news.$('.ns12791_twinTownResult');
         $twinTownCityName = news.$('.ns12791_twinTownCityName');
+        $twinTownCountryName = news.$('.ns12791_twinTownCountryName');
         $twinTownMilesAway = news.$('#ns12791_twinTownDistance_miles');
         $twinTownKmAway = news.$('#ns12791_twinTownDistance_km');
         $tracksInCommonNumber = news.$('#ns12791_tracksInCommon_number');
@@ -25,8 +26,9 @@ define(['lib/news_special/bootstrap'], function (news) {
         news.pubsub.on('display-twin-town-results', displayResults);
     };
 
-    var updateCityName = function (cityName) {
-        $twinTownCityName.text(cityName);
+    var updateCityName = function (twinTownString) {
+        $twinTownCityName.text(utils.getCityFromString(twinTownString));
+        $twinTownCountryName.text(utils.getCountryFromString(twinTownString));
     };
 
     var updateDistance = function (milesAway) {

@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller'], function (news, ShareTools) {
+define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller', 'utils'], function (news, ShareTools, utils) {
 
     var $shareToolsHolder;
     var shareTools;
@@ -12,12 +12,12 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
 
     var displayShareTools = function (userCity, twinTown) {
         if (shareTools === null) {
-            var userCityHashtag = makeCityHashtag(getCityFromString(userCity));
-            var userCountry = getCountryFromString(userCity);
+            var userCityHashtag = makeCityHashtag(utils.getCityFromString(userCity));
+            var userCountry = utils.getCountryFromString(userCity);
             var userCityString = userCityHashtag + ', ' + userCountry;
             if (twinTown) {
-                var twinTownCityHashtag = makeCityHashtag(getCityFromString(twinTown.name));
-                var twinTownCountry = getCountryFromString(twinTown.name);
+                var twinTownCityHashtag = makeCityHashtag(utils.getCityFromString(twinTown.name));
+                var twinTownCountry = utils.getCountryFromString(twinTown.name);
                 var twinTownString = twinTownCityHashtag + ', ' + twinTownCountry;
                 createShareTools(userCityString, twinTownString);
             } else {
@@ -29,14 +29,6 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
             destroyShareTools();
             displayShareTools(userCity, twinTown);
         }
-    };
-
-    var getCityFromString = function (string) {
-        return string.slice(0, string.indexOf(', '));
-    };
-
-    var getCountryFromString = function (string) {
-        return string.slice(string.indexOf(', ') + 2);
     };
 
     var makeCityHashtag = function (cityName) {
