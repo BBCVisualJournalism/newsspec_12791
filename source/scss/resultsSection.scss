@@ -79,8 +79,12 @@
 }
 
 .ns12791_songBoxTitleAndArtistHolder {
-	display: table-cell;
-	padding: 0 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px 0 8px 100px;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
 }
@@ -132,12 +136,6 @@
     }
 
     .ns12791_songBoxTitleAndArtistHolder {
-    	display: block;
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	width: 100%;
-    	height: 100%;
     	padding: 8px 0 8px 144px;
     }
 
