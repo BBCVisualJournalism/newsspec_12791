@@ -10,24 +10,33 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
         news.pubsub.on('display-share-tools', displayShareTools);
     };
 
-    var displayShareTools = function (cityName, twinTown) {
+    var displayShareTools = function (userCity, twinTown) {
         if (shareTools === null) {
-            var cityHashtag = makeCityHashtag(cityName);
+            var userCityHashtag = makeCityHashtag(getCityFromString(userCity));
+            var userCountry = getCountryFromString(userCity);
+            var userCityString = userCityHashtag + ', ' + userCountry;
             if (twinTown) {
-                var twinTownCityCountryArray = twinTown.name.split(', ');
-                var twinTownCityHashtag = makeCityHashtag(twinTownCityCountryArray[0]);
-                var twinTownCountry = twinTownCityCountryArray[1];
+                var twinTownCityHashtag = makeCityHashtag(getCityFromString(twinTown.name));
+                var twinTownCountry = getCountryFromString(twinTown.name);
                 var twinTownString = twinTownCityHashtag + ', ' + twinTownCountry;
-                createShareTools(cityHashtag, twinTownString);
+                createShareTools(userCityString, twinTownString);
             } else {
-                createShareTools(cityHashtag);
+                createShareTools(userCityString);
             }
         } else {
             //sharetools has already been created
             //destroy and try again
             destroyShareTools();
-            displayShareTools(cityName, twinTown);
+            displayShareTools(userCity, twinTown);
         }
+    };
+
+    var getCityFromString = function (string) {
+        return string.slice(0, string.indexOf(', '));
+    };
+
+    var getCountryFromString = function (string) {
+        return string.slice(string.indexOf(', ') + 2);
     };
 
     var makeCityHashtag = function (cityName) {
@@ -37,7 +46,7 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller']
     };
 
     var createShareTools = function (userCity, twinTown) {
-        var message;
+        var message = '';
         if (twinTown) {
             message = $shareToolsHolder.attr('data-share-message')
                 .replace('{{cityName}}', userCity)
