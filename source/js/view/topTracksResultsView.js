@@ -98,6 +98,11 @@ define([
 			context: null
 		});
 
+        // stop current playing snippet when new city is loaded
+        news.pubsub.on('user-submitted-city', function () {
+            snippets.cmd('stop');
+        });
+
         $resultsSection.show();
         $twinTownSection.show();
         $resultsSection.velocity('scroll', { duration: 750, easing: 'easeOutSine' });
