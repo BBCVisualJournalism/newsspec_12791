@@ -31,9 +31,10 @@
     font-size: 1.6em;
     line-height: 20px;
     color: $deepSeaGreen;
-    span {
-        font-weight: bold;
-    }
+}
+
+.ns12791_twinTownDistance_miles_number, .ns12791_twinTownDistance_km_number {
+    font-weight: bold;
 }
 
 .ns12791_tracksInCommon_title {

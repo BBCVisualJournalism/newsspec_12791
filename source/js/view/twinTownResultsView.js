@@ -10,18 +10,27 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     var $twinTownFound;
     var $noTwinTown;
 
+    var isEnglish;
+
     var init = function () {
         // set variables
         $twinTownResult = news.$('.ns12791_twinTownResult');
         $twinTownCityName = news.$('.ns12791_twinTownCityName');
         $twinTownCountryName = news.$('.ns12791_twinTownCountryName');
-        $twinTownMilesAway = news.$('#ns12791_twinTownDistance_miles');
-        $twinTownKmAway = news.$('#ns12791_twinTownDistance_km');
+        $twinTownMilesAwayText = news.$('.ns12791_twinTownDistance_miles');
+        $twinTownMilesAway = news.$('.ns12791_twinTownDistance_miles_number');
+        $twinTownKmAway = news.$('.ns12791_twinTownDistance_km_number');
         $tracksInCommonNumber = news.$('#ns12791_tracksInCommon_number');
         $tracksInCommonText = news.$('#ns12791_tracksInCommon_text');
         $tracksInCommonList = news.$('.ns12791_tracksInCommon_list');
         $twinTownFound = news.$('.ns12791_twinTownFound');
         $noTwinTown = news.$('.ns12791_noTwinTown');
+
+        if (news.$('.main').attr('id') === 'locale_en') {
+            isEnglish = true;
+        } else {
+            isEnglish = false;
+        }
 
         // event listeners
         news.pubsub.on('display-twin-town-results', displayResults);
@@ -34,7 +43,11 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
     var updateDistance = function (milesAway) {
         var kmAway = Math.round(milesAway / 0.6214);
-        $twinTownMilesAway.text(addCommas(milesAway));
+        if (isEnglish) {
+            $twinTownMilesAway.text(addCommas(milesAway));
+        } else {
+            $twinTownMilesAwayText.remove();
+        }
         $twinTownKmAway.text(addCommas(kmAway));
     };
 
@@ -56,7 +69,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         // english only - returns digits for all other languages
         var convertNumberToWord = function (number) {
             var numberString = number.toString();
-            if (news.$('.main').attr('id') !== 'locale_en') {
+            if (!isEnglish) {
                 return numberString;
             } else {
                 var numberLookup = {
