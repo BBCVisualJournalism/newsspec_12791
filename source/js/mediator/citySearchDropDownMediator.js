@@ -35,7 +35,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
             news.$("<option />", {
                 val: undefined,
-                text: 'Select city'
+                text: $cityDropDown.attr('data-select-city')
             }).appendTo($cityDropDown);
 
             news.$("<option />", {
