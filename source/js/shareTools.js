@@ -67,4 +67,4 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller',
     };
 
     return publicApi;
-})
+});
