@@ -34,8 +34,20 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
     var updateDistance = function (milesAway) {
         var kmAway = Math.round(milesAway / 0.6214);
-        $twinTownMilesAway.text(milesAway.toLocaleString());
-        $twinTownKmAway.text(kmAway.toLocaleString());
+        $twinTownMilesAway.text(addCommas(milesAway));
+        $twinTownKmAway.text(addCommas(kmAway));
+    };
+
+    var addCommas = function (number) {
+        var numberString = number + '';
+        var decimalSplit = numberString.split('.');
+        var left = decimalSplit[0];
+        var right = decimalSplit.length > 1 ? '.' + decimalSplit[1] : '';
+        var regex = /(\d+)(\d{3})/;
+        while (regex.test(left)) {
+            left = left.replace(regex, '$1' + ',' + '$2');
+        }
+        return left + right;
     };
 
     var updateTracksInCommon = function (commonTracksArray) {
