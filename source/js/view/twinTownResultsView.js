@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
+define(['lib/news_special/bootstrap', 'utils', 'lib/news_special/numberFormatter'], function (news, utils, NumberFormatter) {
     
     // declare variables
     var $twinTownResult;
@@ -10,7 +10,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     var $twinTownFound;
     var $noTwinTown;
 
-    var isEnglish;
+    var language;
 
     var init = function () {
         // set variables
@@ -26,11 +26,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         $twinTownFound = news.$('.ns12791_twinTownFound');
         $noTwinTown = news.$('.ns12791_noTwinTown');
 
-        if (news.$('.main').attr('id') === 'locale_en') {
-            isEnglish = true;
-        } else {
-            isEnglish = false;
-        }
+        language = utils.getLanguage();
 
         // event listeners
         news.pubsub.on('display-twin-town-results', displayResults);
@@ -43,24 +39,12 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
     var updateDistance = function (milesAway) {
         var kmAway = Math.round(milesAway / 0.6214);
-        if (isEnglish) {
-            $twinTownMilesAway.text(addCommas(milesAway));
+        if (language === 'english') {
+            $twinTownMilesAway.text(NumberFormatter.format(language, milesAway));
         } else {
             $twinTownMilesAwayText.remove();
         }
-        $twinTownKmAway.text(addCommas(kmAway));
-    };
-
-    var addCommas = function (number) {
-        var numberString = number + '';
-        var decimalSplit = numberString.split('.');
-        var left = decimalSplit[0];
-        var right = decimalSplit.length > 1 ? '.' + decimalSplit[1] : '';
-        var regex = /(\d+)(\d{3})/;
-        while (regex.test(left)) {
-            left = left.replace(regex, '$1' + ',' + '$2');
-        }
-        return left + right;
+        $twinTownKmAway.text(NumberFormatter.format(language, kmAway));
     };
 
     var updateTracksInCommon = function (commonTracksArray) {
@@ -69,7 +53,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         // english only - returns digits for all other languages
         var convertNumberToWord = function (number) {
             var numberString = number.toString();
-            if (!isEnglish) {
+            if (language !== 'english') {
                 return numberString;
             } else {
                 var numberLookup = {

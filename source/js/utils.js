@@ -1,4 +1,4 @@
-define(function () {
+define(['lib/news_special/bootstrap'], function (news) {
     var replaceCharsLookup = {
         'À': 'A',
         'à': 'a',
@@ -122,6 +122,26 @@ define(function () {
         return normalisedString;
     };
 
+    var localeLookup = {
+        'locale_en': 'english',
+        'locale_es': 'spanish',
+        'locale_pt': 'portuguese',
+        'locale_ha': 'hausa',
+        'locale_sw': 'swahili',
+        'locale_so': 'somali',
+        'locale_fr': 'french'
+    };
+
+    var getLanguage = function () {
+        for (var key in localeLookup) {
+            if (news.$('.main').attr('id') === key) {
+                return localeLookup[key];
+            }
+        }
+        console.log('locale not found in lookup');
+        return;
+    };
+
     var enableInput = function ($input) {
         console.log('enabling input');
         $input.removeClass('disabled').removeAttr('disabled');
@@ -142,6 +162,7 @@ define(function () {
 
     var publicApi = {
         normaliseText: normaliseText,
+        getLanguage: getLanguage,
         enableInput: enableInput,
         disableInput: disableInput,
         getCityFromString: getCityFromString,
