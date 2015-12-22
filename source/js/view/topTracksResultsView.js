@@ -12,6 +12,7 @@ define([
     var $showMoreTracksButton;
     var $showLessTracksButton;
     var $twinTownSection;
+    var $contentCovers;
 
     var init = function () {
         // set variables
@@ -22,6 +23,7 @@ define([
         $showMoreTracksButton = news.$('.ns12791_showMoreTracksButton');
         $showLessTracksButton = news.$('.ns12791_showLessButton');
         $twinTownSection = news.$('.ns12791_twinTown');
+        $contentCovers = news.$('.ns12791_contentCover');
         
         // event listeners
         news.pubsub.on('display-city-tracks-results', displayResults);
@@ -99,13 +101,20 @@ define([
 		});
 
         // stop current playing snippet when new city is loaded
-        news.pubsub.on('user-submitted-city', function () {
-            snippets.cmd('stop');
-        });
+        snippets.cmd('stop');
 
         $resultsSection.show();
         $twinTownSection.show();
+        $contentCovers.css({ 'top': '0', 'opacity': '1', 'display': 'block' });
         $resultsSection.velocity('scroll', { duration: 750, easing: 'easeOutSine' });
+        $contentCovers.velocity({
+            top: '40px',
+            opacity: 0,
+            display: 'none'
+        }, {
+            duration: 750,
+            easing: 'linear'
+        });
     };
 
     var publicApi = {
