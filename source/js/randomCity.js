@@ -15,18 +15,19 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         });
 
         news.pubsub.on('display-random-city-section', displayRandomCitySection);
+        news.pubsub.on('random-city-button-clicked', selectRandomCity);
     };
 
     var setupRandomCityButton = function (cityArray) {
         $randomCityButton.on('click', function () {
-            var randomCity = getRandomCity(cityArray);
-            var cityFileName = utils.normaliseText(randomCity) + '.js';
-            news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
+            news.pubsub.emit('random-city-button-clicked', [cityArray]);
         });
     };
 
-    var getRandomCity = function (cityArray) {
-        return cityArray[Math.floor(Math.random() * cityArray.length)];
+    var selectRandomCity = function (cityArray) {
+        var randomCity = cityArray[Math.floor(Math.random() * cityArray.length)];
+        var cityFileName = utils.normaliseText(randomCity) + '.js';
+        news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
     };
 
     var displayRandomCitySection = function () {
