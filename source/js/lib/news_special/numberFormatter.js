@@ -73,7 +73,7 @@ define(function () {
         russian: commonSeperatorFormats.spacesAndCommas,
         sinhala: commonSeperatorFormats.commasAndDecimals,
         somali: commonSeperatorFormats.commasAndDecimals,
-        spanish: commonSeperatorFormats.spacesAndCommas,
+        spanish: commonSeperatorFormats.decimalsAndCommas,
         swahili: commonSeperatorFormats.commasAndDecimals,
         tamil: commonSeperatorFormats.commasAndDecimals,
         thai: commonSeperatorFormats.commasAndDecimals,
