@@ -33,17 +33,21 @@ define([
     };
 
     var showMoreTracks = function () {
-        console.log('topTracksResultsView, showMoreTracks');
         $songResultsSecondHalf.removeClass('ns12791_songResultsSecondHalf--mobHidden');
         $showMoreTracksButton.removeClass('ns12791_button--show');
         $showLessTracksButton.addClass('ns12791_button--show');
+        $songResultsSecondHalf.velocity('slideDown', { duration: 750 });
     };
 
     var showLessTracks = function () {
-        console.log('topTracksResultsView, showLessTracks');
         $songResultsSecondHalf.addClass('ns12791_songResultsSecondHalf--mobHidden');
-        $showMoreTracksButton.addClass('ns12791_button--show');
-        $showLessTracksButton.removeClass('ns12791_button--show');
+        $songResultsSecondHalf.velocity('slideUp', {
+            duration: 750,
+            complete: function () {
+                $showLessTracksButton.removeClass('ns12791_button--show');
+                $showMoreTracksButton.addClass('ns12791_button--show');
+            }
+        });
     };
 
     var displayCityName = function (cityName) {
