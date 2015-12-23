@@ -8,7 +8,7 @@
 
 .shareToolsHolder {
     .share__button {
-        width: 84px;
+        width: 132px;
         max-width: none;
         height: 26px;
         background-color: $greenLeaf;
@@ -18,6 +18,9 @@
             margin: 3px 5px;
         }
         p {
+            float: left;
+            width: 102px;
+            text-align: center;
             font-size: 1.6em;
             color: $white;
             line-height: 26px;

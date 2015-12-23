@@ -48,9 +48,9 @@ define(['lib/news_special/bootstrap', 'lib/news_special/share_tools/controller',
                 .replace('{{cityName}}', userCity);
         }
         var shareToolsOptions = {
-            'header': 'Share',
+            'header': $shareToolsHolder.attr('data-share-heading'),
             'message': message,
-            'storyPageUrl': 'http://bit.ly/1TPWnqn',
+            'storyPageUrl': $shareToolsHolder.attr('data-share-url'),
             'template': 'dropdown'
         };
         shareTools = new ShareTools($shareToolsHolder, shareToolsOptions, 'ns12791');
