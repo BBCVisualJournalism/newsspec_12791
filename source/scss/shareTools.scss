@@ -7,19 +7,19 @@
 }
 
 .shareToolsHolder {
+    text-align: center;
     .share__button {
-        width: 132px;
         max-width: none;
         height: 26px;
         background-color: $greenLeaf;
         margin: 0 auto;
+        display: inline-block;
         .share__png_icon {
             float: left;
             margin: 3px 5px;
         }
         p {
             float: left;
-            width: 102px;
             text-align: center;
             font-size: 1.6em;
             color: $white;
