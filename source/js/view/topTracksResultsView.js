@@ -36,16 +36,20 @@ define([
         $songResultsSecondHalf.removeClass('ns12791_songResultsSecondHalf--mobHidden');
         $showMoreTracksButton.removeClass('ns12791_button--show');
         $showLessTracksButton.addClass('ns12791_button--show');
-        $songResultsSecondHalf.velocity('slideDown', { duration: 750 });
+        $songResultsSecondHalf.velocity('slideDown', {
+            duration: 750,
+            display: ''
+        });
     };
 
     var showLessTracks = function () {
-        $songResultsSecondHalf.addClass('ns12791_songResultsSecondHalf--mobHidden');
         $songResultsSecondHalf.velocity('slideUp', {
             duration: 750,
+            display: '',
             complete: function () {
                 $showLessTracksButton.removeClass('ns12791_button--show');
                 $showMoreTracksButton.addClass('ns12791_button--show');
+                $songResultsSecondHalf.addClass('ns12791_songResultsSecondHalf--mobHidden');
             }
         });
     };
