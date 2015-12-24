@@ -59,7 +59,7 @@ Feature: Shazam
   Scenario: Hiding tracks on portable devices
     Given I am on a mobile/tablet size viewport
     And I am on the 'Top Tracks' section
-    And I have selected the 'Show more tracks option'
+    And I have selected the 'Show more tracks' option
     Then the option should be renamed to 'Show less'
     And if I select THAT option
     Then the bottom 5 tracks should be removed (preferably animated)
@@ -111,10 +111,15 @@ Feature: Shazam
 
   Scenario: Twin town doesn't exist
     Given my town is unique
-    Then # @TODO - Ed
+    Then it should display a message explaining that the listed songs don't match the top 10 for any other city
+
+  Scenario: Random city
+    Given I click on the 'Random city' button
+    Then I should be scrolled up to the 'Top Tracks' section
+    And this section should show the top most searched Shazam tracks in a randomly selected city
 
   Scenario: Sharetools
     Given I share from the bespoke sharetools
     Then it should be populated with a custom message about my twin town
-    Or be populated with a "my town is unique" kind of message if there is no twin town # @TODO - Ed
+    Or be populated with a "my town is unique" kind of message if there is no twin town
     And it should have a Shazam-themed social media image
