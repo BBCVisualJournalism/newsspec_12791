@@ -1,21 +1,17 @@
 @import "news_special/defaults";
 @import "app";
+@import "colours";
+@import "type";
 @import "creditsShareAndMore";
 @import "./../../bower_components/snippets-css/index.css";
-@import "type";
-@import "colours";
 @import "buttons";
 @import "topSearchSection";
 @import "autocomplete";
+@import "resultsSection";
+@import "twinTownSection";
+@import "randomCitySection";
+@import "shareTools";
 
-.main {
-	background-color: #fff;
-}
-
-.ns_rtl {
-	direction: rtl;
-}
-
-.ns_hideMe {
-	display: none;
+.b-g-p {
+    box-sizing: content-box;
 }

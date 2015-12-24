@@ -316,7 +316,7 @@
                 styles.width = (that.el.outerWidth()) + 'px';
             }
 
-            $('.main').css('padding-bottom', ($container.height()+18) + 'px');
+            // $('.main').css('padding-bottom', ($container.height()+18) + 'px');
 
             $container.css(styles);
         },
@@ -604,7 +604,7 @@
             that.selectedIndex = -1;
             clearInterval(that.onChangeInterval);
             $(that.suggestionsContainer).hide();
-            $('.main').css('padding-bottom', '18px');
+            // $('.main').css('padding-bottom', '18px');
             that.signalHint(null);
         },
 

@@ -1,22 +1,23 @@
-.autocomplete-suggestions{
-    color: #333; background: #FFF; overflow: auto;
-    border-bottom: 1px solid #666;
-    font-size: 16px;
+.autocomplete-suggestions {
+    color: $mineShaft;
+    background-color: $white;
+    overflow: auto;
+    border-bottom: 1px solid $doveGray;
+    font-size: 1.6em;
+    line-height: 20px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
 }
-.autocomplete-suggestion{
-    border: 1px solid #666;
+
+.autocomplete-suggestion {
+    border: 1px solid $doveGray;
     border-bottom: 0;
     padding: 13px 10px;
     overflow: hidden;
     cursor: pointer;
     font-size: 1em;
-    strong {
-        text-decoration: underline;
-    }
 }
-.autocomplete-selected{
-    background: #C4E0E0;
-}
-.autocomplete-group{
-    background: #EBEBEB; padding: 5px;
+
+.autocomplete-selected {
+    background: $botticelli;
 }

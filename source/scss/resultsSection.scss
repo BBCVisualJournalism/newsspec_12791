@@ -1,0 +1,163 @@
+.ns12791_resultsHolder {
+	width: 100%;
+	text-align: center;
+	background-color: $mineShaft;
+	padding: 16px 0;
+    display: none;
+    position: relative;
+}
+
+.ns12791_resultsTitle {
+	color: $white;
+	margin: 0 0 8px;
+	font-size: 1.6em;
+    line-height: 20px;
+}
+
+.ns12791_songResults {
+	width: 100%;
+	padding: 0 8px;
+	margin: 0 auto;
+	font-size: 1.6em;
+    line-height: 20px;
+	display: block;
+}
+
+.ns12791_songResultsFirstHalf {
+    padding: 16px 8px 0;
+}
+
+.ns12791_songResultsSecondHalf--mobHidden {
+	display: none;
+}
+
+.ns12791_songBoxHolder {
+	margin: 0 0 16px;
+	background-color: $white;
+	padding: 8px;
+    text-align: left;
+    position: relative;
+    display: table;
+    width: 100%;
+    .ns12791_songBoxImage {
+		width: 84px;
+		height: 84px;
+		vertical-align: top;
+		display: none;
+	}
+}
+
+.ns12791_trackNumAndSnippetHolder {
+	display: table-cell;
+	width: 88px;
+    vertical-align: top;
+    position: relative;
+    z-index: 2;
+}
+
+.ns12791_trackNumber, .ns12791_snippetHolder {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	vertical-align: top;
+	margin-right: 4px;
+}
+
+.ns12791_trackNumber {
+	line-height: 40px;
+    text-align: center;
+    color: $white;
+    background-color: $mineShaft;
+}
+
+.ns12791_snippetHolder {
+    font-size: 10px;
+}
+
+.ns12791_snippetHolderNoSong {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGGSURBVFiF7dixq0FRHMDx73mUlDIYDBazyeQPYDOws7Njt5iMysXNZFCSRZktJpOF3WAwGJSSovtmvVdyzu++Zzjf/f761L33d7pX5fN5jw/u678Br7JA0yzQNAs0zQJN0wI2Gg2SyaQw5fe0gKlUik6nQ7VaJRwOS5ue0r7FgUCAQqHAYDAgl8tJmp4yfgZjsRi1Wo1ms0k8HpcwPSX2kmQyGXq9HuVymWAwKDVW9i0OhUKUSiUcxyGdTovM9GXNJBIJWq0W9XqdaDRqNMu3PaiUIpvN4rouxWIRpZTWHN8XdSQSoVKp0G63tXbnn50kurvz4486uX3wou12S7fbZb/fv3Wd78DL5cJ4PGY+n+N5739A+gb0PI/lcslwOOR8PmvP8QV4OBxwHIfNZmM8SxR4u92YzWZMJhPu97vITDHger2m3+9zPB6lRgICwNPphOu6rFYrCc+PtIGPx4PFYsFoNOJ6vUqantIC7nY7ptPp2ztNJ2X/bhlmgaZZoGkWaJoFmvYNAl5vHLikpVsAAAAASUVORK5CYII=');
+    background-image: url('data:image/svg+xml,%3Csvg%0A%20%20%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%0A%20%20%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%0A%20%20%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%0A%20%20%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%0A%20%20%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%0A%20%20%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%0A%20%20%20xml%3Aspace%3D%22preserve%22%0A%20%20%20style%3D%22enable-background%3Anew%200%200%2040%2040%3B%22%0A%20%20%20viewBox%3D%220%200%2040%2040%22%0A%20%20%20y%3D%220px%22%0A%20%20%20x%3D%220px%22%0A%20%20%20version%3D%221.1%22%3E%3Csymbol%0A%20%20%20%20%20viewBox%3D%220%20-64%2064%2064%22%0A%20%20%20%20%20id%3D%22Play_bg%22%3E%3Cpolygon%0A%20%20%20%20%20%20%20id%3D%22polygon6%22%0A%20%20%20%20%20%20%20points%3D%2264%2C-64%200%2C-64%200%2C0%2064%2C0%20%20%22%0A%20%20%20%20%20%20%20style%3D%22fill%3A%234A4A4A%3B%22%20/%3E%3Cpolygon%0A%20%20%20%20%20%20%20id%3D%22polygon8%22%0A%20%20%20%20%20%20%20points%3D%2221%2C-48%2047%2C-32%2021%2C-16%20%20%22%0A%20%20%20%20%20%20%20style%3D%22fill%3A%23FFFFFF%3B%22%20/%3E%3C/symbol%3E%3Cuse%0A%20%20%20%20%20style%3D%22overflow%3Avisible%3B%22%0A%20%20%20%20%20transform%3D%22matrix%280.625%200%200%20-0.625%200%200%29%22%0A%20%20%20%20%20y%3D%22-64%22%0A%20%20%20%20%20id%3D%22XMLID_1_%22%0A%20%20%20%20%20height%3D%2264%22%0A%20%20%20%20%20width%3D%2264%22%0A%20%20%20%20%20xlink%3Ahref%3D%22%23Play_bg%22%20/%3E%3C/svg%3E');
+}
+
+.ns12791_songBoxTitleAndArtistHolder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px 8px 8px 100px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+.ns12791_songBoxArtist {
+	margin: 0 0 4px;
+	font-weight: bold;
+}
+
+.ns12791_songBoxTitle {
+	margin: 0;
+}
+
+.ns12791_songBoxArtist, .ns12791_songBoxTitle {
+    color: $black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.ns12791_resultsButton {
+	display: none;
+    width: 288px;
+}
+
+.ns12791_button--show {
+    display: block;
+}
+
+@include respondMinMax(600px, false) {
+	.ns12791_songResults {
+		width: auto;
+		margin: 0 60px;
+	}
+
+	.ns12791_trackNumAndSnippetHolder {
+		width: 40px;
+		display: inline-block;
+		margin-right: 4px;
+	}
+
+	.ns12791_trackNumber {
+		margin-bottom: 4px;
+	}
+
+	.ns12791_songBoxHolder .ns12791_songBoxImage {
+        display: inline-block;
+    }
+
+    .ns12791_songBoxTitleAndArtistHolder {
+    	padding-left: 144px;
+    }
+
+    .ns12791_songBoxArtist {
+        margin-bottom: 8px;
+    }
+
+    .ns12791_resultsButton {
+    	width: 380px;
+    }
+}
+
+@include respondMinMax(1008px, false) {
+	.ns12791_songResults {
+		display: inline-block;
+		width: 428px;
+		margin: 0;
+        padding: 16px 8px;
+	}
+
+	.ns12791_resultsButton, .ns12791_button--show {
+		display: none;
+	}
+}

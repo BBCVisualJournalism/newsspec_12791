@@ -1,0 +1,82 @@
+.ns12791_twinTown {
+    display: none;
+    background-color: $mineShaft;
+    position: relative;
+}
+
+.ns12791_twinTownResult {
+    text-align: center;
+    background-color: $polar;
+    margin: 0 16px;
+    padding: 32px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+.ns12791_twinTownCityName, .ns12791_twinTownCountryName {
+    color: $curiousBlue;
+    margin: 0;
+}
+
+.ns12791_twinTownCityName {
+    font-size: 2.6em;
+    line-height: 32px;
+}
+
+.ns12791_twinTownCountryName {
+    font-size: 1.8em;
+    line-height: 22px;
+}
+
+.ns12791_twinTownDistance {
+    font-size: 1.6em;
+    line-height: 20px;
+    color: $deepSeaGreen;
+}
+
+.ns12791_twinTownDistance_miles_number, .ns12791_twinTownDistance_km_number {
+    font-weight: bold;
+}
+
+.ns12791_tracksInCommon_title {
+    font-size: 2.2em;
+    line-height: 28px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: $deepSeaGreen;
+}
+
+.ns12791_tracksInCommon_list {
+    font-size: 1.6em;
+    line-height: 22px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    color: $deepSeaGreen;
+    width: 192px;
+}
+
+.ns12791_noTwinTown {
+    display: none;
+    font-size: 1.6em;
+    line-height: 20px;
+    font-weight: bold;
+    color: $deepSeaGreen;
+}
+
+@include respondMinMax(600px, false) {
+    .ns12791_twinTownResult {
+        margin: 0 auto;
+        width: 512px;
+    }
+
+    .ns12791_twinTownCityName {
+        font-size: 3.2em;
+        line-height: 40px;
+    }
+
+    .ns12791_twinTownCountryName {
+        font-size: 2.4em;
+        line-height: 30px;
+    }
+}

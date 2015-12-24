@@ -1,86 +1,50 @@
-define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (news, CitySearchMediator) {
+define(['lib/news_special/bootstrap', 'mediator/cityAutocompleteMediator', 'utils'], function (news, CityAutocompleteMediator, utils) {
 
-    /* Vars */
-    var autocompleteSelectedCity;
-    var autocompleteSelected;
-    var citysAutocomplete;
-    var toggleInputIstats;
+    var $searchForm;
+    var $searchInput;
+    var $searchSubmit;
 
-    /* Elements */
-    var $autocompleteddInput;
-    var $autocompleteEl;
-    var $dropdownInput;
-    var $userInputWrapperEl;
-    var $submitButton;
+    var cityAutocomplete;
+    var basePath;
 
-    var init = function () {
-        /* Set defaults */
-        autocompleteSelectedCity = null;
-        dropdownSelectedCity = null;
-        toggleInputIstats = false;
+    var init = function (baseDataPath) {
+        $searchForm = news.$('#ns12791_cityFreeTextSearchHolder');
+        $searchInput = news.$('#city-search--text-input');
+        $searchSubmit = news.$('.city-search--submit');
 
-        /* Element selectors */
-        $autocompleteInput = news.$('#city-search--text-input');
-        $autocompleteEl = news.$('.city-search--autocomplete');
-        $userInputWrapperEl = news.$('.city-search--inputs');
-        $submitButton = news.$('.city-search--submit');
+        basePath = baseDataPath;
 
-        /* Populate the inputs */
-        citysAutocomplete = new CitySearchMediator($autocompleteInput, updateButtonState);
+        cityAutocomplete = new CityAutocompleteMediator($searchInput, onCitySelect, basePath);
 
-        /* LISTENERS */
-        $autocompleteInput.keypress(autocompleteInputKeypress);
-        $submitButton.on('click', submit);
+        $searchInput.on('focus', function () {
+            var $this = $(this);
+            if ($this.val() !== '') {
+                $this.val('');
+                utils.disableInput($searchSubmit);
+            }
+        });
+
+        $searchForm.on('submit', onSubmit);
     };
 
-    var updateButtonState = function () {
-        var disabled = true;
-        if (citysAutocomplete.getSelectedCity() !== null) {
-            disabled = false;
-        }
-
-        if (disabled) {
-            $submitButton.addClass('disabled');
+    var onCitySelect = function () {
+        if (getUserCity() !== null) {
+            utils.enableInput($searchSubmit);
         } else {
-            $submitButton.removeClass('disabled');
-            // $submitButton.focus();
+            utils.disableInput($searchSubmit);
         }
     };
 
-    var autocompleteInputKeypress = function (e) {
-        var inputText = (e.target.value + String.fromCharCode(e.charCode)).toLowerCase();
-        var $suggestionsHolder = news.$('.autocomplete-suggestions');
-        var $autoCompletSuggestions = $suggestionsHolder.find('.autocomplete-suggestion');
-
-        var keyCode = (window.event) ? e.which : e.keyCode;
-
-        if (keyCode == 13 && !$submitButton.hasClass('disabled')) {
-            //we've got a match and we've hit the enter key!
-            if ($suggestionsHolder.css('display') == 'none') {
-                $submitButton.trigger("click");
-                $autocompleteInput.blur();
-            }
-            return;
-        }
-
-        if ($autoCompletSuggestions.length) {
-            if (news.$($autoCompletSuggestions[0]).text().toLowerCase() == inputText) {
-                $submitButton.removeClass('disabled');
-            }
-            else {
-                $submitButton.addClass('disabled');
-            }
-        }
-    };    
+    var onSubmit = function () {
+        news.istats.log('newsspec-interaction', 'search-button-clicked');
+        news.istats.log('newsspec-interaction', 'city-search-button-clicked');
+        var cityFileName = utils.normaliseText(getUserCity()) + '.js';
+        news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
+        return false;
+    };
 
     var getUserCity = function () {
-        return citysAutocomplete.getSelectedCity();
-    };
-
-    var submit = function () {
-        news.pubsub.emit('istats', ['find-automation-clicked']);
-
-        news.pubsub.emit('user-submitted-city', getUserCity());
+        return cityAutocomplete.getSelectedCity();
     };
 
     var publicApi = {
@@ -89,5 +53,4 @@ define(['lib/news_special/bootstrap', 'mediator/citySearchMediator'], function (
     };
 
     return publicApi;
-
 });

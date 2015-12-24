@@ -1,0 +1,22 @@
+.ns12791_randomCity {
+    width: 100%;
+    text-align: center;
+    background-color: $mineShaft;
+    padding: 48px 0 0;
+    display: none;
+}
+
+.ns12791_randomCityButton {
+    width: 256px;
+}
+
+.ns12791_contentCover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $mineShaft;
+    z-index: 5;
+    display: none;
+}

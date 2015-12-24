@@ -1,0 +1,24 @@
+<div class="ns12791_twinTown">
+    <div class="ns12791_twinTownFound">
+        <h3 class="ns12791_subheading">{{= yourTwinTown }}</h3>
+        <p class="ns12791_paragraph">{{= twinTownParagraph }}</p>
+        <div class="ns12791_twinTownResult">
+            <h4 class="ns12791_twinTownCityName"></h4>
+            <h5 class="ns12791_twinTownCountryName"></h5>
+            <p class="ns12791_twinTownDistance">
+                <span class="ns12791_twinTownDistance_miles"><span class="ns12791_twinTownDistance_miles_number"></span> {{= milesAway }} (</span><span class="ns12791_twinTownDistance_km_number"></span> {{= kmAway }}<span class="ns12791_twinTownDistance_miles">)</span>
+            </p>
+            <h5 class="ns12791_tracksInCommon_title">
+                <span id="ns12791_tracksInCommon_number"></span> <span id="ns12791_tracksInCommon_text" data-singular="{{= trackInCommon_singular }}" data-plural="{{= tracksInCommon }}"></span>
+            </h5>
+            <ol class="ns12791_tracksInCommon_list"></ol>
+        </div>
+    </div>
+    <div class="ns12791_noTwinTown ns12791_twinTownResult">
+        <p>{{= noTwinTownParagraph1 }}</p>
+        <p>{{= noTwinTownParagraph2 }}</p>
+    </div>
+    <p class="ns12791_shareCta">{{= shareCTA }}</p>
+    <div class="shareToolsHolder" data-share-heading="{{= share }}" data-share-message="{{= shareMessage }}" data-share-message-notwin="{{= shareMessageNoTwinTown }}" data-share-url="{{= shareUrl }}"></div>
+    <div class="ns12791_contentCover"></div>
+</div>
