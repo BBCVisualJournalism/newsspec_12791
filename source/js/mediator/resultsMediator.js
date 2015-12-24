@@ -2,12 +2,12 @@ define(['lib/news_special/bootstrap', 'mediator/topTracksResultsMediator'], func
 
     var init = function () {
         news.pubsub.on('user-submitted-city', handleCitySubmit);
+        topTracksResultsMediator.init();
     };
 
     var handleCitySubmit = function (basePath, cityFileName) {
         require([basePath + cityFileName + '?callback=define'], function (selectedCityModel) {
             displayResults(selectedCityModel);
-            topTracksResultsMediator.init();
         });
     };
 
