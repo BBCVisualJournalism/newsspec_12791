@@ -115,14 +115,7 @@ define([
         $twinTownSection.show();
         $contentCovers.css({ 'opacity': '1', 'display': 'block' });
         $resultsSection.velocity('scroll', { duration: 750, easing: 'easeOutSine' });
-        $contentCovers.velocity({
-            opacity: 0
-        }, {
-            delay: 250,
-            duration: 750,
-            easing: 'linear',
-            complete: function () { $contentCovers.css('display', 'none'); }
-        });
+        $contentCovers.velocity('fadeOut', { delay: 250, duration: 750, easing: 'linear' });
     };
 
     var publicApi = {
