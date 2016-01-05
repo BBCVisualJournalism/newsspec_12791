@@ -51,5 +51,6 @@
     "onwardJourneyLink1_url": "http://www.shazam.com/",
     "onwardJourneyLink2_text": "BBC Music",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
-    "onwardJourneyDisclaimer": "A BBC não se responsabiliza pelo conteúdo de outros sites"
+    "onwardJourneyDisclaimer": "A BBC não se responsabiliza pelo conteúdo de outros sites",
+    "ie8Message": ""
 }
