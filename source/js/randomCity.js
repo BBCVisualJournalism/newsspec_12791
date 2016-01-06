@@ -20,6 +20,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
     var setupRandomCityButton = function (cityArray) {
         $randomCityButton.on('click', function () {
+            news.istats.log('newsspec-interaction', 'random-city-button-clicked');
             news.pubsub.emit('random-city-button-clicked', [cityArray]);
         });
     };
