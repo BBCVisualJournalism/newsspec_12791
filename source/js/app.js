@@ -11,8 +11,13 @@ define([
     'randomCity'
 ], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, twinTownResultsView, shareTools, citySearchUserInput, countrySearchUserInput, randomCity) {
 
+    var $main = news.$('.main');
+
+    // remove no-js class
+    $main.removeClass('ns_no-js');
+
 	// variable declarations
-    var locale = news.$('.main').attr('id').replace('locale_', '');
+    var locale = $main.attr('id').replace('locale_', '');
     var baseDataPath = 'http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/' + locale + '/';
     
     var $cantFindCity = news.$('#ns12791_cantFindCity');
