@@ -4,9 +4,9 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
         this.onCountrySelect = onCountrySelect;
         this.autocompleteSelectedCountry  = null;
         
-        var that = this;
+        var self = this;
         require([baseDataPath + 'worldwide_country_list.js?callback=define'], function (worldwideCountriesList) {
-            that.setupAutocomplete(worldwideCountriesList.data);
+            self.setupAutocomplete(worldwideCountriesList.data);
         });
     };
 
@@ -30,6 +30,14 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                 lookupFilter: function (suggestion, originalQuery, queryLowerCase) {
                     if (suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1) {
                         return true;
+                    }
+
+                    if (suggestion.search_alternatives) {
+                        for (var i = 0; i < suggestion.search_alternatives.length; i++) {
+                            if (suggestion.search_alternatives[i].toLowerCase().indexOf(queryLowerCase) !== -1) {
+                                return true;
+                            }
+                        }
                     }
                 },
 
