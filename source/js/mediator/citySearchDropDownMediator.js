@@ -30,24 +30,21 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         // load the jsonp and populate the dropdown
         var that = this;
         require([countriesCityListFilePath + '?callback=define'], function (citiesList) {
-            // add explanation option and a blank space to make it look tidy
-            console.log(citiesList);
-
-            news.$("<option />", {
-                val: undefined,
-                text: $cityDropDown.attr('data-select-city')
+            news.$('<option />', {
+                text: $cityDropDown.attr('data-select-city'),
+                selected: 'selected',
+                hidden: 'hidden'        // so it isn't displayed in the dropdown list
             }).appendTo($cityDropDown);
 
-            news.$("<option />", {
-                val: undefined,
-                text: ''
+            var $citiesOptGroup = news.$('<optgroup />', {
+                label: $cityDropDown.attr('data-select-city')
             }).appendTo($cityDropDown);
 
             news.$(citiesList.data).each(function () {
                 news.$("<option />", {
                     val: this.cityFileName,
                     text: this.cityName
-                }).appendTo($cityDropDown);
+                }).appendTo($citiesOptGroup);
             });
 
             if (citiesList.data.length === 1) {
