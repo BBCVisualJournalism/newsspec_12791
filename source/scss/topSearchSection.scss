@@ -69,10 +69,6 @@
     border: 1px solid $base--border-color;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
-    &.disabled {
-        background-color: $tundora;
-        border-color: $tundora;
-    }
 }
 
 .ns12791_alternateSearch {
@@ -86,11 +82,6 @@
     border-bottom-color: rgba(0,0,0,0);
     &:hover, &:focus{
         border-bottom-color: $rajah;
-    }
-    &.disabled {
-        color: $tundora;
-        cursor: default;
-        pointer-events: none;
     }
 }
 
@@ -111,30 +102,25 @@
     border-radius: 0;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
-    &.disabled {
-        background-color: $tundora;
-        border-color: $tundora;
-        pointer-events: none;
-        cursor: default;
-    }
 }
 
 .city-search--submit, .country-search--submit {
-    @extend %button--cta;
+    @extend %button--naked;
     margin: 0;
     height: 44px;
     width: 100%;
-    background-image: none;
-    color: $white;
-    background-color: $teal;
-    border: 2px solid $teal;
-    &:hover, &:active, &:focus {
-        background-color: $teal;
-        border: 2px solid $teal;
-    }
-    &.disabled {
+}
+
+.disabled {
+    &.search--text-input, &.city-search--submit, &.country-search--submit, &.city-search--dropdown-input {
         background-color: $tundora;
         border-color: $tundora;
+        color: $tundora;
+    }
+    &.ns12791_alternateSearch {
+        color: $tundora;
+        cursor: default;
+        pointer-events: none;
     }
 }
 

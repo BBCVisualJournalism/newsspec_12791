@@ -33,6 +33,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
             news.$('<option />', {
                 text: $cityDropDown.attr('data-select-city'),
                 selected: 'selected',
+                disabled: 'disabled',
                 hidden: 'hidden'        // so it isn't displayed in the dropdown list
             }).appendTo($cityDropDown);
 
