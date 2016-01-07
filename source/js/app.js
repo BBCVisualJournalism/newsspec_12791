@@ -11,12 +11,9 @@ define([
     'randomCity'
 ], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, twinTownResultsView, shareTools, citySearchUserInput, countrySearchUserInput, randomCity) {
 
+    // variable declarations
     var $main = news.$('.main');
 
-    // remove no-js class
-    $main.removeClass('ns_no-js');
-
-	// variable declarations
     var locale = $main.attr('id').replace('locale_', '');
     var baseDataPath = 'http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/' + locale + '/';
     
@@ -25,7 +22,9 @@ define([
     var citySearchV = news.$v('#ns12791_cityFreeTextSearchHolder');
     var countrySearchV = news.$v('#ns12791_countryFreeTextSearchHolder');
 
-    news.sendMessageToremoveLoadingImage();
+    // remove no-js class
+    $main.removeClass('ns_no-js');
+
     citySearchUserInput.init(baseDataPath);
 
     // init mediator components
@@ -40,7 +39,9 @@ define([
     randomCity.init(baseDataPath);
 
     // button listeners
-    $cantFindCity.on('click', function () {
+    $cantFindCity.on('click', function (e) {
+        e.preventDefault();
+
         // switch from city search to country search
         var animationMovement = 40;
         var animationDuration = 180;
@@ -65,7 +66,9 @@ define([
         $backToOriginalSearch.removeClass('disabled');
     });
 
-    $backToOriginalSearch.on('click', function () {
+    $backToOriginalSearch.on('click', function (e) {
+        e.preventDefault();
+        
         // switch from country search to city search
         var animationMovement = 40;
         var animationDuration = 180;
@@ -84,4 +87,6 @@ define([
         $cantFindCity.removeClass('disabled');
         $backToOriginalSearch.addClass('disabled');
     });
+
+    news.sendMessageToremoveLoadingImage();
 });

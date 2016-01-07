@@ -53,5 +53,5 @@
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "The BBC is not responsible for the content of external Internet sites",
     "ie8Message": "This site is optimised for modern web browsers, and does not fully support your version of Internet Explorer",
-    "no-jsMessage": "Please enable JavaScript to view this content"
+    "noJsMessage": "Please enable JavaScript to view this content"
 }

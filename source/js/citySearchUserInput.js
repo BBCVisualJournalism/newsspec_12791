@@ -12,6 +12,8 @@ define(['lib/news_special/bootstrap', 'mediator/cityAutocompleteMediator', 'util
         $searchInput = news.$('#city-search--text-input');
         $searchSubmit = news.$('.city-search--submit');
 
+        utils.enableInput($searchInput);
+
         basePath = baseDataPath;
 
         cityAutocomplete = new CityAutocompleteMediator($searchInput, onCitySelect, basePath);

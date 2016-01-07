@@ -69,6 +69,10 @@
     border: 1px solid $base--border-color;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
+    &.disabled {
+        background-color: $tundora;
+        border-color: $tundora;
+    }
 }
 
 .ns12791_alternateSearch {

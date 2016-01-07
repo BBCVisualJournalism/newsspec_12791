@@ -1,0 +1,29 @@
+.browser-notify {
+    background-color: #333;
+    width:100%;
+    &__banner {
+        color: #fff;
+        margin: 0 auto;
+        max-width: 992px;
+        padding: 10px;
+        span {
+            margin-left:10px;
+            color:#fff;
+            font-size: 14px;
+        }
+    }
+    &__icon {
+        background: url('../img/news--icons-sprite.png') no-repeat;
+        background-position: -6px -6110px;
+        float: left;
+        height: 20px;
+        margin-left: 8px;
+        width: 20px;
+    }
+}
+
+.ns_no-js {
+    .bbc-news-visual-journalism-loading-spinner {
+        display: none;
+    }
+}
