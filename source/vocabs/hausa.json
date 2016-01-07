@@ -5,8 +5,8 @@
     "introParagraph_part1": "Manhajar wayar salula",
     "introParagraph_shazamLink_text": "Shazam",
     "introParagraph_shazamLink_url": "http://www.shazam.com/",
-    "introParagraph_part2": "Tana taimakawa mutane domin samun kade-kaden da aka manta da su. Za ku iya neman wakoki 10 da aka fi saurare a birane 4,900 na kusan kasashe 200.",
-    "searchBoxCTACity": "Ku saka sunan birnin",
+    "introParagraph_part2": "tana taimakawa mutane domin samun kade-kaden da aka manta da su. Za ku iya neman wakoki 10 da aka fi saurare a birane 4,900 na kusan kasashe 200.",
+    "searchBoxCTACity": "Ku saka sunan birnin, sunayen za su fito ne da Ingilishi.",
     "searchBoxCityPlaceholder": "Birninku",
     "searchSubmitButton": "Bincike",
     "cantFindYourCity": "Baku ga birnin ba?",
@@ -19,7 +19,7 @@
     "showLessTracks": "A nuna wakoki kadan",
     "yourTwinTown": "Tagwayen biranenku",
     "twinTownParagraph": "Mun yi amfani da bayanan Shazam domin neman garuruwa masu nisa da ke sha'awar wake-wake. Mun nemi garuruwan ne a nahiyoyi daban-daban, wadanda ke sauraren wakoki 10 da dukkansu suka fi saurara.",
-    "milesAway": "[ not applicable]",
+    "milesAway": "[not applicable]",
     "kmAway": "Kilomita",
     "tracksInCommon": "Wakoki iri daya",
     "trackInCommon_singular": "Waka iri daya",
@@ -27,7 +27,7 @@
     "noTwinTownParagraph2": "Akwai birane 101 cikin birane 5,000 a binciken da ba su da tagwayen garuruwa.",
     "shareCTA": "Ku nuna tagwayen garuruwanku",
     "share": "Ku nuna",
-    "shareMessage": "Barkanku #{{twinTownName}}! Kuna tagwayen birnin mawaka  #{{cityName}}",
+    "shareMessage": "My musical twin town is #{{twinTownName}}. What's yours?",
     "shareMessageNoTwinTown": "#{{cityName}} na daban ne. Ku duba idan garinku yana da tagwaye a waka",
     "exploreFurther": "Ku duba sosai",
     "randomCityParagraph": "Ku zabi birni",
@@ -52,5 +52,6 @@
     "onwardJourneyLink2_text": "Wakokin BBC",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "BBC ba ta da alhakin duk wani abu da aka shigo da shi daga waje",
-    "ie8Message": ""
+    "ie8Message": "An tsara wannan shafin ne domin ya dace da masarrafar shafin intanet da aka sabunta, don haka ba zai yi aiki a Internet Explorer ba.",
+    "no-jsMessage": "Please enable JavaScript to view this content"
 }

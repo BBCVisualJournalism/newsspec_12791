@@ -27,7 +27,7 @@
     "noTwinTownParagraph2": "Sólo hay 101 localidades de casi 5.000 que no tienen un sitio musical gemelo.",
     "shareCTA": "Comparte tu localidad gemela",
     "share": "Compartir",
-    "shareMessage": "Hola #{{twinTownName}}! Tu eres la localidad gemela musical de #{{cityName}}",
+    "shareMessage": "Mi localidad musical gemela es #{{twinTownName}}. ¿Cuál es la tuya?",
     "shareMessageNoTwinTown": "#{{cityName}} es única. Averigua si tu localidad tiene un gemelo musical:",
     "exploreFurther": "Explora más",
     "randomCityParagraph": "Selecciona una localidad cualquiera para explorar",
@@ -52,5 +52,6 @@
     "onwardJourneyLink2_text": "BBC Music",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "El contenido de las páginas externas no es responsabilidad de la BBC.",
-    "ie8Message": ""
+    "ie8Message": "Este sitio web está diseñado para navegadores modernos. Su versión de Internet Explorer es obsoleta, por lo que le recomendamos actualizarla.",
+    "no-jsMessage": "Necesita JavaScript activado para ver este contenido"
 }

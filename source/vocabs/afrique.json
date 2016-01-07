@@ -5,7 +5,7 @@
     "introParagraph_part1": "Application mobile",
     "introParagraph_shazamLink_text": "Shazam",
     "introParagraph_shazamLink_url": "http://www.shazam.com/",
-    "introParagraph_part2": "Aide les utilisateurs à découvrir des morceaux méconnus ou oubliés. Explorez le top 10 des chansons les plus recherchées dans 4 900 villes, soit près de 200 pays.",
+    "introParagraph_part2": "aide les utilisateurs à découvrir des morceaux méconnus ou oubliés. Explorez le top 10 des chansons les plus recherchées dans 4 900 villes, soit près de 200 pays.",
     "searchBoxCTACity": "Tapez le nom d'une ville",
     "searchBoxCityPlaceholder": "Votre ville",
     "searchSubmitButton": "Rechercher",
@@ -27,8 +27,8 @@
     "noTwinTownParagraph2": "Seulement 101 villes sur 5 000 identifiées ne sont pas jumelées",
     "shareCTA": "Partagez votre ville jumelée",
     "share": "Partager",
-    "shareMessage": "Bonjour #{{twinTownName}}! Vous êtes jumelée musicalement avec #{{cityName}}",
-    "shareMessageNoTwinTown": "#{{cityName}} est unique. Découvrez si votre ville est jumelée musicalement :",
+    "shareMessage": "Ma ville musicale jumelle est #{{twinTownName}}. Quelle est la vôtre ?",
+    "shareMessageNoTwinTown": "#{{cityName}} est unique. Découvrez si votre ville est jumelée musicalement:",
     "exploreFurther": "Explorer d'autres options",
     "randomCityParagraph": "Sélectionner au hasard une ville à explorer",
     "randomCityButton": "Ville surprise",
@@ -52,5 +52,6 @@
     "onwardJourneyLink2_text": "BBC Music",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "La BBC n'est pas responsable des contenus de sites externes",
-    "ie8Message": ""
+    "ie8Message": "Ce site est optimisé pour les navigateurs web actuels, et ne fonctionne pas entièrement avec votre version d'Internet Explorer",
+    "no-jsMessage": "Please enable JavaScript to view this content"
 }

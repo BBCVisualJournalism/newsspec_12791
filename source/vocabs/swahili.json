@@ -27,7 +27,7 @@
     "noTwinTownParagraph2": "Ni miji 101 pekee kati ya 5,000 kwa mujibu wa takwimu ambayo haina miji pacha",
     "shareCTA": "Sambaza mji pacha wako",
     "share": "Sambaza",
-    "shareMessage": "Hello #{{twinTownName}}! Wewe ni pacha kimuziki na #{{cityName}}",
+    "shareMessage": "Mji pacha wangu kimuziki ni #{{twinTownName}}. Je, wako ni upi?",
     "shareMessageNoTwinTown": "#{{cityName}} ni wa kipekee. Baini iwapo mji wako una pacha kimuziki:",
     "exploreFurther": "Tafuta zaidi",
     "randomCityParagraph": "Chagua mji wowote bila kufuata utaratibu",
@@ -52,5 +52,6 @@
     "onwardJourneyLink2_text": "BBC Music",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "BBC haiwajibiki kwa taarifa kutoka kwa tovuti zisizo zake",
-    "ie8Message": ""
+    "ie8Message": "Tovuti hii imetengenezwa kufanya vyema zaidi kupitia visakuzi vya kisasa vya mtandaoni, na haifanyi vyema na aina yako ya Internet Explorer",
+    "no-jsMessage": "Please enable JavaScript to view this content"
 }

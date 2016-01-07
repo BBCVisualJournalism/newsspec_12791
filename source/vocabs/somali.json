@@ -6,7 +6,7 @@
     "introParagraph_shazamLink_text": "Shazam",
     "introParagraph_shazamLink_url": "http://www.shazam.com/",
     "introParagraph_part2": "wuxuu gacan ka siiyaa adeegsadayaasha in ay ogaadaan muusigga aysan aqoon iyo kan ay iloobeenba. Baar tobanka hees ee loogu raadiska badan yahay 4,900 oo magaalo ee ku dhowaad 200 oo dal.",
-    "searchBoxCTACity": "Gali magaalo",
+    "searchBoxCTACity": "Ku qor magaalada, u qor magacyada luqadda Ingiriiska",
     "searchBoxCityPlaceholder": "Magaaladaada",
     "searchSubmitButton": "Raadi",
     "cantFindYourCity": "Ma waysay magaalada aad raadinayso?",
@@ -27,8 +27,8 @@
     "noTwinTownParagraph2": "Waxaa jira oo kaliya 101 magaalada oo ka mid ah ku dhowaad 5000 xog gaaraysa oo aan lahayn magaalo ku mataanaysan",
     "shareCTA": "nala wadaag magaaladaada mataanta ah",
     "share": "La wadaag",
-    "shareMessage": "Ahlan #{{magaca magaalada mataanta ah}}! Waxaad la mataan tahay muusig ahaan #{{magaca magaalada}}",
-    "shareMessageNoTwinTown": "#{{magac magaalo}} waa kuu gaar. Ogow in magaaladaadu leedahay mid muusigga kula mataano ah",
+    "shareMessage": "My musical twin town is #{{twinTownName}}. What's yours?",
+    "shareMessageNoTwinTown": "#{{cityName}} waa kuu gaar. Ogow in magaaladaadu leedahay mid muusigga kula mataano ah",
     "exploreFurther": "Sii baarbaar",
     "randomCityParagraph": "Si guud u raadi magaalo cusub oo aad baarto",
     "randomCityButton": "Shaandhee magaaladaada",
@@ -43,7 +43,7 @@
     "shareUrl": "",
     "fullUrl": "",
     "shareTitle": "Wararka BBC - magaalooyinka mataanaysan",
-    "shareDescription": "barnaamijka mobile-ka Shaqazan ayaa ka caawiya adeegsadayaasha in ay ogaadaan muusig aysan garanay  ama ay iloobeen. baar tobanka sare ee loogu raadiska badan yahay ee 4,900 magaalooyinka caalamiga ah.",
+    "shareDescription": "Barnaamijka mobile-ka Shaqazan ayaa ka caawiya adeegsadayaasha in ay ogaadaan muusig aysan garanay  ama ay iloobeen. baar tobanka sare ee loogu raadiska badan yahay ee 4,900 magaalooyinka caalamiga ah.",
     "twitterMessage": "Magaalooyinka mataanaha muusigga - heesaha magaalooyina laga raadinayo - @bbcsomali",
     "shareImageUrl": "http://news.bbcimg.co.uk/news/special/2015/newsspec_12791/content/english/img/twitter_promo_1024.jpg",
     "onwardJourneyTitle": "Boggaga internet-ka ee xiriirka la leh",
@@ -52,5 +52,6 @@
     "onwardJourneyLink2_text": "Muusigga BBC",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "BBC mas'uul kama aha xogta boggagga internet-ka ee barteena ka baxsan.",
-    "ie8Message": ""
+    "ie8Message": "Bogga waxaa loo qaabeeyay bog-baarayaasha internet-ka casriga ah (Browser), si buuxda uguma shaqaynayao Internet Explorer",
+    "no-jsMessage": "Please enable JavaScript to view this content"
 }

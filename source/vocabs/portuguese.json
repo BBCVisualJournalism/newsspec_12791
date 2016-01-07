@@ -27,7 +27,7 @@
     "noTwinTownParagraph2": "Apenas 101 entre 5 mil cidades no banco de dados não têm uma cidade gêmea",
     "shareCTA": "Compartilhar sua cidade gêmea",
     "share": "Compartilhar",
-    "shareMessage": "Oi #{{twinTownName}}! Você é a cidade gêmea de #{{cityName}}",
+    "shareMessage": "Minha cidade gêmea musical é #{{twinTownName}}. Qual é a sua?",
     "shareMessageNoTwinTown": "#{{cityName}} é única. Descubra se sua cidade tem uma gêmea musical:",
     "exploreFurther": "Explorar mais",
     "randomCityParagraph": "Selecione uma cidade qualquer para explorar",
@@ -52,5 +52,6 @@
     "onwardJourneyLink2_text": "BBC Music",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "A BBC não se responsabiliza pelo conteúdo de outros sites",
-    "ie8Message": ""
+    "ie8Message": "Essa página foi desenhada para navegadores modernos e não é compatível com sua versão do Internet Explorer.",
+    "no-jsMessage": "Please enable JavaScript to view this content"
 }

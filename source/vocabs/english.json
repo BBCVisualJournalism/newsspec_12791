@@ -5,7 +5,7 @@
     "introParagraph_part1": "Mobile app",
     "introParagraph_shazamLink_text": "Shazam",
     "introParagraph_shazamLink_url": "http://www.shazam.com/",
-    "introParagraph_part2": "helps its users find out about unfamiliar or forgotten music. Explore the top 10 most-searched-for songs in 4,900 cities in nearly 200 countries.",
+    "introParagraph_part2": "helps its users find out about unfamiliar or forgotten music. Explore the top-10 most-searched-for songs in 4,900 cities in 200 countries.",
     "searchBoxCTACity": "Enter a city",
     "searchBoxCityPlaceholder": "Your city",
     "searchSubmitButton": "Search",
@@ -27,8 +27,8 @@
     "noTwinTownParagraph2": "There are just 101 cities out nearly 5,000 in the data that have no twin town.",
     "shareCTA": "Share your twin town",
     "share": "Share",
-    "shareMessage": "Hello #{{twinTownName}}! You are the musical twin town of #{{cityName}}",
-    "shareMessageNoTwinTown": "#{{cityName}} is unique. Find out if your town has a musical twin:",
+    "shareMessage": "My musical twin town is #{{twinTownName}}. What's yours?",
+    "shareMessageNoTwinTown": "#{{cityName}} is unique. Find out if your hometown has a musical twin:",
     "exploreFurther": "Explore further",
     "randomCityParagraph": "Randomly select a new city to explore",
     "randomCityButton": "Shuffle your city",
@@ -52,5 +52,6 @@
     "onwardJourneyLink2_text": "BBC Music",
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "The BBC is not responsible for the content of external Internet sites",
-    "ie8Message": "This site is optimised for modern web browsers, and does not fully support your version of Internet Explorer"
+    "ie8Message": "This site is optimised for modern web browsers, and does not fully support your version of Internet Explorer",
+    "no-jsMessage": "Please enable JavaScript to view this content"
 }
