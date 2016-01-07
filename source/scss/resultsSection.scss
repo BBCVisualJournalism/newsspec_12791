@@ -150,6 +150,11 @@
     }
 }
 
+// override snippets-css so pause button displays correctly
+.spt-snippet.can-pause .spt-button:after {
+    width: 1em;
+}
+
 @include respondMinMax(1008px, false) {
 	.ns12791_songResults {
 		display: inline-block;

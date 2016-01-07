@@ -73,12 +73,6 @@
 
     <script type="text/javascript">
 
-        var options = {
-            languages: []
-        };
-
-            options.languages.push('en-GB');
-
         require.config({
             paths: {
                 "mybbc/templates": '//mybbc.files.bbci.co.uk/s/notification-ui/18/templates',
@@ -88,7 +82,7 @@
 
         require(['mybbc/notifications/NotificationsMain', 'idcta/idcta-1'], function(NotificationsMain, idcta) {
             if (window.orb.fig.geo.isUK()) {
-                NotificationsMain.run(idcta, '//mybbc.files.bbci.co.uk/s/notification-ui/18/', options);
+                NotificationsMain.run(idcta, '//mybbc.files.bbci.co.uk/s/notification-ui/18/');
             }
         });
     </script>
