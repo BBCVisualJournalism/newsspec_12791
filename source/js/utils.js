@@ -25,17 +25,14 @@ define(['lib/news_special/bootstrap'], function (news) {
                 return localeLookup[key];
             }
         }
-        console.log('locale not found in lookup');
         return;
     };
 
     var enableInput = function ($input) {
-        console.log('enabling input');
         $input.removeClass('disabled').removeAttr('disabled');
     };
 
     var disableInput = function ($input) {
-        console.log('disabling input');
         $input.addClass('disabled').attr('disabled', 'disabled');
     };
 

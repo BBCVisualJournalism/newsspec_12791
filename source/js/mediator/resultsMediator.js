@@ -12,7 +12,6 @@ define(['lib/news_special/bootstrap', 'mediator/topTracksResultsMediator'], func
     };
 
     var displayResults = function (resultsModel) {
-        console.log(resultsModel);
         news.pubsub.emit('display-selected-city-name', [resultsModel.data.cityName]);
         news.pubsub.emit('display-city-tracks-results', [resultsModel.data.topTracks]);
         news.pubsub.emit('display-twin-town-results', [resultsModel.data.twinTown]);
