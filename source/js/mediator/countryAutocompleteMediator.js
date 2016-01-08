@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (news) {
+define(['lib/news_special/bootstrap', 'utils', 'lib/vendors/autocomplete'], function (news, utils) {
     var CountryAutocompleteMediator = function ($inputElement, onCountrySelect, baseDataPath) {
         this.$autocompleteInput = $inputElement;
         this.onCountrySelect = onCountrySelect;
