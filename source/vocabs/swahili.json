@@ -2,7 +2,7 @@
     "": "Andika jina la jiji, majina yamo kwa Kiingereza",
     "mainTitle": "Miji pacha kimuziki",
     "introSubheading": "Nyimbo zinazotafutwa sana miji mbalimbali",
-    "introParagraph_part1": "App ya simu",
+    "introParagraph_part1": "App ya simu ya",
     "introParagraph_shazamLink_text": "Shazam",
     "introParagraph_shazamLink_url": "http://www.shazam.com/",
     "introParagraph_part2": "husaidia watumizi kujifahamisha kuhusu nyimbo wasizozijua au zilizosahaulika. Pata nyimbo 10 kuu zinazotafutwa sana katika zaidi ya miji 4,900 katika mataifa karibu 200.",
@@ -40,8 +40,8 @@
     "shareHeading": "Sambaza makala hii",
     "shareDisclaimerLink_text": "Kuhusu kusambaza",
     "shareDisclaimerLink_url": "http://www.bbc.com/swahili/taasisi/2013/11/000000_about_share_this",
-    "shareUrl": "bbc.in/1MW24xy",
-    "fullUrl": "http://www.stage.bbc.com/news/resources/idt-060945f9-2ea8-425a-9c1e-39d6e8f6fcd9",
+    "shareUrl": "bbc.in/1VPvMLI",
+    "fullUrl": "http://www.bbc.co.uk/news/resources/idt-090b396f-117f-4230-9c44-e7bdf62b944e",
     "shareTitle": "BBC Swahili - Miji pacha kimuziki",
     "shareDescription": "App ya simu ya Shazam husaidia watumizi wake kujifahamisha kuhusu nyimbo wasizozijua au zilizosahaulika. Pata nyimbo kumi kuu zinazotafutwa sana katika zaidi ya miji 4,900 duniani.",
     "twitterMessage": "Miji pacha kimuziki - nyimbo zinazotafutwa sana miji mbalimbali - @bbcswahili",
@@ -53,5 +53,5 @@
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "BBC haiwajibiki kwa taarifa kutoka kwa tovuti zisizo zake",
     "ie8Message": "Tovuti hii imetengenezwa kufanya vyema zaidi kupitia visakuzi vya kisasa vya mtandaoni, na haifanyi vyema na aina yako ya Internet Explorer",
-    "noJsMessage": "Please enable JavaScript to view this content"
+    "noJsMessage": "Tafadhali fungulia JavaScript kuweza kutazama ukurasa vyema"
 }

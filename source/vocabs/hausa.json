@@ -27,7 +27,7 @@
     "noTwinTownParagraph2": "Akwai birane 101 cikin birane 5,000 a binciken da ba su da tagwayen garuruwa.",
     "shareCTA": "Ku nuna tagwayen garuruwanku",
     "share": "Ku nuna",
-    "shareMessage": "My musical twin town is #{{twinTownName}}. What's yours?",
+    "shareMessage": "Garin da ya fi dacewa da nawa ta fuskar waka shi ne #{{twinTownName}}. Wannene naka?",
     "shareMessageNoTwinTown": "#{{cityName}} na daban ne. Ku duba idan garinku yana da tagwaye a waka",
     "exploreFurther": "Ku duba sosai",
     "randomCityParagraph": "Ku zabi birni",
@@ -40,8 +40,8 @@
     "shareHeading": "Ku raba wannan labarin",
     "shareDisclaimerLink_text": "Yadda ake rabawa",
     "shareDisclaimerLink_url": "http://www.bbc.com/hausa/institutional/2012/12/000000_mobile_share_this",
-    "shareUrl": "bbc.in/1O7fYBg",
-    "fullUrl": "http://www.stage.bbc.com/news/resources/idt-f33a105e-3d38-4f36-9cc4-da9bd319848c",
+    "shareUrl": "http://bbc.in/1mKo9tJ",
+    "fullUrl": "http://www.bbc.co.uk/news/resources/idt-54f85895-d38c-4146-bf09-e514c5eeb9af",
     "shareTitle": "BBC Hausa - Tagwayen garuruwan waka",
     "shareDescription": "Manhajar Shazam tana taimakawa wajen neman wakokin da aka manta da su. Ku duba wakoki goma da aka fi nema a birane 4,900.",
     "twitterMessage": "Tagwayen garuruwa - biranen da ake neman wakokin a @BBCHausa",
@@ -53,5 +53,5 @@
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "BBC ba ta da alhakin duk wani abu da aka shigo da shi daga waje",
     "ie8Message": "An tsara wannan shafin ne domin ya dace da masarrafar shafin intanet da aka sabunta, don haka ba zai yi aiki a Internet Explorer ba.",
-    "noJsMessage": "Please enable JavaScript to view this content"
+    "noJsMessage": "Ka bayar da damar amfani da manhajar Jaba domin kallon wannan shirin"
 }
