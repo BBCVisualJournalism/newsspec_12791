@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (news) {
+define(['lib/news_special/bootstrap', 'utils', 'lib/vendors/autocomplete'], function (news, utils) {
     var CityAutocompleteMediator = function ($inputElement, onCitySelect, baseDataPath) {
         this.$autocompleteInput = $inputElement;
         this.onCitySelect = onCitySelect;
@@ -27,7 +27,7 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
                 },
 
                 lookupFilter: function (suggestion, originalQuery, queryLowerCase) {
-                    if (suggestion.value.toLowerCase().indexOf(queryLowerCase) !== -1) {
+                    if (utils.removeDiacritics(suggestion.value.toLowerCase()).indexOf(utils.removeDiacritics(queryLowerCase)) !== -1) {
                         return true;
                     }
                 },

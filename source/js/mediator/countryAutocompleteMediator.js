@@ -34,7 +34,7 @@ define(['lib/news_special/bootstrap', 'lib/vendors/autocomplete'], function (new
 
                     if (suggestion.search_alternatives) {
                         for (var i = 0; i < suggestion.search_alternatives.length; i++) {
-                            if (suggestion.search_alternatives[i].toLowerCase().indexOf(queryLowerCase) !== -1) {
+                            if (utils.removeDiacritics(suggestion.search_alternatives[i].toLowerCase()).indexOf(utils.removeDiacritics(queryLowerCase)) !== -1) {
                                 return true;
                             }
                         }

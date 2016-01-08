@@ -21,7 +21,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
     var loadCountriesCities = function (countryName) {
         // load the city options for the country selected
-        var countrySafePathName = utils.normaliseText(countryName);
+        var countrySafePathName = utils.normaliseFilename(countryName);
         var countriesCityListFilePath = basePath + 'cities_list_' + countrySafePathName + '.js';
 
         // clear the dropdown list

@@ -27,7 +27,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
 
     var selectRandomCity = function (cityArray) {
         var randomCity = cityArray[Math.floor(Math.random() * cityArray.length)];
-        var cityFileName = utils.normaliseText(randomCity) + '.js';
+        var cityFileName = utils.normaliseFilename(randomCity) + '.js';
         news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
     };
 

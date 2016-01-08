@@ -40,7 +40,7 @@ define(['lib/news_special/bootstrap', 'mediator/cityAutocompleteMediator', 'util
     var onSubmit = function () {
         news.istats.log('newsspec-interaction', 'search-button-clicked');
         news.istats.log('newsspec-interaction', 'city-search-button-clicked');
-        var cityFileName = utils.normaliseText(getUserCity()) + '.js';
+        var cityFileName = utils.normaliseFilename(getUserCity()) + '.js';
         news.pubsub.emit('user-submitted-city', [basePath, cityFileName]);
         return false;
     };
