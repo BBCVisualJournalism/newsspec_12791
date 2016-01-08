@@ -15,6 +15,13 @@ define([
     var $main = news.$('.main');
 
     var locale = $main.attr('id').replace('locale_', '');
+    // use english datapath for hausa/swahili/somali
+    switch (locale) {
+    case 'ha':
+    case 'sw':
+    case 'so':
+        locale = 'en';
+    }
     var baseDataPath = 'http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/' + locale + '/';
     
     var $cantFindCity = news.$('#ns12791_cantFindCity');
