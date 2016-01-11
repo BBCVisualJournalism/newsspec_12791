@@ -27,7 +27,7 @@
     "noTwinTownParagraph2": "Waxaa jira oo kaliya 101 magaalada oo ka mid ah ku dhowaad 5000 xog gaaraysa oo aan lahayn magaalo ku mataanaysan",
     "shareCTA": "nala wadaag magaaladaada mataanta ah",
     "share": "La wadaag",
-    "shareMessage": "My musical twin town is #{{twinTownName}}. What's yours?",
+    "shareMessage": "Magaaladay muusiga waa #{{twinTownName}}. Waa tee taadu?",
     "shareMessageNoTwinTown": "#{{cityName}} waa kuu gaar. Ogow in magaaladaadu leedahay mid muusigga kula mataano ah",
     "exploreFurther": "Sii baarbaar",
     "randomCityParagraph": "Si guud u raadi magaalo cusub oo aad baarto",
@@ -53,5 +53,5 @@
     "onwardJourneyLink2_url": "http://www.bbc.co.uk/music",
     "onwardJourneyDisclaimer": "BBC mas'uul kama aha xogta boggagga internet-ka ee barteena ka baxsan.",
     "ie8Message": "Bogga waxaa loo qaabeeyay bog-baarayaasha internet-ka casriga ah (Browser), si buuxda uguma shaqaynayao Internet Explorer",
-    "noJsMessage": "Please enable JavaScript to view this content"
+    "noJsMessage": "Fadlan awood-sii JavaScript si aad u aragto xogta"
 }
