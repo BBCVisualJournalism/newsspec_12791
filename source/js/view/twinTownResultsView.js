@@ -41,13 +41,20 @@ define(['lib/news_special/bootstrap', 'utils', 'lib/news_special/numberFormatter
     };
 
     var updateDistance = function (milesAway) {
+        // calculate km
         var kmAway = Math.round(milesAway / 0.6214);
+
+        // round to nearest 100
+        var milesRounded = Math.round(milesAway / 100) * 100;
+        var kmRounded = Math.round(kmAway / 100) * 100;
+
+        // only display miles and km if language is english
         if (language === 'english') {
-            $twinTownMilesAway.text(NumberFormatter.format(language, milesAway));
-        } else {
+            $twinTownMilesAway.text(NumberFormatter.format(language, milesRounded));
+        } else { // otherwise display km only
             $twinTownMilesAwayText.remove();
         }
-        $twinTownKmAway.text(NumberFormatter.format(language, kmAway));
+        $twinTownKmAway.text(NumberFormatter.format(language, kmRounded));
     };
 
     var updateTracksInCommon = function (commonTracksArray) {

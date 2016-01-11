@@ -5,7 +5,7 @@
     "url": "http://github.com/BBCVisualJournalism/newsspec_12791"
   },
   "description":    "Whats the world listening to? Help readers find out which songs are popular in a wide range of places around the world. Engage them in a quiz, testing their knowledge of some of the world's most shazammed artists and highlighting interesting data points.",
-  "version":        "0.1.457",
+  "version":        "0.1.459",
   "devDependencies": {
     "casperjs":                         "1.1.0-beta3",
     "grunt":                            "~0.4.0",
