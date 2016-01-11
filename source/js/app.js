@@ -1,18 +1,16 @@
 define([
     'lib/news_special/bootstrap',
+    'userInput',
     'mediator/screenSizeMediator',
-    'mediator/citySearchDropDownMediator',
     'mediator/resultsMediator',
     'view/topTracksResultsView',
     'view/twinTownResultsView',
     'shareTools',
-    'citySearchUserInput',
-    'countrySearchUserInput',
     'randomCity'
-], function (news, screenSizeMediator, citySearchDropDownMediator, resultsMediator, topTracksResultsView, twinTownResultsView, shareTools, citySearchUserInput, countrySearchUserInput, randomCity) {
+], function (news, userInput, screenSizeMediator, resultsMediator, topTracksResultsView, twinTownResultsView, shareTools, randomCity) {
 
-    // variable declarations
     var $main = news.$('.main');
+    $main.removeClass('ns_no-js');
 
     var locale = $main.attr('id').replace('locale_', '');
     // use english datapath for hausa/swahili/somali
@@ -23,77 +21,15 @@ define([
         locale = 'en';
     }
     var baseDataPath = 'http://newsimg.bbc.co.uk/news/special/2015/newsspec_12791_data/data/' + locale + '/';
-    
-    var $cantFindCity = news.$('#ns12791_cantFindCity');
-    var $backToOriginalSearch = news.$('#ns12791_backToOriginalSearch');
-    var citySearchV = news.$v('#ns12791_cityFreeTextSearchHolder');
-    var countrySearchV = news.$v('#ns12791_countryFreeTextSearchHolder');
 
-    // remove no-js class
-    $main.removeClass('ns_no-js');
-
-    citySearchUserInput.init(baseDataPath);
-
-    // init mediator components
+    // initialise modules
+    userInput.init(baseDataPath);
     screenSizeMediator.init();
-    citySearchDropDownMediator.init(baseDataPath);
     resultsMediator.init();
-
-    // init view components
     topTracksResultsView.init();
     twinTownResultsView.init();
     shareTools.init();
     randomCity.init(baseDataPath);
-
-    // button listeners
-    $cantFindCity.on('click', function (e) {
-        e.preventDefault();
-
-        // switch from city search to country search
-        var animationMovement = 40;
-        var animationDuration = 180;
-
-        citySearchV.velocity({
-                marginLeft: '-' + animationMovement + 'px',
-                opacity: 0
-            }, animationDuration, 'linear', function () {
-                countrySearchUserInput.init(baseDataPath);
-            }
-        );
-        countrySearchV.css({
-            'display': 'block'
-        });
-        countrySearchV.velocity({
-                left: [0, (animationMovement * 1.5) + 'px'],
-                opacity: [1, 0]
-            }, animationDuration * 1.2, 'linear'
-        );
-
-        $cantFindCity.addClass('disabled');
-        $backToOriginalSearch.removeClass('disabled');
-    });
-
-    $backToOriginalSearch.on('click', function (e) {
-        e.preventDefault();
-        
-        // switch from country search to city search
-        var animationMovement = 40;
-        var animationDuration = 180;
-
-        citySearchV.velocity('reverse');
-        countrySearchV.velocity({
-                left: [(animationMovement * 1.5) + 'px', 0],
-                opacity: [0, 1]
-            }, animationDuration * 1.2, 'linear', function () {
-                countrySearchV.css({
-                    'display': 'none'
-                });
-            }
-        );
-
-        $cantFindCity.removeClass('disabled');
-        $backToOriginalSearch.addClass('disabled');
-    });
 
     news.sendMessageToremoveLoadingImage();
 });
