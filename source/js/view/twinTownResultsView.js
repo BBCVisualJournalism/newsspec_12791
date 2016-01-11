@@ -3,9 +3,12 @@ define(['lib/news_special/bootstrap', 'utils', 'lib/news_special/numberFormatter
     // declare variables
     var $twinTownResult;
     var $twinTownCityName;
+    var $twinTownCountryName;
+    var $twinTownMilesAwayText;
     var $twinTownMilesAway;
     var $twinTownKmAway;
     var $tracksInCommonNumber;
+    var $tracksInCommonText;
     var $tracksInCommonList;
     var $twinTownFound;
     var $noTwinTown;
@@ -48,7 +51,6 @@ define(['lib/news_special/bootstrap', 'utils', 'lib/news_special/numberFormatter
     };
 
     var updateTracksInCommon = function (commonTracksArray) {
-
         // if param number is between 1-9, returns the number as a word
         // english only - returns digits for all other languages
         var convertNumberToWord = function (number) {
