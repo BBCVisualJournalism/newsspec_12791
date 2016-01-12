@@ -28,7 +28,7 @@
     "shareCTA": "Ku nuna tagwayen garuruwanku",
     "share": "Ku nuna",
     "shareMessage": "Garin da ya fi dacewa da nawa ta fuskar waka shi ne #{{twinTownName}}. Wannene naka?",
-    "shareMessageNoTwinTown": "#{{cityName}} na daban ne. Ku duba idan garinku yana da tagwaye a waka",
+    "shareMessageNoTwinTown": "#{{cityName}} na daban ne. Ku duba idan garinku yana da tagwaye a waka:",
     "exploreFurther": "Ku duba sosai",
     "randomCityParagraph": "Ku zabi birni",
     "randomCityButton": "Ku sasauya yadda ake zabar birni",
