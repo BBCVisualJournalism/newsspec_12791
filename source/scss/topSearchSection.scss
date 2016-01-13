@@ -153,13 +153,6 @@
     }
 }
 
-//'desktop' portrait
-@media screen and (orientation:portrait) and (min-width: 1008px) {
-    .ns12791_topSearchHolder {
-        background-image: url('../img/topbg_large_portrait.jpg');
-    }
-}
-
 @include respondMinMax(600px, false) {
 	.ns12791_topSearchHolder {
 		display: table;
